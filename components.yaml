@@ -1,0 +1,7 @@
+components:
+  serverhost:
+    type: registry
+    slug: serverhost
+    name: serverhost
+    filename: serverhost.jar
+    description: Core runtime for managing Minecraft servers
