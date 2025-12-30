@@ -5,3 +5,10 @@ components:
     name: serverhost
     filename: serverhost.jar
     description: Core runtime for managing Minecraft servers
+  
+  default-templates:
+    type: direct             
+    version: "0.0.1"
+    downloadUrl: "https://github.com/theSimpleCloud/simplecloud-manifest/releases/download/v.2024.43.1/templates.zip"
+    name: default-templates
+    extractPath: "templates/*" 
