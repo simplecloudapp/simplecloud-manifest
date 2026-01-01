@@ -13,7 +13,7 @@ components:
   
   default-templates:
     type: direct             
-    version: "0.0.2"
+    version: "0.0.3"
     downloadUrl: "https://github.com/theSimpleCloud/simplecloud-manifest/releases/download/v.2024.43.1/templates.zip"
     name: default-templates
     extractPath: "templates/*" 
