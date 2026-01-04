@@ -10,6 +10,8 @@ components:
     name: serverhost
     filename: serverhost.jar
     description: Core runtime for managing Minecraft servers
+    startConfig:
+      javaArgs: ["-Xmx512m"]
   
   default-templates:
     type: direct             
