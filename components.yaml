@@ -18,4 +18,4 @@ components:
     version: "0.0.4"
     downloadUrl: "https://github.com/theSimpleCloud/simplecloud-manifest/releases/download/v.2024.43.1/templates.zip"
     name: default-templates
-    extractPath: "templates/*" 
+    extractPath: "*" 
