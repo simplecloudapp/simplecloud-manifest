@@ -212,9 +212,3 @@ main() {
 }
 
 main || exit 1
-
-if [ -n "$ZSH_VERSION" ] || [ "$SHELL" = "/bin/zsh" ]; then
-    exec zsh -l </dev/tty
-else
-    exec bash -l </dev/tty
-fi
