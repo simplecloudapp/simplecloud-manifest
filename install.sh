@@ -124,19 +124,19 @@ install_bun() {
     hash -r 2>/dev/null || true
 
     if command -v bun &> /dev/null; then
-        print_success "Bun is already installed ($(bun --version))"
+        print_success "Package Manager is already installed ($(bun --version))"
         return
     fi
 
-    spin "Installing Bun" install_bun_cmd
+    spin "Installing Package Manager" install_bun_cmd
 
     hash -r 2>/dev/null || true
 
     if ! command -v bun &> /dev/null; then
         if [ -x "$HOME/.bun/bin/bun" ]; then
-            print_success "Bun installed at $HOME/.bun/bin/bun"
+            print_success "Package Manager installed at $HOME/.bun/bin/bun"
         else
-            print_error "Failed to install Bun"
+            print_error "Failed to install Package Manager"
             exit 1
         fi
     fi
