@@ -85,7 +85,7 @@ jobs:
             COMPARE_REF="HEAD"
           fi
 
-          mkdir -p .tmp/dist .tmp
+          mkdir -p .tmp/dist .tmp/stage
           : > .tmp/changed-components.txt
 
           if [ -z "$PREVIOUS_TAG" ]; then
@@ -130,7 +130,71 @@ jobs:
           echo "Changed components:"
           cat .tmp/changed-components.txt
           while IFS= read -r component_name; do
-            (cd "components/$component_name" && zip -r "../../.tmp/dist/${component_name}.zip" . -x "*.git*" -x "*.DS_Store")
+            stage_dir=".tmp/stage/${component_name}"
+            history_file=".tmp/stage/${component_name}.history.txt"
+            rm -rf "$stage_dir"
+            mkdir -p "$stage_dir"
+
+            rsync -a \
+              --exclude ".git*" \
+              --exclude ".DS_Store" \
+              --exclude ".gitkeep" \
+              "components/$component_name/" \
+              "$stage_dir/"
+
+            git log --pretty=format: --name-only -- "components/$component_name" \
+              | sed '/^$/d' \
+              | sed "s#^components/$component_name/##" \
+              | grep -Ev '^(\.gitkeep|\.DS_Store)$' \
+              | sort -u > "$history_file"
+
+            python3 - "$stage_dir" "$component_name" "$TAG" "$history_file" <<'PY'
+            import hashlib
+            import json
+            import sys
+            from pathlib import Path
+
+            root = Path(sys.argv[1])
+            component = sys.argv[2]
+            release_tag = sys.argv[3]
+            history_file = Path(sys.argv[4])
+            version = release_tag[1:] if release_tag.startswith("v") else release_tag
+
+            files = []
+            current_paths = set()
+            for path in sorted(root.rglob("*")):
+                if not path.is_file():
+                    continue
+                rel = path.relative_to(root).as_posix()
+                if rel == "manifest.json":
+                    continue
+                sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
+                files.append({"path": rel, "sha256": sha256})
+                current_paths.add(rel)
+
+            historic_paths = set()
+            if history_file.exists():
+                for raw in history_file.read_text().splitlines():
+                    rel = raw.strip().replace("\\", "/")
+                    if not rel or rel == "manifest.json":
+                        continue
+                    historic_paths.add(rel)
+
+            deleted_files = sorted(historic_paths - current_paths)
+
+            manifest = {
+                "component": component,
+                "version": version,
+                "releaseTag": release_tag,
+                "fileCount": len(files),
+                "files": files,
+                "deletedFiles": deleted_files,
+            }
+
+            (root / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+            PY
+
+            (cd "$stage_dir" && zip -r "../../dist/${component_name}.zip" .)
           done < .tmp/changed-components.txt
           echo "has_components=true" >> "$GITHUB_OUTPUT"
 
