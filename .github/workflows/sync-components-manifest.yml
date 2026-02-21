@@ -23,7 +23,7 @@ jobs:
       - name: Checkout manifest repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
+          ref: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.event.repository.default_branch }}
 
       - name: Resolve release metadata
         shell: bash
@@ -31,7 +31,7 @@ jobs:
           RELEASE_TAG: ${{ github.event_name == 'release' && github.event.release.tag_name || github.event.inputs.tag }}
           REFERENCE_ASSETS: ${{ github.event_name == 'release' && toJson(github.event.release.assets) || '' }}
           REPOSITORY: ${{ github.repository }}
-          BASE_REF: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
+          BASE_REF: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.event.repository.default_branch }}
           GH_TOKEN: ${{ github.token }}
         run: |
           if [ -z "$RELEASE_TAG" ]; then
@@ -39,16 +39,18 @@ jobs:
             exit 1
           fi
 
-          if [ "$REFERENCE_ASSETS" = "[]" ]; then
+          ASSETS_JSON="$REFERENCE_ASSETS"
+          if [ -z "$ASSETS_JSON" ] || [ "$ASSETS_JSON" = "[]" ] || [ "$ASSETS_JSON" = "null" ]; then
             echo "No release assets were supplied in workflow event payload. Resolving from GitHub API."
-            ASSETS_JSON="$(gh api "/repos/${REPOSITORY}/releases/tags/${RELEASE_TAG}" --jq '.assets')"
-          else
-            ASSETS_JSON="$REFERENCE_ASSETS"
+            if ! ASSETS_JSON="$(gh api "/repos/${REPOSITORY}/releases/tags/${RELEASE_TAG}" --jq '.assets' 2>/dev/null)"; then
+              echo "No release found for tag ${RELEASE_TAG}. Skipping manifest sync."
+              exit 0
+            fi
           fi
 
-          if [ -z "$ASSETS_JSON" ] || [ "$ASSETS_JSON" = "null" ]; then
-            echo "No release assets found for ${RELEASE_TAG}."
-            exit 1
+          if [ -z "$ASSETS_JSON" ] || [ "$ASSETS_JSON" = "null" ] || [ "$ASSETS_JSON" = "[]" ]; then
+            echo "No release assets found for ${RELEASE_TAG}. Skipping manifest sync."
+            exit 0
           fi
 
           VERSION="${RELEASE_TAG#v}"
@@ -85,9 +87,12 @@ jobs:
           in_component_block = False
           current_component = None
           updated_components = {}
+          matched_direct_components = set()
 
           def flush_component_footer():
               if not in_component_block or current_component not in updated_components:
+                  return
+              if not updated_components[current_component]["is_direct"]:
                   return
               if not updated_components[current_component]["version"]:
                   output.append(f'    version: "{version}"')
@@ -121,6 +126,7 @@ jobs:
                       updated_components[current_component] = {
                           "version": False,
                           "downloadUrl": False,
+                          "is_direct": False,
                       }
                   output.append(raw_line)
                   continue
@@ -130,6 +136,18 @@ jobs:
                   continue
 
               stripped = raw_line.strip()
+              if stripped.startswith("type:"):
+                  type_value = stripped.split(":", 1)[1].strip().strip('"').strip("'")
+                  if type_value == "direct":
+                      updated_components[current_component]["is_direct"] = True
+                      matched_direct_components.add(current_component)
+                  output.append(raw_line)
+                  continue
+
+              if not updated_components[current_component]["is_direct"]:
+                  output.append(raw_line)
+                  continue
+
               if stripped.startswith("version:"):
                   output.append(f'    version: "{version}"')
                   updated_components[current_component]["version"] = True
@@ -146,8 +164,8 @@ jobs:
 
           flush_component_footer()
 
-          if not updated_components:
-              print("No matching component zip files found in components.yaml.")
+          if not matched_direct_components:
+              print("No matching direct component zip files found in components.yaml.")
               exit(0)
 
           path.write_text("\n".join(output) + "\n")

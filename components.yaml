@@ -2,7 +2,7 @@ setup:
   components:
     - serverhost
     - default-templates
-    - internal-workflows
+    - serverhost-defaults
 
 components:
   serverhost:

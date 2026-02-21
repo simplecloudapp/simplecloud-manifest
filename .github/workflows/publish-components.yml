@@ -92,5 +92,5 @@ jobs:
         run: |
           gh api repos/${{ github.repository }}/actions/workflows/sync-components-manifest.yml/dispatches \
             --method POST \
-            -f ref="${{ github.ref_name }}" \
+            -f ref="${{ github.event.repository.default_branch }}" \
             -f inputs[tag]="${{ steps.release.outputs.tag }}"
