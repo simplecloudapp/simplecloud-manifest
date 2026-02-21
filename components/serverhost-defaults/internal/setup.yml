@@ -1,0 +1,69 @@
+name: Setup Workflow
+
+steps:
+  - name: copy-from-cache
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.templates }}/cache/{{ runtime.name }}"
+      to: "{{ runtime.server-dir }}"
+  - name: copy-every
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.templates }}/_every/every"
+      to: "{{ runtime.server-dir }}"
+      init-dir-if-missing: true
+      replace: false
+  - name: copy-every-with-type
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.templates }}/_every/every_{{ runtime.type }}"
+      to: "{{ runtime.server-dir }}"
+      init-dir-if-missing: true
+      replace: false
+  - name: copy-every-with-mapped-software
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.templates }}/_every/every_{{ runtime.mapped-software }}"
+      to: "{{ runtime.server-dir }}"
+      init-dir-if-missing: true
+      replace: false
+  - name: copy-every-with-software
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.templates }}/_every/every_{{ runtime.software }}"
+      to: "{{ runtime.server-dir }}"
+      init-dir-if-missing: true
+      replace: false
+  - name: copy-tagged
+    uses: simplecloud/foreach
+    with:
+      items: "{{ runtime.tags }}"
+      as: tag
+      steps:
+        - name: copy-tag-{{ vars.tag }}
+          uses: simplecloud/copy
+          with:
+            from: "{{ runtime.templates }}/_tagged/{{ vars.tag }}"
+            to: "{{ runtime.server-dir }}"
+            init-dir-if-missing: false
+            replace: false
+  - name: copy-template
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.templates }}/{{ runtime.name }}"
+      to: "{{ runtime.server-dir }}"
+      init-dir-if-missing: true
+      replace: false
+  - name: load-plugins
+    uses: simplecloud/load-plugins
+    with:
+      minecraft-version: "{{ runtime.minecraft-version }}"
+      platform: "{{ runtime.software }}"
+      plugins-dir: "{{ runtime.server-dir }}/plugins"
+      cache-dir: "{{ runtime.cache-dir }}"
+      type: "{{ runtime.type }}"
+  - name: configurate-server
+    uses: simplecloud/configurate
+    with:
+      configurator: "{{ runtime.configurator }}"
+      dir: "{{ runtime.server-dir }}"

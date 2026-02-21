@@ -1,0 +1,43 @@
+name: Cleanup Workflow
+
+steps:
+  - name: copy-logs-to-archive
+    uses: simplecloud/copy
+    if: "{{ runtime.persistent }} == false"
+    with:
+      from: "{{ runtime.server-dir }}/logs/"
+      to: "{{ runtime.templates }}/cache/logs/{{ runtime.name }}/{{ runtime.nice-id }}-{{ runtime.process-id }}"
+  - name: copy-into-cache-paper-remapped
+    uses: simplecloud/copy
+    if: "{{ runtime.persistent }} == false && value(runtime.properties.backup-into-cache, true) == true"
+    with:
+      from: "{{ runtime.server-dir }}/plugins/.paper-remapped"
+      to: "{{ runtime.templates }}/cache/{{ runtime.name }}/plugins/.paper-remapped"
+  - name: copy-into-cache-libraries
+    uses: simplecloud/copy
+    if: "{{ runtime.persistent }} == false && value(runtime.properties.backup-into-cache, true) == true"
+    with:
+      from: "{{ runtime.server-dir }}/libraries/"
+      to: "{{ runtime.templates }}/cache/{{ runtime.name }}/libraries"
+  - name: copy-into-cache-versions
+    uses: simplecloud/copy
+    if: "{{ runtime.persistent }} == false && value(runtime.properties.backup-into-cache, true) == true"
+    with:
+      from: "{{ runtime.server-dir }}/versions/"
+      to: "{{ runtime.templates }}/cache/{{ runtime.name }}/versions"
+  - name: cleanup-downloaded-plugins
+    uses: simplecloud/foreach
+    if: "{{ runtime.persistent }} == true"
+    with:
+      items: "{{ runtime.workflow-store.plugins.downloaded-paths }}"
+      as: pluginPath
+      steps:
+        - name: delete-downloaded-plugin
+          uses: simplecloud/delete
+          with:
+            path: "{{ vars.pluginPath }}"
+  - name: delete-running-dir
+    uses: simplecloud/delete
+    if: "{{ runtime.persistent }} == false"
+    with:
+      path: "{{ runtime.server-dir }}"

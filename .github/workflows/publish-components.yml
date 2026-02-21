@@ -1,0 +1,86 @@
+name: Publish component release artifacts
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to publish"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  publish-components:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Resolve release tag
+        id: release
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ -z "${{ github.event.inputs.tag }}" ]; then
+              echo "workflow_dispatch requires a tag input."
+              exit 1
+            fi
+            echo "tag=${{ github.event.inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Package component folders
+        shell: bash
+        run: |
+          if [ ! -d "components" ]; then
+            echo "Missing components folder."
+            exit 1
+          fi
+
+          mkdir -p .tmp/dist
+          component_assets=0
+
+          for component_path in components/*; do
+            if [ ! -d "$component_path" ]; then
+              continue
+            fi
+
+            component_name=$(basename "$component_path")
+            if [[ "$component_name" == .* ]]; then
+              continue
+            fi
+            if [ "$component_name" = ".gitkeep" ]; then
+              continue
+            fi
+
+            has_payload_file=0
+            if find "$component_path" -type f -not -name ".gitkeep" -not -name ".DS_Store" | grep -q "."; then
+              has_payload_file=1
+            fi
+
+            if [ "$has_payload_file" -eq 0 ]; then
+              echo "Skipping $component_name (no files to package)."
+              continue
+            fi
+
+            (cd "$component_path" && zip -r "../../.tmp/dist/${component_name}.zip" . -x "*.git*" -x "*.DS_Store")
+            component_assets=1
+          done
+
+          if [ "$component_assets" -ne 1 ]; then
+            echo "No component folders with files found in components/."
+            exit 1
+          fi
+
+      - name: Create release assets for components
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release.outputs.tag }}
+          files: .tmp/dist/*.zip
+          fail_on_unmatched_files: true

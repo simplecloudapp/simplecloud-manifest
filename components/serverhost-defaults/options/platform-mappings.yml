@@ -1,0 +1,22 @@
+# Platform mappings for server software variants
+# Maps server software names to their base platform equivalents
+# Used for template inheritance (every_<platform>) and Modrinth plugin downloads
+
+platforms:
+  # Purpur is a Paper fork, map to Paper
+  purpur: paper
+
+  # Pufferfish is a Paper fork, map to Paper
+  pufferfish: paper
+
+  # Airplane is a Paper fork, map to Paper
+  airplane: paper
+
+  # ASPaper is a Paper fork, map to Paper
+  aspaper: paper
+
+  # Leaf is a Paper fork, map to Paper
+  leaf: paper
+
+  # Add more mappings as needed
+  # Format: source-platform: target-platform

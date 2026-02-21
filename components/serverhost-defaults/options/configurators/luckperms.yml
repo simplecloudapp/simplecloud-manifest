@@ -1,0 +1,10 @@
+paths:
+  - path: "config.yml"
+    type: "YML"
+    data:
+      storage-method: https://luckperms.net/wiki/Configuration#storage-method
+      data:
+        address: IP_ADDRESS
+        database: DATABASE
+        username: USERNAME
+        password: PASSWORD

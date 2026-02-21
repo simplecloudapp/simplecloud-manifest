@@ -2,6 +2,7 @@ setup:
   components:
     - serverhost
     - default-templates
+    - internal-workflows
 
 components:
   serverhost:
@@ -12,10 +13,17 @@ components:
     description: Core runtime for managing Minecraft servers
     startConfig:
       javaArgs: ["-Xmx512m"]
-  
+
   default-templates:
-    type: direct             
+    type: direct
     version: "0.0.15"
-    downloadUrl: "https://github.com/theSimpleCloud/simplecloud-manifest/releases/download/v.2024.43.1/templates.zip"
+    downloadUrl: "https://github.com/theSimpleCloud/simplecloud-manifest/releases/latest/download/default-templates.zip"
     name: default-templates
-    extractPath: "templates/*" 
+    extractPath: "templates/*"
+
+  serverhost-defaults:
+    type: direct
+    version: "0.0.0"
+    downloadUrl: "https://github.com/theSimpleCloud/simplecloud-manifest/releases/latest/download/serverhost-defaults.zip"
+    name: serverhost-defaults
+    extractPath: "/"
