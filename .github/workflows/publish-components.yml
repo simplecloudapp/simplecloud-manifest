@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Resolve release tag
         id: release
@@ -37,6 +39,7 @@ jobs:
           fi
 
       - name: Package component folders
+        id: changed
         shell: bash
         run: |
           if [ ! -d "components" ]; then
@@ -44,24 +47,54 @@ jobs:
             exit 1
           fi
 
-          mkdir -p .tmp/dist
-          component_assets=0
+          TAG="${{ steps.release.outputs.tag }}"
+          if ! git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
+            echo "Tag ${TAG} does not exist in repository."
+            exit 1
+          fi
 
-          for component_path in components/*; do
-            if [ ! -d "$component_path" ]; then
-              continue
-            fi
+          SEMVER_PATTERN='^v[0-9]+\.[0-9]+\.[0-9]+$'
+          if [[ "$TAG" =~ $SEMVER_PATTERN ]]; then
+            SEMVER_TAGS="$(git tag -l 'v*' | grep -E "$SEMVER_PATTERN" || true)"
+            PREVIOUS_TAG="$(
+              printf '%s\n' "$SEMVER_TAGS" \
+                | sort -V \
+                | awk -v tag="$TAG" '
+                    $0 == tag { print prev; found=1; exit }
+                    { prev=$0 }
+                    END { if (!found) print "" }
+                  '
+            )"
+          else
+            echo "Tag ${TAG} is not strict semver (vX.Y.Z). Including all components."
+            PREVIOUS_TAG=""
+          fi
 
-            component_name=$(basename "$component_path")
+          mkdir -p .tmp/dist .tmp
+          : > .tmp/changed-components.txt
+
+          if [ -z "$PREVIOUS_TAG" ]; then
+            echo "No previous tag found. Including all components."
+            candidate_components="$(find components -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)"
+          else
+            echo "Comparing changed components from ${PREVIOUS_TAG} to ${TAG}."
+            candidate_components="$(
+              git diff --name-only "$PREVIOUS_TAG" "$TAG" -- components \
+                | awk -F/ '/^components\/[^/]+\// { print $2 }' \
+                | sort -u
+            )"
+          fi
+
+          for component_name in $candidate_components; do
             if [[ "$component_name" == .* ]]; then
               continue
             fi
-            if [ "$component_name" = ".gitkeep" ]; then
+            if [ ! -d "components/$component_name" ]; then
               continue
             fi
 
             has_payload_file=0
-            if find "$component_path" -type f -not -name ".gitkeep" -not -name ".DS_Store" | grep -q "."; then
+            if find "components/$component_name" -type f -not -name ".gitkeep" -not -name ".DS_Store" | grep -q "."; then
               has_payload_file=1
             fi
 
@@ -70,16 +103,24 @@ jobs:
               continue
             fi
 
-            (cd "$component_path" && zip -r "../../.tmp/dist/${component_name}.zip" . -x "*.git*" -x "*.DS_Store")
-            component_assets=1
+            echo "$component_name" >> .tmp/changed-components.txt
           done
 
-          if [ "$component_assets" -ne 1 ]; then
-            echo "No component folders with files found in components/."
-            exit 1
+          if [ ! -s .tmp/changed-components.txt ]; then
+            echo "No changed component payloads found for this tag."
+            echo "has_components=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
+          echo "Changed components:"
+          cat .tmp/changed-components.txt
+          while IFS= read -r component_name; do
+            (cd "components/$component_name" && zip -r "../../.tmp/dist/${component_name}.zip" . -x "*.git*" -x "*.DS_Store")
+          done < .tmp/changed-components.txt
+          echo "has_components=true" >> "$GITHUB_OUTPUT"
+
       - name: Create release assets for components
+        if: steps.changed.outputs.has_components == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.release.outputs.tag }}
@@ -87,6 +128,7 @@ jobs:
           fail_on_unmatched_files: true
 
       - name: Trigger component manifest sync
+        if: steps.changed.outputs.has_components == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
