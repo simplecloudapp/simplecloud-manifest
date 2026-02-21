@@ -48,26 +48,41 @@ jobs:
           fi
 
           TAG="${{ steps.release.outputs.tag }}"
-          if ! git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
-            echo "Tag ${TAG} does not exist in repository."
-            exit 1
+          TAG_EXISTS=false
+          if git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
+            TAG_EXISTS=true
           fi
 
           SEMVER_PATTERN='^v[0-9]+\.[0-9]+\.[0-9]+$'
           if [[ "$TAG" =~ $SEMVER_PATTERN ]]; then
             SEMVER_TAGS="$(git tag -l 'v*' | grep -E "$SEMVER_PATTERN" || true)"
-            PREVIOUS_TAG="$(
-              printf '%s\n' "$SEMVER_TAGS" \
-                | sort -V \
-                | awk -v tag="$TAG" '
-                    $0 == tag { print prev; found=1; exit }
-                    { prev=$0 }
-                    END { if (!found) print "" }
-                  '
-            )"
+            if [ "$TAG_EXISTS" = true ]; then
+              PREVIOUS_TAG="$(
+                printf '%s\n' "$SEMVER_TAGS" \
+                  | sort -V \
+                  | awk -v tag="$TAG" '
+                      $0 == tag { print prev; found=1; exit }
+                      { prev=$0 }
+                      END { if (!found) print "" }
+                    '
+              )"
+            else
+              PREVIOUS_TAG="$(
+                printf '%s\n' "$SEMVER_TAGS" \
+                  | sort -V \
+                  | awk -v tag="$TAG" '$0 < tag { prev=$0 } END { print prev }'
+              )"
+              echo "Tag ${TAG} does not exist yet. Comparing from ${PREVIOUS_TAG:-<none>} to current HEAD."
+            fi
           else
             echo "Tag ${TAG} is not strict semver (vX.Y.Z). Including all components."
             PREVIOUS_TAG=""
+          fi
+
+          if [ "$TAG_EXISTS" = true ]; then
+            COMPARE_REF="$TAG"
+          else
+            COMPARE_REF="HEAD"
           fi
 
           mkdir -p .tmp/dist .tmp
@@ -77,9 +92,9 @@ jobs:
             echo "No previous tag found. Including all components."
             candidate_components="$(find components -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)"
           else
-            echo "Comparing changed components from ${PREVIOUS_TAG} to ${TAG}."
+            echo "Comparing changed components from ${PREVIOUS_TAG} to ${COMPARE_REF}."
             candidate_components="$(
-              git diff --name-only "$PREVIOUS_TAG" "$TAG" -- components \
+              git diff --name-only "$PREVIOUS_TAG" "$COMPARE_REF" -- components \
                 | awk -F/ '/^components\/[^/]+\// { print $2 }' \
                 | sort -u
             )"
@@ -124,6 +139,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.release.outputs.tag }}
+          target_commitish: ${{ github.sha }}
           files: .tmp/dist/*.zip
           fail_on_unmatched_files: true
 
