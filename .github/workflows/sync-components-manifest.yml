@@ -3,7 +3,15 @@ name: Sync manifest to released components
 on:
   release:
     types:
+      - created
       - published
+      - released
+      - edited
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (for example: v1.2.3)"
+        required: true
 
 permissions:
   contents: write
@@ -15,18 +23,36 @@ jobs:
       - name: Checkout manifest repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.target_commitish }}
+          ref: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
 
-      - name: Sync released component versions and download URLs
+      - name: Resolve release metadata
         shell: bash
         env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
-          REFERENCE_ASSETS: ${{ toJson(github.event.release.assets) }}
+          RELEASE_TAG: ${{ github.event_name == 'release' && github.event.release.tag_name || github.event.inputs.tag }}
+          REFERENCE_ASSETS: ${{ github.event_name == 'release' && toJson(github.event.release.assets) || '' }}
           REPOSITORY: ${{ github.repository }}
-          BASE_REF: ${{ github.event.release.target_commitish }}
+          BASE_REF: ${{ github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
         run: |
+          if [ -z "$RELEASE_TAG" ]; then
+            echo "Release tag is required."
+            exit 1
+          fi
+
+          if [ "$REFERENCE_ASSETS" = "[]" ]; then
+            echo "No release assets were supplied in workflow event payload. Resolving from GitHub API."
+            ASSETS_JSON="$(gh api "/repos/${REPOSITORY}/releases/tags/${RELEASE_TAG}" --jq '.assets')"
+          else
+            ASSETS_JSON="$REFERENCE_ASSETS"
+          fi
+
+          if [ -z "$ASSETS_JSON" ] || [ "$ASSETS_JSON" = "null" ]; then
+            echo "No release assets found for ${RELEASE_TAG}."
+            exit 1
+          fi
+
           VERSION="${RELEASE_TAG#v}"
-          python - "$VERSION" "$REPOSITORY" "$RELEASE_TAG" "$REFERENCE_ASSETS" <<'PY'
+          python - "$VERSION" "$REPOSITORY" "$RELEASE_TAG" "$ASSETS_JSON" <<'PY'
           import json
           import sys
           from pathlib import Path
@@ -37,20 +63,19 @@ jobs:
           assets_json = sys.argv[4]
 
           try:
-            release_assets = json.loads(assets_json)
+              release_assets = json.loads(assets_json)
           except json.JSONDecodeError as error:
-            raise SystemExit(f"Failed to decode GitHub assets JSON: {error}")
+              raise SystemExit(f"Failed to decode GitHub release assets JSON: {error}")
 
           released_components = {
-            asset["name"][:-4]
-            for asset in release_assets
-            if isinstance(asset, dict)
-            and asset.get("name", "").endswith(".zip")
+              asset["name"][:-4]
+              for asset in release_assets
+              if isinstance(asset, dict) and asset.get("name", "").endswith(".zip")
           }
 
           if not released_components:
-            print("No .zip assets found in this release.")
-            exit(0)
+              print("No .zip assets found in this release.")
+              exit(0)
 
           path = Path("components.yaml")
           lines = path.read_text().splitlines()
@@ -62,68 +87,68 @@ jobs:
           updated_components = {}
 
           def flush_component_footer():
-            if not in_component_block or current_component not in updated_components:
-              return
-            if not updated_components[current_component]["version"]:
-              output.append(f'    version: "{version}"')
-            if not updated_components[current_component]["downloadUrl"]:
-              output.append(
-                f'    downloadUrl: "https://github.com/{repository}/releases/download/{release_tag}/{current_component}.zip"'
-              )
+              if not in_component_block or current_component not in updated_components:
+                  return
+              if not updated_components[current_component]["version"]:
+                  output.append(f'    version: "{version}"')
+              if not updated_components[current_component]["downloadUrl"]:
+                  output.append(
+                      f'    downloadUrl: "https://github.com/{repository}/releases/download/{release_tag}/{current_component}.zip"'
+                  )
 
           for raw_line in lines:
-            if raw_line == "components:":
-              in_components_section = True
+              if raw_line == "components:":
+                  in_components_section = True
+                  output.append(raw_line)
+                  continue
+
+              if in_components_section and raw_line and not raw_line.startswith(" "):
+                  flush_component_footer()
+                  in_component_block = False
+                  current_component = None
+                  output.append(raw_line)
+                  continue
+
+              if in_components_section and raw_line.startswith("  ") and not raw_line.startswith("    "):
+                  flush_component_footer()
+                  in_component_block = False
+                  current_component = None
+
+                  component_name = raw_line.split(":", 1)[0].strip()
+                  in_component_block = component_name in released_components
+                  if in_component_block:
+                      current_component = component_name
+                      updated_components[current_component] = {
+                          "version": False,
+                          "downloadUrl": False,
+                      }
+                  output.append(raw_line)
+                  continue
+
+              if not in_component_block:
+                  output.append(raw_line)
+                  continue
+
+              stripped = raw_line.strip()
+              if stripped.startswith("version:"):
+                  output.append(f'    version: "{version}"')
+                  updated_components[current_component]["version"] = True
+                  continue
+
+              if stripped.startswith("downloadUrl:"):
+                  output.append(
+                      f'    downloadUrl: "https://github.com/{repository}/releases/download/{release_tag}/{current_component}.zip"'
+                  )
+                  updated_components[current_component]["downloadUrl"] = True
+                  continue
+
               output.append(raw_line)
-              continue
-
-            if in_components_section and raw_line and not raw_line.startswith(" "):
-              flush_component_footer()
-              in_component_block = False
-              current_component = None
-              output.append(raw_line)
-              continue
-
-            if in_components_section and raw_line.startswith("  ") and not raw_line.startswith("    "):
-              flush_component_footer()
-              in_component_block = False
-              current_component = None
-
-              component_name = raw_line.split(":", 1)[0].strip()
-              in_component_block = component_name in released_components
-              if in_component_block:
-                current_component = component_name
-                updated_components[current_component] = {
-                  "version": False,
-                  "downloadUrl": False,
-                }
-              output.append(raw_line)
-              continue
-
-            if not in_component_block:
-              output.append(raw_line)
-              continue
-
-            stripped = raw_line.strip()
-            if stripped.startswith("version:"):
-              output.append(f'    version: "{version}"')
-              updated_components[current_component]["version"] = True
-              continue
-
-            if stripped.startswith("downloadUrl:"):
-              output.append(
-                f'    downloadUrl: "https://github.com/{repository}/releases/download/{release_tag}/{current_component}.zip"'
-              )
-              updated_components[current_component]["downloadUrl"] = True
-              continue
-
-            output.append(raw_line)
 
           flush_component_footer()
 
           if not updated_components:
-            print("No matching component zip files found in components.yaml.")
-            exit(0)
+              print("No matching component zip files found in components.yaml.")
+              exit(0)
 
           path.write_text("\n".join(output) + "\n")
           PY
