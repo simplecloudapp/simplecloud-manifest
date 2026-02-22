@@ -139,13 +139,35 @@ jobs:
               --exclude ".git*" \
               --exclude ".DS_Store" \
               --exclude ".gitkeep" \
+              --exclude ".manifest-reset" \
+              --exclude "README.md" \
               "components/$component_name/" \
               "$stage_dir/"
 
-            git log --pretty=format: --name-only -- "components/$component_name" \
+            reset_commit="$(
+              git log "$COMPARE_REF" --format='%H%x09%s' \
+                | awk -F'\t' -v component="$(printf '%s' "$component_name" | tr '[:upper:]' '[:lower:]')" '
+                    {
+                      msg=tolower($2)
+                      specific="\\[manifest reset:" component "\\]"
+                      if (msg ~ specific || msg ~ /\[manifest reset\]/) {
+                        print $1
+                        exit
+                      }
+                    }
+                  '
+            )"
+
+            history_range="$COMPARE_REF"
+            if [ -n "$reset_commit" ]; then
+              history_range="${reset_commit}..${COMPARE_REF}"
+              echo "Applying manifest reset baseline for $component_name from commit $reset_commit."
+            fi
+
+            git log "$history_range" --pretty=format: --name-only -- "components/$component_name" \
               | sed '/^$/d' \
               | sed "s#^components/$component_name/##" \
-              | grep -Ev '^(\.gitkeep|\.DS_Store)$' \
+              | grep -Ev '^(\.gitkeep|\.DS_Store|\.manifest-reset|README\.md)$' \
               | sort -u > "$history_file"
 
             python3 - "$stage_dir" "$component_name" "$TAG" "$history_file" <<'PY'
