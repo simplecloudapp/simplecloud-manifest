@@ -187,6 +187,129 @@ install_cli() {
     fi
 }
 
+remove_path() {
+    local target="$1"
+
+    if [ ! -e "$target" ] && [ ! -L "$target" ]; then
+        return 0
+    fi
+
+    if rm -f "$target" 2>/dev/null; then
+        return 0
+    fi
+
+    if command -v sudo > /dev/null 2>&1; then
+        if sudo rm -f "$target"; then
+            return 0
+        fi
+    fi
+
+    return 1
+}
+
+cleanup_user_cli_paths() {
+    local removed_any=0
+    local target
+
+    for target in "$HOME/.bun/bin/simplecloud" "$HOME/.bun/bin/sc" "$HOME/.local/bin/simplecloud" "$HOME/.local/bin/sc"; do
+        if [ -e "$target" ] || [ -L "$target" ]; then
+            if remove_path "$target"; then
+                removed_any=1
+            else
+                print_warning "Could not remove old CLI path: $target"
+            fi
+        fi
+    done
+
+    if [ "$removed_any" -eq 1 ]; then
+        print_success "Removed existing user-level CLI command paths"
+    fi
+}
+
+cleanup_system_sc_symlink() {
+    local target="/usr/local/bin/sc"
+    local link_target=""
+
+    if [ ! -L "$target" ]; then
+        return
+    fi
+
+    link_target=$(readlink "$target" 2>/dev/null || true)
+    case "$link_target" in
+        *simplecloud*|*"/.bun/bin/sc"|*"/.bun/bin/simplecloud")
+            if remove_path "$target"; then
+                print_success "Removed existing system-level sc symlink"
+            else
+                print_warning "Could not remove old CLI symlink: $target"
+            fi
+            ;;
+    esac
+}
+
+cleanup_existing_cli() {
+    local target="/usr/local/bin/simplecloud"
+
+    cleanup_user_cli_paths
+
+    if [ -e "$target" ] || [ -L "$target" ]; then
+        if remove_path "$target"; then
+            print_success "Removed existing system-level simplecloud command"
+        else
+            print_warning "Could not remove old CLI command: $target"
+        fi
+    fi
+
+    cleanup_system_sc_symlink
+    hash -r 2>/dev/null || true
+}
+
+confirm_preinstall_stop() {
+    local response
+
+    echo "A previous SimpleCloud CLI installation was detected."
+    echo "Is it okay to uninstall the old version and stop all running servers before continuing?"
+
+    if [ ! -t 0 ]; then
+        print_warning "No interactive terminal detected. Proceeding with stop attempt."
+        return 0
+    fi
+
+    printf "[Y/n]: "
+    read -r response
+
+    case "$response" in
+        ""|[Yy]|[Yy][Ee][Ss])
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
+stop_existing_cloud() {
+    if ! command -v simplecloud > /dev/null 2>&1; then
+        return
+    fi
+
+    if ! confirm_preinstall_stop; then
+        print_error "Installation canceled by user"
+        exit 1
+    fi
+
+    if simplecloud stop cloud -ys > /dev/null 2>&1; then
+        print_success "Stopped running cloud before reinstall"
+        return
+    fi
+
+    if simplecloud stop --stop-servers > /dev/null 2>&1; then
+        print_success "Stopped running cloud before reinstall"
+        return
+    fi
+
+    print_warning "Could not stop cloud automatically; continuing installation"
+}
+
 verify_cli_runtime() {
     local cli_exec=""
     local cli_version
@@ -358,6 +481,8 @@ main() {
     
     install_bun
     setup_path
+    stop_existing_cloud
+    cleanup_existing_cli
     install_cli
     ensure_runtime_shebang
     install_user_links
