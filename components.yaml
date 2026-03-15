@@ -16,7 +16,7 @@ components:
 
   default-templates:
     type: direct
-    version: "0.0.16"
+    version: "0.0.17"
     downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.16/default-templates.zip"
     name: default-templates
     extractPath: "templates/*"
