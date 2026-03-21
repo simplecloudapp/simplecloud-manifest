@@ -1,0 +1,10 @@
+name: Copy To Template Workflow
+
+steps:
+  - name: copy-running-to-template
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.server-dir }}"
+      to: "{{ runtime.templates }}/{{ runtime.name }}"
+      init-dir-if-missing: true
+      exclude: "{{ runtime.workflow-store.plugins.downloaded-paths }}"

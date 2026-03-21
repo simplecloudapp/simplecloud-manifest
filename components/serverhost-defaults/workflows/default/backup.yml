@@ -1,0 +1,9 @@
+name: Backup Workflow
+
+steps:
+  - name: copy-running-to-backup
+    uses: simplecloud/copy
+    with:
+      from: "{{ runtime.server-dir }}"
+      to: "{{ runtime.templates }}/.backup/{{ runtime.name }}/{{ time.now.date }}/{{ time.now.dateTime }}-{{ runtime.nice-id }}-{{ runtime.process-id }}"
+      init-dir-if-missing: true
