@@ -16,14 +16,14 @@ components:
 
   default-templates:
     type: direct
-    version: "0.0.17"
-    downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.16/default-templates.zip"
+    version: "0.0.24"
+    downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.24/default-templates.zip"
     name: default-templates
     extractPath: "templates/*"
 
   serverhost-defaults:
     type: direct
-    version: "0.0.23"
-    downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.23/serverhost-defaults.zip"
+    version: "0.0.24"
+    downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.24/serverhost-defaults.zip"
     name: serverhost-defaults
     extractPath: "/"
