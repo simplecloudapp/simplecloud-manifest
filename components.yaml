@@ -27,3 +27,82 @@ components:
     downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.25/serverhost-defaults.zip"
     name: serverhost-defaults
     extractPath: "/"
+
+installables:
+  java:
+    name: Java
+    description: Java runtime
+    defaultVersion: "25"
+    commonVersions: ["8", "11", "17", "21", "25"]
+    variables:
+      correttoLinuxVersion:
+        default: "{{version}}"
+        versions:
+          "8": "1.8.0"
+      pacmanPackage:
+        default: "jdk{{version}}-openjdk"
+        versions:
+          "25": jdk-openjdk
+    versions:
+      "8":
+        name: Java 8
+        description: Legacy LTS runtime for older Minecraft servers
+        manualInstructions:
+          darwin: "Install Java 8 with: brew install openjdk@8"
+          linux: "Install Java 8 with your package manager or from https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html"
+          windows: "Install Java 8 with winget, Chocolatey, Scoop, or download it from https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html"
+      "11":
+        name: Java 11
+        description: LTS runtime for older server software
+        manualInstructions:
+          darwin: "Install Java 11 with: brew install openjdk@11"
+          linux: "Install Java 11 with your package manager or from https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html"
+          windows: "Install Java 11 with winget, Chocolatey, Scoop, or download it from https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html"
+      "17":
+        name: Java 17
+        description: LTS runtime used by many modern Minecraft versions
+        manualInstructions:
+          darwin: "Install Java 17 with: brew install openjdk@17"
+          linux: "Install Java 17 with your package manager or from https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html"
+          windows: "Install Java 17 with winget, Chocolatey, Scoop, or download it from https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html"
+      "21":
+        name: Java 21
+        description: LTS runtime supported by modern Minecraft servers
+        manualInstructions:
+          darwin: "Install Java 21 with: brew install openjdk@21"
+          linux: "Install Java 21 with your package manager or from https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html"
+          windows: "Install Java 21 with winget, Chocolatey, Scoop, or download it from https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html"
+      "25":
+        name: Java 25
+        description: Latest runtime recommended for SimpleCloud serverhosts
+        recommended: true
+        manualInstructions:
+          darwin: "Install Java 25 with: brew install openjdk@25"
+          linux: "Install Java 25 with your package manager or from https://docs.aws.amazon.com/corretto/latest/corretto-25-ug/downloads-list.html"
+          windows: "Install Java 25 with winget, Chocolatey, Scoop, or download it from https://docs.aws.amazon.com/corretto/latest/corretto-25-ug/downloads-list.html"
+    commands:
+      apt:
+        - ["apt-get", "update"]
+        - ["apt-get", "install", "-y", "ca-certificates", "apt-transport-https", "gnupg", "wget"]
+        - ["sh", "-c", "wget -O - https://apt.corretto.aws/corretto.key | gpg --yes --dearmor -o /usr/share/keyrings/corretto-keyring.gpg"]
+        - ["sh", "-c", "echo \"deb [signed-by=/usr/share/keyrings/corretto-keyring.gpg] https://apt.corretto.aws stable main\" > /etc/apt/sources.list.d/corretto.list"]
+        - ["apt-get", "update"]
+        - ["apt-get", "install", "-y", "java-{{correttoLinuxVersion}}-amazon-corretto-jdk", "libxi6", "libxtst6", "libxrender1"]
+      dnf:
+        - ["rpm", "--import", "https://yum.corretto.aws/corretto.key"]
+        - ["curl", "-Lo", "/etc/yum.repos.d/corretto.repo", "https://yum.corretto.aws/corretto.repo"]
+        - ["dnf", "-y", "install", "java-{{correttoLinuxVersion}}-amazon-corretto-devel"]
+      yum:
+        - ["rpm", "--import", "https://yum.corretto.aws/corretto.key"]
+        - ["curl", "-Lo", "/etc/yum.repos.d/corretto.repo", "https://yum.corretto.aws/corretto.repo"]
+        - ["yum", "-y", "install", "java-{{correttoLinuxVersion}}-amazon-corretto-devel"]
+      brew:
+        - ["brew", "install", "openjdk@{{version}}"]
+      pacman:
+        - ["pacman", "-Syu", "{{pacmanPackage}}"]
+      winget:
+        - ["winget", "install", "--id", "Amazon.Corretto.{{version}}.JDK", "--source", "winget"]
+      choco:
+        - ["choco", "install", "corretto{{version}}jdk", "-y"]
+      scoop:
+        - ["scoop", "install", "java/corretto{{version}}-jdk"]
