@@ -255,7 +255,7 @@
           "-XX:MaxTenuringThreshold=1",
           "-XX:SurvivorRatio=32"
         ],
-        "supportStatus": "DEPRECATED"
+        "supportStatus": "UNSUPPORTED"
       },
       {
         "version": "1.21.11-rc3",
