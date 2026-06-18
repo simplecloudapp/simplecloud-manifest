@@ -11,3 +11,9 @@ paths:
     data:
       settings:
         bungeecord: true
+  - path: "config/paper-global.yml"
+    type: "YML"
+    data:
+      proxies:
+        velocity:
+          enabled: "false"
