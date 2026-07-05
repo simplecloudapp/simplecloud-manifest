@@ -104,21 +104,27 @@ jobs:
             if [[ "$component_name" == .* ]]; then
               continue
             fi
-            if [ ! -d "components/$component_name" ]; then
-              continue
-            fi
 
             has_payload_file=0
-            if find "components/$component_name" -type f -not -name ".gitkeep" -not -name ".DS_Store" | grep -q "."; then
-              has_payload_file=1
+            if [ -d "components/$component_name" ]; then
+              payload_files="$(
+                find "components/$component_name" -type f -not -name ".gitkeep" -not -name ".DS_Store" \
+                  | sed -n '1p'
+              )"
+              if [ -n "$payload_files" ]; then
+                has_payload_file=1
+              fi
             fi
 
             has_changed_payload=0
             if [ -n "$PREVIOUS_TAG" ]; then
-              if git diff --name-only "$PREVIOUS_TAG" "$COMPARE_REF" -- "components/$component_name" \
-                | sed "s#^components/$component_name/##" \
-                | grep -Ev '^(\.gitkeep|\.DS_Store|\.manifest-reset|README\.md)$' \
-                | grep -q "."; then
+              changed_payload_files="$(
+                git diff --name-only "$PREVIOUS_TAG" "$COMPARE_REF" -- "components/$component_name" \
+                  | sed "s#^components/$component_name/##" \
+                  | grep -Ev '^(\.gitkeep|\.DS_Store|\.manifest-reset|README\.md)$' \
+                  || true
+              )"
+              if [ -n "$changed_payload_files" ]; then
                 has_changed_payload=1
               fi
             fi
@@ -145,14 +151,16 @@ jobs:
             rm -rf "$stage_dir"
             mkdir -p "$stage_dir"
 
-            rsync -a \
-              --exclude ".git*" \
-              --exclude ".DS_Store" \
-              --exclude ".gitkeep" \
-              --exclude ".manifest-reset" \
-              --exclude "README.md" \
-              "components/$component_name/" \
-              "$stage_dir/"
+            if [ -d "components/$component_name" ]; then
+              rsync -a \
+                --exclude ".git*" \
+                --exclude ".DS_Store" \
+                --exclude ".gitkeep" \
+                --exclude ".manifest-reset" \
+                --exclude "README.md" \
+                "components/$component_name/" \
+                "$stage_dir/"
+            fi
 
             reset_commit="$(
               git log "$COMPARE_REF" --format='%H%x09%s' \
