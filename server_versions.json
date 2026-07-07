@@ -3665,7 +3665,7 @@
     "name": "Vanilla",
     "type": "SERVER",
     "isPaperclip": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/vanilla.jpg",
+    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
     "latestVersion": "26.3-snapshot-1",
     "latestSnapshot": "25w20a",
     "downloadLinks": [
