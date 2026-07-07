@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Minecraft">
-  <rect width="64" height="64" rx="12" fill="#2d1f13"/>
-  <path d="M10 12h44v16H10z" fill="#63a343"/>
-  <path d="M10 24h8v8h8v-8h10v8h8v-8h10v28H10z" fill="#8b5a2b"/>
-  <path d="M10 12h8v8h8v-8h9v8h8v-8h11v8H10z" fill="#78c257"/>
-  <path d="M18 36h8v8h-8zM38 36h8v8h-8zM26 44h12v8H26z" fill="#3a2415"/>
-</svg>

@@ -18,4 +18,4 @@ Do not recolor, distort, or imply endorsement by the upstream projects.
 | Folia | `folia.svg` | `https://raw.githubusercontent.com/PaperMC/website/main/src/assets/brand/folia.svg` | Project-owned PaperMC website asset. |
 | Fabric | `fabric.png` | `https://docs.fabricmc.net/logo.png` | Official Fabric docs asset. |
 | WindSpigot | `windspigot.jpg` | `https://avatars.githubusercontent.com/u/101380739?s=400&v=4` | Wind Development org avatar; no dedicated software mark found. |
-| Vanilla | `vanilla.svg` | Minecraft-style block icon | Used to identify the Vanilla Minecraft server option. Minecraft brand rights remain with Mojang and Microsoft. |
+| Vanilla | `vanilla.jpg` | `https://www.minecraft.net/content/dam/minecraftnet/franchise/component-library/modalB/grass-block.jpg` | Official Minecraft grass block image from minecraft.net. Minecraft brand rights remain with Mojang and Microsoft. |
