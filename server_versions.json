@@ -8,15 +8,15 @@
     "downloadLinks": [
       {
         "version": "3.5.0-SNAPSHOT",
-        "link": "https://fill-data.papermc.io/v1/objects/3b25292797526ce2f354f99bad42076014199c678c14a487220acaf97d07ef59/velocity-3.5.0-SNAPSHOT-608.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/0c3d16b70ed757638b696a9a87d670b4301f23a6fef30c3acbbd9b0e0d7b29bb/velocity-3.5.0-SNAPSHOT-609.jar",
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "44926cc3-3493-474c-8f41-4964136938df",
-        "buildName": "#608",
+        "buildUuid": "e9533b2a-63b4-4f0b-a8f2-841e3984f92e",
+        "buildName": "#609",
         "projectVersion": "3.5.0-SNAPSHOT",
-        "downloadSize": 18872122,
-        "publishedAt": "2026-07-10T12:56:08.603Z"
+        "downloadSize": 18932392,
+        "publishedAt": "2026-07-11T02:37:15.676Z"
       },
       {
         "version": "3.4.0",
