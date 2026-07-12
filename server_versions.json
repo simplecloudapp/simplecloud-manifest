@@ -4,14 +4,50 @@
     "type": "PROXY",
     "isPaperclip": false,
     "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/velocity.svg",
-    "latestVersion": "3.5.0-SNAPSHOT",
+    "latestVersion": "4.0.0-SNAPSHOT",
     "downloadLinks": [
+      {
+        "version": "4.0.0-SNAPSHOT",
+        "link": "https://fill-data.papermc.io/v1/objects/7dc974ba4b3094d05d308032790a22e5348845c46d82c664730b169ce2b4ea79/velocity-4.0.0-SNAPSHOT-5.jar",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "5c21ddb5-1c3b-4e90-aa0d-8128d763ed14",
+        "buildName": "#5",
+        "projectVersion": "4.0.0-SNAPSHOT",
+        "downloadSize": 18821073,
+        "publishedAt": "2026-07-11T23:08:54.806Z"
+      },
+      {
+        "version": "3.5.1",
+        "link": "https://fill-data.papermc.io/v1/objects/b4e3164df5377346854dc6cb9e6a78022b1946ff69e89676313f5f6f1c6f0fb3/velocity-3.5.1-615.jar",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "supportStatus": "UNSUPPORTED",
+        "buildUuid": "c37710d3-cd60-494e-8677-a45274016a98",
+        "buildName": "#615",
+        "projectVersion": "3.5.1",
+        "downloadSize": 18932366,
+        "publishedAt": "2026-07-11T17:59:56.494Z"
+      },
+      {
+        "version": "3.6.0-SNAPSHOT",
+        "link": "https://fill-data.papermc.io/v1/objects/a87eea534bd483209aa5ccb03822cb14d5006796d9c18a59e6e34cfd3c28b5b0/velocity-3.6.0-SNAPSHOT-613.jar",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "supportStatus": "UNSUPPORTED",
+        "buildUuid": "7d09a382-01ba-4183-84a7-260df35c6d96",
+        "buildName": "#613",
+        "projectVersion": "3.6.0-SNAPSHOT",
+        "downloadSize": 18916587,
+        "publishedAt": "2026-07-11T03:22:38.184Z"
+      },
       {
         "version": "3.5.0-SNAPSHOT",
         "link": "https://fill-data.papermc.io/v1/objects/0c3d16b70ed757638b696a9a87d670b4301f23a6fef30c3acbbd9b0e0d7b29bb/velocity-3.5.0-SNAPSHOT-609.jar",
         "isSnapshot": false,
         "javaMinimum": 21,
-        "supportStatus": "SUPPORTED",
+        "supportStatus": "UNSUPPORTED",
         "buildUuid": "e9533b2a-63b4-4f0b-a8f2-841e3984f92e",
         "buildName": "#609",
         "projectVersion": "3.5.0-SNAPSHOT",
@@ -3605,18 +3641,6 @@
         "publishedAt": "2026-06-12T11:32:28Z"
       },
       {
-        "version": "26.2-rc-1",
-        "link": "https://versions.mcjars.app/download/fabric/26.2-rc-1/0.19.3/1.1.1.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "75f0e07f-2dc4-4bb3-a1e6-7c04e6bd98c2",
-        "buildName": "0.19.3",
-        "projectVersion": "0.19.3",
-        "downloadSize": 179056,
-        "publishedAt": "2026-06-11T11:57:50Z"
-      },
-      {
         "version": "26.1.2",
         "link": "https://versions.mcjars.app/download/fabric/26.1.2/0.19.3/1.1.1.jar",
         "isSnapshot": false,
@@ -4248,18 +4272,6 @@
         "buildName": "#1",
         "downloadSize": 60894506,
         "publishedAt": "2026-06-12T13:32:28Z",
-        "experimental": true
-      },
-      {
-        "version": "26.2-rc-1",
-        "link": "https://piston-data.mojang.com/v1/objects/6e65feb9b2ac017030924af9d663e714c2464fbd/server.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "9c7e90bf-ac16-46df-80d8-ada8ed8a9068",
-        "buildName": "#1",
-        "downloadSize": 60893464,
-        "publishedAt": "2026-06-11T13:57:50Z",
         "experimental": true
       },
       {
