@@ -4,14 +4,38 @@
     "type": "PROXY",
     "isPaperclip": false,
     "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/velocity.svg",
-    "latestVersion": "4.0.0-SNAPSHOT",
+    "latestVersion": "4.1.0-SNAPSHOT",
     "downloadLinks": [
+      {
+        "version": "4.1.0-SNAPSHOT",
+        "link": "https://fill-data.papermc.io/v1/objects/0fb692511ee117611c6caae87fe8f2b041e7f56332e0dd4ec5081bba1eedddf0/velocity-4.1.0-SNAPSHOT-7.jar",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "36d63bc5-92ee-400a-af4d-0c31c2a5b88f",
+        "buildName": "#7",
+        "projectVersion": "4.1.0-SNAPSHOT",
+        "downloadSize": 18821064,
+        "publishedAt": "2026-07-15T00:06:51.225Z"
+      },
+      {
+        "version": "4.0.0",
+        "link": "https://fill-data.papermc.io/v1/objects/4540289f48c83e305fc2f2c495a84d1f4d0b7f360830251e169dd5a208740e70/velocity-4.0.0-6.jar",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "supportStatus": "UNSUPPORTED",
+        "buildUuid": "8e82d04c-ed40-468d-aea3-78a49a0135d1",
+        "buildName": "#6",
+        "projectVersion": "4.0.0",
+        "downloadSize": 18821048,
+        "publishedAt": "2026-07-14T16:13:05.541Z"
+      },
       {
         "version": "4.0.0-SNAPSHOT",
         "link": "https://fill-data.papermc.io/v1/objects/7dc974ba4b3094d05d308032790a22e5348845c46d82c664730b169ce2b4ea79/velocity-4.0.0-SNAPSHOT-5.jar",
         "isSnapshot": false,
         "javaMinimum": 21,
-        "supportStatus": "SUPPORTED",
+        "supportStatus": "UNSUPPORTED",
         "buildUuid": "5c21ddb5-1c3b-4e90-aa0d-8128d763ed14",
         "buildName": "#5",
         "projectVersion": "4.0.0-SNAPSHOT",
@@ -2448,14 +2472,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/24/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/25/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "f282dcb6-52d2-4189-96cd-a18e4e7c9f48",
-        "buildName": "#24",
-        "downloadSize": 81624485,
-        "publishedAt": "2026-07-14T00:27:18.112Z",
+        "buildUuid": "65bfb0b0-3fcf-4634-b881-5ec1e61f6ee8",
+        "buildName": "#25",
+        "downloadSize": 81625809,
+        "publishedAt": "2026-07-14T18:07:09.181Z",
         "experimental": true
       },
       {
