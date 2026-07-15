@@ -1,0 +1,8 @@
+name: Configure Simple Voice Chat Workflow
+
+steps:
+  - name: configurate-simple-voice-chat
+    uses: simplecloud/configurate
+    with:
+      configurator: "simple-voice-chat"
+      dir: "{{ runtime.server-dir }}"
