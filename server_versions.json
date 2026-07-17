@@ -2472,14 +2472,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/25/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/27/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "65bfb0b0-3fcf-4634-b881-5ec1e61f6ee8",
-        "buildName": "#25",
-        "downloadSize": 81625809,
-        "publishedAt": "2026-07-14T18:07:09.181Z",
+        "buildUuid": "a77c1f04-2213-412b-af9b-e1b6c75591b0",
+        "buildName": "#27",
+        "downloadSize": 81626339,
+        "publishedAt": "2026-07-16T17:21:54.944Z",
         "experimental": true
       },
       {
@@ -2496,14 +2496,14 @@
       },
       {
         "version": "1.21.11",
-        "link": "https://files.mcjars.app/leaf/1.21.11/171/server.jar",
+        "link": "https://files.mcjars.app/leaf/1.21.11/172/server.jar",
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "ce1ccaeb-9b5d-47bd-8658-2562dcacdef1",
-        "buildName": "#171",
-        "downloadSize": 83879061,
-        "publishedAt": "2026-07-14T01:10:08.641Z"
+        "buildUuid": "93148a6f-0d28-4f8e-a9ab-550fbdf81b3d",
+        "buildName": "#172",
+        "downloadSize": 83879491,
+        "publishedAt": "2026-07-16T17:11:53.635Z"
       },
       {
         "version": "1.21.8",
@@ -3601,8 +3601,20 @@
     "isPaperclip": false,
     "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/fabric.png",
     "latestVersion": "26.2",
-    "latestSnapshot": "26.3-snapshot-3",
+    "latestSnapshot": "26.3-snapshot-4",
     "downloadLinks": [
+      {
+        "version": "26.3-snapshot-4",
+        "link": "https://versions.mcjars.app/download/fabric/26.3-snapshot-4/0.19.3/1.1.1.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "d657d3a4-9234-465d-9a50-8a13a573ad6c",
+        "buildName": "0.19.3",
+        "projectVersion": "0.19.3",
+        "downloadSize": 179062,
+        "publishedAt": "2026-07-16T13:59:30Z"
+      },
       {
         "version": "26.3-snapshot-3",
         "link": "https://versions.mcjars.app/download/fabric/26.3-snapshot-3/0.19.3/1.1.1.jar",
@@ -4224,8 +4236,20 @@
     "isPaperclip": false,
     "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
     "latestVersion": "26.2",
-    "latestSnapshot": "26.3-snapshot-3",
+    "latestSnapshot": "26.3-snapshot-4",
     "downloadLinks": [
+      {
+        "version": "26.3-snapshot-4",
+        "link": "https://piston-data.mojang.com/v1/objects/12ce9ccac727a0ff37ba4aea9d11a73c493d70ca/server.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "f5d418b4-3dc7-430e-ab66-86f5fbca8e7a",
+        "buildName": "#1",
+        "downloadSize": 61797812,
+        "publishedAt": "2026-07-16T15:59:30Z",
+        "experimental": true
+      },
       {
         "version": "26.3-snapshot-3",
         "link": "https://piston-data.mojang.com/v1/objects/6cd1e711f62dc45497df6f390a9e83ba6191be41/server.jar",
@@ -5242,17 +5266,6 @@
         "publishedAt": "2012-12-27T22:00:00Z"
       },
       {
-        "version": "1.4.6",
-        "link": "https://launcher.mojang.com/v1/objects/a0aeb5709af5f2c3058c1cf0dc6b110a7a61278c/server.jar",
-        "isSnapshot": false,
-        "javaMinimum": 8,
-        "supportStatus": "UNSUPPORTED",
-        "buildUuid": "de331650-6f26-4803-9bb2-ca938bb686e9",
-        "buildName": "#1",
-        "downloadSize": 2061647,
-        "publishedAt": "2012-12-19T22:00:00Z"
-      },
-      {
         "version": "1.4.5",
         "link": "https://launcher.mojang.com/v1/objects/c12fd88a8233d2c517dbc8196ba2ae855f4d36ea/server.jar",
         "isSnapshot": false,
@@ -5261,6 +5274,17 @@
         "buildUuid": "39f1bd8b-4c09-430f-b5ae-604c8c91a920",
         "buildName": "#1",
         "downloadSize": 2047972,
+        "publishedAt": "2012-12-19T22:00:00Z"
+      },
+      {
+        "version": "1.4.6",
+        "link": "https://launcher.mojang.com/v1/objects/a0aeb5709af5f2c3058c1cf0dc6b110a7a61278c/server.jar",
+        "isSnapshot": false,
+        "javaMinimum": 8,
+        "supportStatus": "UNSUPPORTED",
+        "buildUuid": "de331650-6f26-4803-9bb2-ca938bb686e9",
+        "buildName": "#1",
+        "downloadSize": 2061647,
         "publishedAt": "2012-12-19T22:00:00Z"
       },
       {
