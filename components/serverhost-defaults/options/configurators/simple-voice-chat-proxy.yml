@@ -3,7 +3,7 @@ requires:
     simple-voice-chat: 24454
 
 paths:
-  - path: "plugins/voicechat/voicechat-server.properties"
+  - path: "plugins/voicechat/voicechat-proxy.properties"
     type: "PROPERTIES"
     data:
       port: "{{ runtime.dynamic-ports.simple-voice-chat }}"

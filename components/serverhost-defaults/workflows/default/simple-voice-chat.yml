@@ -1,8 +1,15 @@
 name: Configure Simple Voice Chat Workflow
 
 steps:
-  - name: configurate-simple-voice-chat
+  - name: configurate-simple-voice-chat-server
+    if: "{{ runtime.type }} == server"
     uses: simplecloud/configurate
     with:
       configurator: "simple-voice-chat"
+      dir: "{{ runtime.server-dir }}"
+  - name: configurate-simple-voice-chat-proxy
+    if: "{{ runtime.type }} == proxy"
+    uses: simplecloud/configurate
+    with:
+      configurator: "simple-voice-chat-proxy"
       dir: "{{ runtime.server-dir }}"
