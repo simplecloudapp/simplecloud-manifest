@@ -1,0 +1,7 @@
+paths:
+  - path: "pumpkin.toml"
+    type: "TOML"
+    data:
+      networking.query.address: "0.0.0.0:%port%"
+      networking.java.address: "0.0.0.0:%port%"
+      networking.java.max_players: %max-players%
