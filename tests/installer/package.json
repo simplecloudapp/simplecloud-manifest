@@ -1,0 +1,13 @@
+{
+  "name": "simplecloud-installer-tests",
+  "private": true,
+  "scripts": {
+    "test": "bun test.ts",
+    "test:all": "bun test.ts --all",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}

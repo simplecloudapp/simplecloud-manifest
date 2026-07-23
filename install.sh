@@ -2,8 +2,17 @@
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
+
+if [ ! -t 1 ]; then
+    RED=''
+    GREEN=''
+    YELLOW=''
+    BLUE=''
+    NC=''
+fi
 
 print_success() {
     echo -e "${GREEN}✓${NC} $1"
@@ -14,31 +23,124 @@ print_error() {
 }
 
 print_warning() {
-    echo -e "\033[0;33m!\033[0m $1"
+    echo -e "${YELLOW}!${NC} $1"
+}
+
+terminate_process_tree() {
+    local pid="$1"
+    local signal="$2"
+    local child
+
+    if command -v pgrep > /dev/null 2>&1; then
+        for child in $(pgrep -P "$pid" 2>/dev/null); do
+            terminate_process_tree "$child" "$signal"
+        done
+    fi
+
+    kill "-$signal" "$pid" 2>/dev/null || true
+}
+
+run_with_timeout() {
+    local timeout_seconds="$1"
+    shift
+    local command_pid
+    local watchdog_pid
+    local exit_code
+    local timeout_marker
+
+    timeout_marker=$(mktemp)
+    rm -f "$timeout_marker"
+
+    "$@" &
+    command_pid=$!
+
+    (
+        sleep "$timeout_seconds"
+        if kill -0 "$command_pid" 2>/dev/null; then
+            : > "$timeout_marker"
+            terminate_process_tree "$command_pid" TERM
+            sleep 3
+            if kill -0 "$command_pid" 2>/dev/null; then
+                terminate_process_tree "$command_pid" KILL
+            fi
+        fi
+    ) &
+    watchdog_pid=$!
+
+    wait "$command_pid" 2>/dev/null
+    exit_code=$?
+
+    kill "$watchdog_pid" 2>/dev/null || true
+    wait "$watchdog_pid" 2>/dev/null || true
+
+    if [ -e "$timeout_marker" ]; then
+        rm -f "$timeout_marker"
+        echo "Command timed out after ${timeout_seconds} seconds."
+        return 124
+    fi
+
+    rm -f "$timeout_marker"
+    return "$exit_code"
+}
+
+run_with_retries() {
+    local timeout_seconds="$1"
+    local max_attempts="$2"
+    shift 2
+    local attempt=1
+    local exit_code
+
+    while [ "$attempt" -le "$max_attempts" ]; do
+        run_with_timeout "$timeout_seconds" "$@"
+        exit_code=$?
+
+        if [ "$exit_code" -eq 0 ]; then
+            return 0
+        fi
+
+        if [ "$attempt" -ge "$max_attempts" ]; then
+            return "$exit_code"
+        fi
+
+        echo "Attempt ${attempt}/${max_attempts} failed; retrying in $((attempt * 2)) seconds..."
+        sleep $((attempt * 2))
+        attempt=$((attempt + 1))
+    done
 }
 
 spin() {
     local msg="$1"
-    shift
-    local frames='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    local timeout_seconds="$2"
+    local max_attempts="$3"
+    shift 3
+    local frames='|/-\'
     local pid
     local i=0
-    local temp_file=$(mktemp)
+    local temp_file
+    local exit_code
+
+    temp_file=$(mktemp)
     
-    "$@" > "$temp_file" 2>&1 &
+    run_with_retries "$timeout_seconds" "$max_attempts" "$@" > "$temp_file" 2>&1 &
     pid=$!
     
-    while kill -0 "$pid" 2>/dev/null; do
-        printf "\r${BLUE}%s${NC} %s" "${frames:i++%${#frames}:1}" "$msg"
-        sleep 0.1
-    done
+    if [ -t 1 ]; then
+        while kill -0 "$pid" 2>/dev/null; do
+            printf "\r${BLUE}%s${NC} %s" "${frames:i++%${#frames}:1}" "$msg"
+            sleep 0.1
+        done
+    else
+        printf "%s...\n" "$msg"
+    fi
     
     wait "$pid"
-    local exit_code=$?
+    exit_code=$?
     
-    printf "\r\033[K"
+    if [ -t 1 ]; then
+        printf "\r\033[K"
+    fi
     
-    if [ $exit_code -eq 0 ]; then
+    if [ "$exit_code" -eq 0 ]; then
         print_success "$msg"
     else
         print_error "$msg"
@@ -78,44 +180,106 @@ detect_package_manager() {
     fi
 }
 
-install_unzip_apt() {
-    if ! sudo apt-get install -y unzip 2>/dev/null; then
-        sudo apt-get update -y
-        sudo apt-get install -y unzip
+run_privileged() {
+    if [ "$(id -u)" -eq 0 ]; then
+        "$@"
+    else
+        sudo -n "$@"
     fi
 }
 
-install_unzip() {
-    local pkg_manager=$1
-
-    if command -v unzip &> /dev/null; then
-        print_success "unzip is already installed"
-        return
+prepare_privileges() {
+    if [ "$(id -u)" -eq 0 ]; then
+        return 0
     fi
+
+    if ! command -v sudo > /dev/null 2>&1; then
+        print_error "Administrator access is required to install missing system packages, but sudo was not found"
+        return 1
+    fi
+
+    echo "Administrator access is required to install missing prerequisites."
+    sudo -v
+}
+
+install_packages_apt() {
+    if ! run_privileged env DEBIAN_FRONTEND=noninteractive apt-get \
+        -o DPkg::Lock::Timeout=60 \
+        -o Acquire::Retries=3 \
+        -o Acquire::http::Timeout=30 \
+        -o Acquire::https::Timeout=30 \
+        install -y "$@"; then
+        run_privileged apt-get \
+            -o DPkg::Lock::Timeout=60 \
+            -o Acquire::Retries=3 \
+            -o Acquire::http::Timeout=30 \
+            -o Acquire::https::Timeout=30 \
+            update
+        run_privileged env DEBIAN_FRONTEND=noninteractive apt-get \
+            -o DPkg::Lock::Timeout=60 \
+            -o Acquire::Retries=3 \
+            -o Acquire::http::Timeout=30 \
+            -o Acquire::https::Timeout=30 \
+            install -y "$@"
+    fi
+}
+
+install_packages() {
+    local pkg_manager=$1
+    shift
 
     case "$pkg_manager" in
         apt)
-            spin "Installing unzip" install_unzip_apt
+            install_packages_apt "$@"
             ;;
         dnf)
-            spin "Installing unzip" sudo dnf install -y unzip
+            run_privileged dnf install -y --setopt=timeout=30 --setopt=retries=3 "$@"
             ;;
         yum)
-            spin "Installing unzip" sudo yum install -y unzip
+            run_privileged yum install -y --setopt=timeout=30 --setopt=retries=3 "$@"
             ;;
         pacman)
-            spin "Installing unzip" sudo pacman -S --noconfirm unzip
+            run_privileged pacman -Syu --noconfirm --needed "$@"
             ;;
         *)
-            print_error "Unknown package manager, cannot install unzip"
-            exit 1
+            print_error "Unknown package manager; install these prerequisites manually: $*"
+            return 1
             ;;
     esac
+}
 
-    if ! command -v unzip &> /dev/null; then
-        print_error "Failed to install unzip"
+install_prerequisites() {
+    local pkg_manager="$1"
+    local packages=""
+    local package
+
+    for package in curl unzip; do
+        if ! command -v "$package" > /dev/null 2>&1; then
+            packages="$packages $package"
+        fi
+    done
+
+    if [ -z "$packages" ]; then
+        print_success "System prerequisites are already installed"
+        return 0
+    fi
+
+    if [ "$pkg_manager" = "unknown" ]; then
+        print_error "No supported package manager was found. Install curl and unzip manually, then run this installer again."
         exit 1
     fi
+
+    prepare_privileges || exit 1
+
+    # Word splitting is intentional: package names are fixed above.
+    spin "Installing system prerequisites" 300 1 install_packages "$pkg_manager" $packages || exit 1
+
+    for package in curl unzip; do
+        if ! command -v "$package" > /dev/null 2>&1; then
+            print_error "Failed to install required command: $package"
+            exit 1
+        fi
+    done
 }
 
 resolve_bun_exec() {
@@ -151,7 +315,34 @@ verify_bun_runtime() {
 }
 
 install_bun_cmd() {
-    curl -fsSL https://bun.sh/install | bash
+    local installer_file
+    local exit_code
+
+    installer_file=$(mktemp)
+
+    curl \
+        --fail \
+        --location \
+        --silent \
+        --show-error \
+        --retry 3 \
+        --retry-delay 2 \
+        --connect-timeout 15 \
+        --max-time 120 \
+        --output "$installer_file" \
+        https://bun.sh/install
+    exit_code=$?
+
+    if [ "$exit_code" -eq 0 ] && [ -s "$installer_file" ]; then
+        bash "$installer_file"
+        exit_code=$?
+    elif [ "$exit_code" -eq 0 ]; then
+        echo "Downloaded Package Manager installer was empty."
+        exit_code=1
+    fi
+
+    rm -f "$installer_file"
+    return "$exit_code"
 }
 
 install_bun() {
@@ -165,7 +356,7 @@ install_bun() {
         return
     fi
 
-    spin "Installing Package Manager" install_bun_cmd
+    spin "Installing Package Manager" 180 2 install_bun_cmd || exit 1
 
     hash -r 2>/dev/null || true
 
@@ -173,7 +364,7 @@ install_bun() {
 }
 
 install_cli() {
-    spin "Installing SimpleCloud CLI" "$BUN_EXEC" i -g simplecloud
+    spin "Installing SimpleCloud CLI" 180 3 "$BUN_EXEC" i -g simplecloud || exit 1
 
     hash -r 2>/dev/null || true
 
@@ -266,13 +457,13 @@ cleanup_existing_cli() {
 confirm_preinstall_stop() {
     local response
 
-    echo "A previous SimpleCloud CLI installation was detected."
-    echo "Is it okay to uninstall the old version and stop all running servers before continuing?"
-
     if [ ! -t 0 ]; then
-        print_warning "No interactive terminal detected. Proceeding with stop attempt."
+        print_warning "Previous CLI installation detected; attempting a non-interactive stop before reinstalling."
         return 0
     fi
+
+    echo "A previous SimpleCloud CLI installation was detected."
+    echo "Is it okay to uninstall the old version and stop all running servers before continuing?"
 
     printf "[Y/n]: "
     read -r response
@@ -476,7 +667,13 @@ main() {
     if [ "$OS" = "linux" ]; then
         PKG_MANAGER=$(detect_package_manager)
         print_success "Detected package manager: $PKG_MANAGER"
-        install_unzip "$PKG_MANAGER"
+        install_prerequisites "$PKG_MANAGER"
+    else
+        if ! command -v curl > /dev/null 2>&1 || ! command -v unzip > /dev/null 2>&1; then
+            print_error "Missing required commands. Install curl and unzip, then run this installer again."
+            exit 1
+        fi
+        print_success "System prerequisites are already installed"
     fi
     
     install_bun
@@ -498,4 +695,6 @@ main() {
     echo ""
 }
 
-main || exit 1
+if [ "${BASH_SOURCE[0]}" = "$0" ]; then
+    main || exit 1
+fi
