@@ -695,6 +695,4 @@ main() {
     echo ""
 }
 
-if [ "${BASH_SOURCE[0]}" = "$0" ]; then
-    main || exit 1
-fi
+main || exit 1

@@ -149,14 +149,6 @@ if [ "$DISABLE_PACMAN_DOWNLOAD_USER" = "true" ]; then
   sed -i '/^DownloadUser[[:space:]]*=/d' /etc/pacman.conf
 fi
 
-detected_package_manager="$(
-  bash -c 'source /installer/install.sh; detect_package_manager'
-)"
-if [ "$detected_package_manager" != "$EXPECTED_PACKAGE_MANAGER" ]; then
-  echo "Expected package manager $EXPECTED_PACKAGE_MANAGER, detected $detected_package_manager." >&2
-  exit 1
-fi
-
 missing_before=""
 for command_name in curl unzip; do
   if ! command -v "$command_name" >/dev/null 2>&1; then
@@ -167,10 +159,12 @@ for command_name in curl unzip; do
   fi
 done
 
-bash /installer/install.sh
+install_output="$(mktemp)"
+bash < /installer/install.sh | tee "$install_output"
+grep -F "Detected package manager: $EXPECTED_PACKAGE_MANAGER" "$install_output" >/dev/null
 
 if [ "$TEST_REINSTALL" = "true" ]; then
-  bash /installer/install.sh
+  bash < /installer/install.sh | tee -a "$install_output"
 fi
 
 for command_name in curl unzip simplecloud sc; do
@@ -195,7 +189,7 @@ if [ -z "$missing_before" ]; then
 fi
 
 printf 'TEST_RESULT manager=%s missing_before=%s bun=%s cli=%s reinstall=%s\n' \
-  "$detected_package_manager" "$missing_before" "$bun_version" "$cli_version" "$TEST_REINSTALL"
+  "$EXPECTED_PACKAGE_MANAGER" "$missing_before" "$bun_version" "$cli_version" "$TEST_REINSTALL"
 `;
 
 let activeContainer: string | undefined;
