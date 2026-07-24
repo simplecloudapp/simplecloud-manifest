@@ -29,6 +29,40 @@ components:
     extractPath: "/"
 
 installables:
+  docker:
+    name: Docker
+    description: Docker Engine and the Docker Compose plugin
+    variables:
+      composeVersion: "5.1.2"
+    manualInstructions:
+      darwin: "Install and start Docker Desktop from https://docs.docker.com/desktop/setup/install/mac-install/"
+      linux: "Install Docker Engine and the Docker Compose plugin from https://docs.docker.com/engine/install/"
+      windows: "Install and start Docker Desktop from https://docs.docker.com/desktop/setup/install/windows-install/"
+    commands:
+      apt:
+        - ["apt-get", "update"]
+        - ["apt-get", "install", "-y", "ca-certificates", "curl", "docker.io"]
+        - ["install", "-m", "0755", "-d", "/usr/local/lib/docker/cli-plugins"]
+        - ["sh", "-c", "arch=\"$(uname -m)\"; case \"$arch\" in x86_64|aarch64) ;; armv7l) arch=armv7 ;; *) echo \"Unsupported Docker Compose architecture: $arch\" >&2; exit 1 ;; esac; curl -fL \"https://github.com/docker/compose/releases/download/v{{composeVersion}}/docker-compose-linux-$arch\" -o /usr/local/lib/docker/cli-plugins/docker-compose"]
+        - ["chmod", "+x", "/usr/local/lib/docker/cli-plugins/docker-compose"]
+        - ["sh", "-c", "if command -v systemctl >/dev/null 2>&1; then systemctl enable --now docker; else service docker start; fi"]
+      dnf:
+        - ["dnf", "-y", "install", "dnf-plugins-core"]
+        - ["sh", "-c", "dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo || dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo"]
+        - ["dnf", "-y", "install", "docker-ce", "docker-ce-cli", "containerd.io", "docker-buildx-plugin", "docker-compose-plugin"]
+        - ["systemctl", "enable", "--now", "docker"]
+      yum:
+        - ["yum", "-y", "install", "curl", "docker"]
+        - ["install", "-m", "0755", "-d", "/usr/local/lib/docker/cli-plugins"]
+        - ["sh", "-c", "arch=\"$(uname -m)\"; case \"$arch\" in x86_64|aarch64) ;; armv7l) arch=armv7 ;; *) echo \"Unsupported Docker Compose architecture: $arch\" >&2; exit 1 ;; esac; curl -fL \"https://github.com/docker/compose/releases/download/v{{composeVersion}}/docker-compose-linux-$arch\" -o /usr/local/lib/docker/cli-plugins/docker-compose"]
+        - ["chmod", "+x", "/usr/local/lib/docker/cli-plugins/docker-compose"]
+        - ["sh", "-c", "if command -v systemctl >/dev/null 2>&1; then systemctl enable --now docker; else service docker start; fi"]
+      pacman:
+        - ["pacman", "-Syu", "--noconfirm", "docker", "docker-compose"]
+        - ["systemctl", "enable", "--now", "docker"]
+      brew:
+        - ["brew", "install", "--cask", "docker"]
+
   java:
     name: Java
     description: Java runtime
@@ -106,3 +140,216 @@ installables:
         - ["choco", "install", "corretto{{version}}jdk", "-y"]
       scoop:
         - ["scoop", "install", "java/corretto{{version}}-jdk"]
+
+services:
+  postgresql:
+    name: PostgreSQL
+    description: Relational database
+    dependencies:
+      - installable: docker
+        checks:
+          - ["docker", "compose", "version"]
+          - ["docker", "info"]
+    variables:
+      image:
+        default: "postgres:17-alpine"
+        pattern: "^[A-Za-z0-9._/:@-]+$"
+      port:
+        default: "5432"
+        increment: true
+        minimum: 1
+        maximum: 65535
+        pattern: "^[0-9]{1,5}$"
+      database:
+        default: simplecloud
+        pattern: "^[A-Za-z0-9_-]+$"
+      username:
+        default: simplecloud
+        pattern: "^[A-Za-z0-9_-]+$"
+      password:
+        generate: password
+        length: 48
+        pattern: "^[A-Za-z0-9]+$"
+    files:
+      - source: services/postgresql/compose.yaml
+        target: compose.yaml
+      - source: services/postgresql/service.env
+        target: .env
+        mode: "0600"
+      - source: services/postgresql/README.md
+        target: README.md
+    commands:
+      start:
+        - ["docker", "compose", "up", "-d", "--wait"]
+      stop:
+        - ["docker", "compose", "down"]
+      status:
+        - ["docker", "compose", "ps"]
+
+  mariadb:
+    name: MariaDB
+    description: Relational database
+    dependencies:
+      - installable: docker
+        checks:
+          - ["docker", "compose", "version"]
+          - ["docker", "info"]
+    variables:
+      image:
+        default: "mariadb:11.4"
+        pattern: "^[A-Za-z0-9._/:@-]+$"
+      port:
+        default: "3306"
+        increment: true
+        minimum: 1
+        maximum: 65535
+        pattern: "^[0-9]{1,5}$"
+      database:
+        default: simplecloud
+        pattern: "^[A-Za-z0-9_-]+$"
+      username:
+        default: simplecloud
+        pattern: "^[A-Za-z0-9_-]+$"
+      password:
+        generate: password
+        length: 48
+        pattern: "^[A-Za-z0-9]+$"
+      rootPassword:
+        generate: password
+        length: 48
+        pattern: "^[A-Za-z0-9]+$"
+    files:
+      - source: services/mariadb/compose.yaml
+        target: compose.yaml
+      - source: services/mariadb/service.env
+        target: .env
+        mode: "0600"
+      - source: services/mariadb/README.md
+        target: README.md
+    commands:
+      start:
+        - ["docker", "compose", "up", "-d", "--wait"]
+      stop:
+        - ["docker", "compose", "down"]
+      status:
+        - ["docker", "compose", "ps"]
+
+  mongodb:
+    name: MongoDB
+    description: Document database
+    dependencies:
+      - installable: docker
+        checks:
+          - ["docker", "compose", "version"]
+          - ["docker", "info"]
+    variables:
+      image:
+        default: "mongo:8.0"
+        pattern: "^[A-Za-z0-9._/:@-]+$"
+      port:
+        default: "27017"
+        increment: true
+        minimum: 1
+        maximum: 65535
+        pattern: "^[0-9]{1,5}$"
+      database:
+        default: simplecloud
+        pattern: "^[A-Za-z0-9_-]+$"
+      username:
+        default: simplecloud
+        pattern: "^[A-Za-z0-9_-]+$"
+      password:
+        generate: password
+        length: 48
+        pattern: "^[A-Za-z0-9]+$"
+    files:
+      - source: services/mongodb/compose.yaml
+        target: compose.yaml
+      - source: services/mongodb/service.env
+        target: .env
+        mode: "0600"
+      - source: services/mongodb/README.md
+        target: README.md
+    commands:
+      start:
+        - ["docker", "compose", "up", "-d", "--wait"]
+      stop:
+        - ["docker", "compose", "down"]
+      status:
+        - ["docker", "compose", "ps"]
+
+  redis:
+    name: Redis
+    description: In-memory data store
+    dependencies:
+      - installable: docker
+        checks:
+          - ["docker", "compose", "version"]
+          - ["docker", "info"]
+    variables:
+      image:
+        default: "redis:7.4-alpine"
+        pattern: "^[A-Za-z0-9._/:@-]+$"
+      port:
+        default: "6379"
+        increment: true
+        minimum: 1
+        maximum: 65535
+        pattern: "^[0-9]{1,5}$"
+      password:
+        generate: password
+        length: 48
+        pattern: "^[A-Za-z0-9]+$"
+    files:
+      - source: services/redis/compose.yaml
+        target: compose.yaml
+      - source: services/redis/service.env
+        target: .env
+        mode: "0600"
+      - source: services/redis/README.md
+        target: README.md
+    commands:
+      start:
+        - ["docker", "compose", "up", "-d", "--wait"]
+      stop:
+        - ["docker", "compose", "down"]
+      status:
+        - ["docker", "compose", "ps"]
+
+  valkey:
+    name: Valkey
+    description: In-memory data store
+    dependencies:
+      - installable: docker
+        checks:
+          - ["docker", "compose", "version"]
+          - ["docker", "info"]
+    variables:
+      image:
+        default: "valkey/valkey:8.0-alpine"
+        pattern: "^[A-Za-z0-9._/:@-]+$"
+      port:
+        default: "6380"
+        increment: true
+        minimum: 1
+        maximum: 65535
+        pattern: "^[0-9]{1,5}$"
+      password:
+        generate: password
+        length: 48
+        pattern: "^[A-Za-z0-9]+$"
+    files:
+      - source: services/valkey/compose.yaml
+        target: compose.yaml
+      - source: services/valkey/service.env
+        target: .env
+        mode: "0600"
+      - source: services/valkey/README.md
+        target: README.md
+    commands:
+      start:
+        - ["docker", "compose", "up", "-d", "--wait"]
+      stop:
+        - ["docker", "compose", "down"]
+      status:
+        - ["docker", "compose", "ps"]

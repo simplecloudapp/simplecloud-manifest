@@ -1,0 +1,17 @@
+services:
+  database:
+    image: "{{image}}"
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "127.0.0.1:{{port}}:27017"
+    volumes:
+      - data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval 'db.adminCommand(\"ping\").ok' localhost:27017/test --username \"$${MONGO_INITDB_ROOT_USERNAME}\" --password \"$${MONGO_INITDB_ROOT_PASSWORD}\" --authenticationDatabase admin | grep 1"]
+      interval: 5s
+      timeout: 8s
+      retries: 12
+
+volumes:
+  data:
