@@ -1,5 +1,6 @@
 services:
   database:
+    container_name: "{{networkSlug}}-{{instance}}-database-1"
     image: "{{image}}"
     restart: unless-stopped
     env_file: .env
