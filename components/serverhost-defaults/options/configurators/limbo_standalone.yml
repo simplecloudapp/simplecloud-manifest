@@ -1,0 +1,10 @@
+paths:
+  - path: "server.properties"
+    type: "PROPERTIES"
+    data:
+      server-ip: "0.0.0.0"
+      server-port: %port%
+      max-players: %max-players%
+      bungeecord: false
+      velocity-modern: false
+      bungee-guard: false

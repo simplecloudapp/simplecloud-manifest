@@ -173,6 +173,8 @@ done
 
 test -x /root/.bun/bin/bun
 test -x /root/.bun/bin/simplecloud
+test -L /root/.bun/bin/simplecloud
+test -L /root/.bun/bin/sc
 test -L /root/.local/bin/simplecloud
 test -L /root/.local/bin/sc
 test -L /usr/local/bin/simplecloud

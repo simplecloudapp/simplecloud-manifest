@@ -22,3 +22,4 @@ Do not recolor, distort, or imply endorsement by the upstream projects.
 | WindSpigot | `windspigot.jpg` | `https://avatars.githubusercontent.com/u/101380739?s=400&v=4` | Wind Development org avatar; no dedicated software mark found. |
 | Vanilla | `vanilla.png` | `LabyMod/versions/26_2.jar:assets/minecraft/textures/block/grass_block_side.png` | Grass block side texture extracted from the running LabyMod/Minecraft 26.2 instance and upscaled with nearest-neighbor sampling. Minecraft brand rights remain with Mojang and Microsoft. |
 | Pumpkin | `pumpkin.png` | `https://raw.githubusercontent.com/Pumpkin-MC/Pumpkin/master/assets/default_icon.png` | Project-owned default server icon from the Pumpkin repository. |
+| Limbo | `limbo.png` | `https://cdn.modrinth.com/data/gIDqs3gn/4b578f057b9302065829fd2965068eceb5183ab2.png` | Official icon published by the project on Modrinth. |
