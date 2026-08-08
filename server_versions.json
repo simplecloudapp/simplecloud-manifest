@@ -5,7 +5,7 @@
     "description": "A modern Minecraft proxy built for performance, scalability, security, and mod support. Recommended for new proxy networks.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/velocity.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/velocity.svg",
     "latestVersion": "4.1.0-SNAPSHOT",
     "downloadLinks": [
       {
@@ -195,7 +195,7 @@
     "lifecycle": "END_OF_LIFE",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/waterfall.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/waterfall.svg",
     "latestVersion": "1.21",
     "downloadLinks": [
       {
@@ -327,7 +327,7 @@
     "description": "A maintained SpigotMC proxy and plugin API for connecting multiple Minecraft servers behind one address.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/bungeecord.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/bungeecord.png",
     "latestVersion": "latest",
     "downloadLinks": [
       {
@@ -343,7 +343,7 @@
     "lifecycle": "DISCONTINUED",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/travertine.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/travertine.svg",
     "latestVersion": "1.16",
     "downloadLinks": [
       {
@@ -556,7 +556,7 @@
     "description": "A high-performance Minecraft server with broad Bukkit, Spigot, and Paper plugin compatibility. A strong default for most plugin-based servers.",
     "isPaperclip": true,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/paper.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/paper.svg",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
@@ -2614,7 +2614,7 @@
     "description": "A customizable, high-performance Paper fork that remains compatible with Spigot and Paper plugins.",
     "isPaperclip": true,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/leaf.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/leaf.svg",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
@@ -2755,7 +2755,7 @@
     "description": "A Paper fork with Advanced Slime World Manager built in, designed for faster world loading and lower storage use.",
     "isPaperclip": true,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/aspaper.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/aspaper.svg",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
@@ -2945,7 +2945,7 @@
     "description": "A highly configurable Paper fork with extra gameplay settings and features. It supports Bukkit, Spigot, and Paper plugins.",
     "isPaperclip": true,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/purpur.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/purpur.svg",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
@@ -3398,7 +3398,7 @@
     "description": "A Paper fork that ticks independent world regions in parallel for better scalability. Plugins must explicitly support Folia.",
     "isPaperclip": true,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/folia.svg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/folia.svg",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
@@ -3785,7 +3785,7 @@
     "description": "A lightweight mod loader for running Fabric mods on a Minecraft server. Use it for modded gameplay rather than Bukkit or Paper plugins.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/fabric.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/fabric.png",
     "latestVersion": "26.2",
     "latestSnapshot": "26.3-snapshot-7",
     "downloadLinks": [
@@ -4409,7 +4409,7 @@
     "description": "A performance-focused Minecraft 1.8.8 server with multithreaded workloads and configurable PvP mechanics.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/windspigot.jpg",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/windspigot.jpg",
     "latestVersion": "1.8.8",
     "downloadLinks": [
       {
@@ -4424,7 +4424,7 @@
     "description": "Mojang's official, unmodified Minecraft: Java Edition server. Use it for the default game experience without third-party plugin or mod-loader APIs.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
     "latestVersion": "26.2",
     "latestSnapshot": "26.3-snapshot-7",
     "downloadLinks": [
@@ -5540,7 +5540,7 @@
     "description": "An experimental Minecraft server written from scratch in Rust for performance and multithreading. It is under heavy development.",
     "isPaperclip": false,
     "isBinary": true,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/pumpkin.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/pumpkin.png",
     "latestVersion": "nightly",
     "latestSnapshot": "nightly",
     "downloadLinks": [
@@ -5630,7 +5630,7 @@
     "description": "A lightweight, modular Minecraft mod loader and toolchain maintained by the QuiltMC community.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/quilt.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/quilt.png",
     "latestVersion": "26.2",
     "latestSnapshot": "26.3-snapshot-6",
     "downloadLinks": [
@@ -6240,7 +6240,7 @@
     "description": "A community-driven Minecraft modding platform and Forge successor for running NeoForge mods.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/neoforge.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/neoforge.png",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
@@ -6512,7 +6512,7 @@
     "description": "A lightweight standalone Minecraft server for AFK rooms, waiting rooms, and network lobbies.",
     "isPaperclip": false,
     "isBinary": false,
-    "iconUrl": "https://raw.githubusercontent.com/theSimpleCloud/simplecloud-manifest/refs/heads/main/assets/software/limbo.png",
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/limbo.png",
     "latestVersion": "26.2",
     "downloadLinks": [
       {
