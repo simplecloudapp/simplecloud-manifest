@@ -2619,14 +2619,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/46/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/56/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "7f40b987-80cd-422e-b50e-00f3c156f7ff",
-        "buildName": "#46",
-        "downloadSize": 81636739,
-        "publishedAt": "2026-08-02T11:59:47.084Z",
+        "buildUuid": "b494912f-1968-471c-89d9-ccf90cbfa6aa",
+        "buildName": "#56",
+        "downloadSize": 82351626,
+        "publishedAt": "2026-08-08T20:49:43.763Z",
         "experimental": true
       },
       {
@@ -5565,9 +5565,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 71027264,
-        "sha256": "ab5afe176b9328d4ce1780f95991c612dd2688e8b0b1545330d7e42ddb61220e",
-        "publishedAt": "2026-08-07T21:39:54Z",
+        "downloadSize": 70883696,
+        "sha256": "1b8a2fb1856d6729059a77e0d83180036dc347289444ee8aaeac21f9cb0dacdb",
+        "publishedAt": "2026-08-08T15:17:14Z",
         "experimental": true
       },
       {
@@ -5578,9 +5578,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 88686784,
-        "sha256": "4ef1ee598eb5e0baddc86f9cf8d2c91fa53d1dbbec8f86f816b0722b0a9df73c",
-        "publishedAt": "2026-08-07T21:39:55Z",
+        "downloadSize": 88466912,
+        "sha256": "1ed3a102e3ad5d5494a935d209692c80bf18eea5976d8cdf6632c60889b62d99",
+        "publishedAt": "2026-08-08T15:17:15Z",
         "experimental": true
       },
       {
@@ -5591,9 +5591,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 85489456,
-        "sha256": "3b28d0f7a57541c9c8df97753c922338f08541ec886896481de38049b474e62b",
-        "publishedAt": "2026-08-07T21:39:55Z",
+        "downloadSize": 85262008,
+        "sha256": "057ffee85623762aa637582188c2389b9f3c2206024698296217d0a12f746c2d",
+        "publishedAt": "2026-08-08T15:17:15Z",
         "experimental": true
       },
       {
@@ -5604,9 +5604,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 83719992,
-        "sha256": "9faca9b0da5c05824e5e21212d317153baaeed8925b061c991b24ec6906e6ba2",
-        "publishedAt": "2026-08-07T21:39:55Z",
+        "downloadSize": 83372856,
+        "sha256": "2aafec0a9cbfa1b5e9ff670c6ebd5edc25ec130a46d8aa1b379e7c9c05c0f4cc",
+        "publishedAt": "2026-08-08T15:17:15Z",
         "experimental": true
       },
       {
@@ -5617,9 +5617,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 71471928,
-        "sha256": "e7b41fb761d5c8f8f1e6dd3ea19516b6be23ffd2870f0b1a81e098e147f3e1ca",
-        "publishedAt": "2026-08-07T21:39:54Z",
+        "downloadSize": 71207224,
+        "sha256": "6c780d57f68cafd1431822e054d7273c875df1840e999b99b691e13568fbc641",
+        "publishedAt": "2026-08-08T15:17:14Z",
         "experimental": true
       }
     ]
@@ -6245,14 +6245,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.52-beta/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.53-beta/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "35d20e83-3daf-48c7-97dd-492d5da4d6ee",
-        "buildName": "26.2.0.52-beta",
-        "projectVersion": "26.2.0.52-beta",
-        "downloadSize": 71177175,
+        "buildUuid": "7a7deeb3-cd3f-4127-9221-bb2f51fdf4b9",
+        "buildName": "26.2.0.53-beta",
+        "projectVersion": "26.2.0.53-beta",
+        "downloadSize": 71176630,
         "publishedAt": "2026-06-16T12:03:33Z",
         "experimental": true
       },
