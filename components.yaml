@@ -23,8 +23,8 @@ components:
 
   serverhost-defaults:
     type: direct
-    version: "0.0.49"
-    downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.49/serverhost-defaults.zip"
+    version: "0.0.50"
+    downloadUrl: "https://github.com/simplecloudapp/simplecloud-manifest/releases/download/v0.0.50/serverhost-defaults.zip"
     name: serverhost-defaults
     extractPath: "/"
 
