@@ -61,8 +61,8 @@ jobs:
                 printf '%s\n' "$SEMVER_TAGS" \
                   | sort -V \
                   | awk -v tag="$TAG" '
-                      $0 == tag { print prev; found=1; exit }
-                      { prev=$0 }
+                      $0 == tag && !found { print prev; found=1 }
+                      !found { prev=$0 }
                       END { if (!found) print "" }
                     '
               )"
@@ -168,9 +168,9 @@ jobs:
                     {
                       msg=tolower($2)
                       specific="\\[manifest reset:" component "\\]"
-                      if (msg ~ specific || msg ~ /\[manifest reset\]/) {
+                      if (!found && (msg ~ specific || msg ~ /\[manifest reset\]/)) {
                         print $1
-                        exit
+                        found=1
                       }
                     }
                   '
