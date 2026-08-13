@@ -10,14 +10,14 @@
     "downloadLinks": [
       {
         "version": "4.1.0-SNAPSHOT",
-        "link": "https://fill-data.papermc.io/v1/objects/aebade8be3b15d7c3c61514a50ce857cbf78ee87bd32e8d16d2352c6ca3e472f/velocity-4.1.0-SNAPSHOT-16.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/55ebc3230eb11bbc75d3afcf6cb0fd16d2462a338f074693ed2a9332d5614dcd/velocity-4.1.0-SNAPSHOT-20.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildNumber": 16,
-        "downloadSize": 18826239,
-        "sha256": "aebade8be3b15d7c3c61514a50ce857cbf78ee87bd32e8d16d2352c6ca3e472f",
-        "publishedAt": "2026-08-03T13:12:09.388Z"
+        "buildNumber": 20,
+        "downloadSize": 42046074,
+        "sha256": "55ebc3230eb11bbc75d3afcf6cb0fd16d2462a338f074693ed2a9332d5614dcd",
+        "publishedAt": "2026-08-12T22:43:02.492Z"
       },
       {
         "version": "4.0.0",
@@ -2619,14 +2619,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/63/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/64/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "e391accc-93ec-4693-bca5-768a9ba995d0",
-        "buildName": "#63",
-        "downloadSize": 82360310,
-        "publishedAt": "2026-08-11T16:26:25.135Z",
+        "buildUuid": "90b81144-4efb-40f5-a021-71697479be40",
+        "buildName": "#64",
+        "downloadSize": 82360731,
+        "publishedAt": "2026-08-12T16:50:28.039Z",
         "experimental": true
       },
       {
@@ -3787,8 +3787,20 @@
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/fabric.png",
     "latestVersion": "26.2",
-    "latestSnapshot": "26.3-snapshot-7",
+    "latestSnapshot": "26.3-snapshot-8",
     "downloadLinks": [
+      {
+        "version": "26.3-snapshot-8",
+        "link": "https://versions.mcjars.app/download/fabric/26.3-snapshot-8/0.19.3/1.1.2.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "5b2bde84-3c4e-4530-9706-762189bcc0c6",
+        "buildName": "0.19.3",
+        "projectVersion": "0.19.3",
+        "downloadSize": 181849,
+        "publishedAt": "2026-08-12T09:39:37Z"
+      },
       {
         "version": "26.3-snapshot-7",
         "link": "https://versions.mcjars.app/download/fabric/26.3-snapshot-7/0.19.3/1.1.2.jar",
@@ -4426,8 +4438,20 @@
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
     "latestVersion": "26.2",
-    "latestSnapshot": "26.3-snapshot-7",
+    "latestSnapshot": "26.3-snapshot-8",
     "downloadLinks": [
+      {
+        "version": "26.3-snapshot-8",
+        "link": "https://piston-data.mojang.com/v1/objects/f56c190d1deda0a8e63592ae07b1cd7f26cccd3e/server.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "6aa71859-b175-4194-ac1f-cbebd8fcc9e5",
+        "buildName": "#1",
+        "downloadSize": 62028254,
+        "publishedAt": "2026-08-12T11:39:37Z",
+        "experimental": true
+      },
       {
         "version": "26.3-snapshot-7",
         "link": "https://piston-data.mojang.com/v1/objects/06157fedd67ff4dd6e0e6fa4a9dd0af296f0dd61/server.jar",
@@ -5456,17 +5480,6 @@
         "publishedAt": "2012-12-27T22:00:00Z"
       },
       {
-        "version": "1.4.6",
-        "link": "https://launcher.mojang.com/v1/objects/a0aeb5709af5f2c3058c1cf0dc6b110a7a61278c/server.jar",
-        "isSnapshot": false,
-        "javaMinimum": 8,
-        "supportStatus": "UNSUPPORTED",
-        "buildUuid": "de331650-6f26-4803-9bb2-ca938bb686e9",
-        "buildName": "#1",
-        "downloadSize": 2061647,
-        "publishedAt": "2012-12-19T22:00:00Z"
-      },
-      {
         "version": "1.4.5",
         "link": "https://launcher.mojang.com/v1/objects/c12fd88a8233d2c517dbc8196ba2ae855f4d36ea/server.jar",
         "isSnapshot": false,
@@ -5475,6 +5488,17 @@
         "buildUuid": "39f1bd8b-4c09-430f-b5ae-604c8c91a920",
         "buildName": "#1",
         "downloadSize": 2047972,
+        "publishedAt": "2012-12-19T22:00:00Z"
+      },
+      {
+        "version": "1.4.6",
+        "link": "https://launcher.mojang.com/v1/objects/a0aeb5709af5f2c3058c1cf0dc6b110a7a61278c/server.jar",
+        "isSnapshot": false,
+        "javaMinimum": 8,
+        "supportStatus": "UNSUPPORTED",
+        "buildUuid": "de331650-6f26-4803-9bb2-ca938bb686e9",
+        "buildName": "#1",
+        "downloadSize": 2061647,
         "publishedAt": "2012-12-19T22:00:00Z"
       },
       {
@@ -5565,9 +5589,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 71769680,
-        "sha256": "a2265e2c069b4cdc18331195da48f41362ee9c80f87eb83e844e314979783998",
-        "publishedAt": "2026-08-11T17:57:05Z",
+        "downloadSize": 72569056,
+        "sha256": "ff7726fbff755951ca8a3116697ea973d880e08d5c915b42fec82b3ad46be2aa",
+        "publishedAt": "2026-08-12T21:25:15Z",
         "experimental": true
       },
       {
@@ -5578,9 +5602,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 89488744,
-        "sha256": "cae5364c636889de2e20a1e1b6897f1e6d370622547b3e592d70df1250772c1b",
-        "publishedAt": "2026-08-11T17:57:06Z",
+        "downloadSize": 90372728,
+        "sha256": "bdc8e35ac85e48ae1e641bf796219874bf55c6081ef4b5bb52d6e487304e292c",
+        "publishedAt": "2026-08-12T21:25:16Z",
         "experimental": true
       },
       {
@@ -5591,9 +5615,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 86360272,
-        "sha256": "5163235d4d0f89ddcd6dd2f4475e10c187ae8b5dbc48733ebbe2e62624e72f3f",
-        "publishedAt": "2026-08-11T17:57:06Z",
+        "downloadSize": 87198912,
+        "sha256": "6d7294f464cffd6b09415f782f7d31630cf7e923b1cc1dc5af6c9e840034165b",
+        "publishedAt": "2026-08-12T21:25:14Z",
         "experimental": true
       },
       {
@@ -5604,9 +5628,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 84482872,
-        "sha256": "573971b625ea9963468cfd1ce150cc5cb986d75ae266bb743d0914451e968a2a",
-        "publishedAt": "2026-08-11T17:57:06Z",
+        "downloadSize": 85945656,
+        "sha256": "afa18f7934b050b77c1299ee5004f42082fedd79ec96a962cbe80563459c6c0a",
+        "publishedAt": "2026-08-12T21:25:15Z",
         "experimental": true
       },
       {
@@ -5617,9 +5641,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 72167736,
-        "sha256": "d2765ac85eb8cfa37ca6a29e89996f81407c6196b68cfb7a1a90b852711f62c8",
-        "publishedAt": "2026-08-11T17:57:05Z",
+        "downloadSize": 73220920,
+        "sha256": "9cd4dfe086463547b2f2351e8df4d22f86e9a01c56e3c11e4727b1bece81eeac",
+        "publishedAt": "2026-08-12T21:25:14Z",
         "experimental": true
       }
     ]
@@ -6257,14 +6281,14 @@
       },
       {
         "version": "26.1.2",
-        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.94/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.95/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "6de0d72f-8a4b-46f5-97ce-21f64fdd8555",
-        "buildName": "26.1.2.94",
-        "projectVersion": "26.1.2.94",
-        "downloadSize": 72315095,
+        "buildUuid": "74148d20-da55-4221-a433-a04dd08b9486",
+        "buildName": "26.1.2.95",
+        "projectVersion": "26.1.2.95",
+        "downloadSize": 72331192,
         "publishedAt": "2026-04-09T10:12:23Z"
       },
       {
