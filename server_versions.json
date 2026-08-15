@@ -10,14 +10,14 @@
     "downloadLinks": [
       {
         "version": "4.1.0-SNAPSHOT",
-        "link": "https://fill-data.papermc.io/v1/objects/55ebc3230eb11bbc75d3afcf6cb0fd16d2462a338f074693ed2a9332d5614dcd/velocity-4.1.0-SNAPSHOT-20.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/f840e8dbf9e3220f1ae400aa67c462ef4213d64fd03209dae284e2e991147c93/velocity-4.1.0-SNAPSHOT-21.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildNumber": 20,
-        "downloadSize": 42046074,
-        "sha256": "55ebc3230eb11bbc75d3afcf6cb0fd16d2462a338f074693ed2a9332d5614dcd",
-        "publishedAt": "2026-08-12T22:43:02.492Z"
+        "buildNumber": 21,
+        "downloadSize": 42051577,
+        "sha256": "f840e8dbf9e3220f1ae400aa67c462ef4213d64fd03209dae284e2e991147c93",
+        "publishedAt": "2026-08-14T10:57:03.338Z"
       },
       {
         "version": "4.0.0",
@@ -2619,14 +2619,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/66/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/69/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "3d81dbbd-b4a4-47c5-944c-78e810b49dfb",
-        "buildName": "#66",
-        "downloadSize": 82361282,
-        "publishedAt": "2026-08-13T21:51:51.588Z",
+        "buildUuid": "ab263b65-1bca-44eb-a11c-010f1e8e68fd",
+        "buildName": "#69",
+        "downloadSize": 82360728,
+        "publishedAt": "2026-08-14T23:46:04.496Z",
         "experimental": true
       },
       {
@@ -5589,9 +5589,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 71337008,
-        "sha256": "c3e8ffcf7b5b8cc97391a44d867c6c3ee2469828a62184aef9a4e72339957d95",
-        "publishedAt": "2026-08-13T20:42:31Z",
+        "downloadSize": 76494416,
+        "sha256": "026ec0285728f0d176f7f2664559971a1490dda68f5ebdc9069f1a2b1624f8fd",
+        "publishedAt": "2026-08-14T18:52:07Z",
         "experimental": true
       },
       {
@@ -5602,9 +5602,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 89029040,
-        "sha256": "195e17998253181f49e8a7a11b02c57b7b96b17d578d15e9cb5af85342449d2c",
-        "publishedAt": "2026-08-13T20:42:32Z",
+        "downloadSize": 94626256,
+        "sha256": "9f67ba65b5fe3d7082ad2a074520a43767a6c83a94bb5ac430f00d3baf152ac3",
+        "publishedAt": "2026-08-14T18:52:07Z",
         "experimental": true
       },
       {
@@ -5615,9 +5615,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 85660608,
-        "sha256": "c0fc61fccba0e95ab4c1680c6679a095041de8139aebc81434711689b30e1ec6",
-        "publishedAt": "2026-08-13T20:42:31Z",
+        "downloadSize": 91494304,
+        "sha256": "86e774908d7032097ab70a0c5a4f7bd8e48d4d4e85146490ab59b3d8f00265d4",
+        "publishedAt": "2026-08-14T18:52:07Z",
         "experimental": true
       },
       {
@@ -5628,9 +5628,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 84263224,
-        "sha256": "0a103eb3ae065db061b30aa159342984c1633958b75f682db771cf2a6fe98107",
-        "publishedAt": "2026-08-13T20:42:31Z",
+        "downloadSize": 89597240,
+        "sha256": "219ad049e5fc5fdd3ed9db4ce35315dda27c44f5c8e6ed51effda7208c1d5144",
+        "publishedAt": "2026-08-14T18:52:08Z",
         "experimental": true
       },
       {
@@ -5641,9 +5641,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 71437632,
-        "sha256": "fe9104728adccc190021d5f560b459bb148d3b0f21bb7b8001ca28f42a578a8d",
-        "publishedAt": "2026-08-13T20:42:32Z",
+        "downloadSize": 76211520,
+        "sha256": "39a03463ae47d4878ae1bb22d05a45f6bccb27c7b80a03b8fed91a5a1026107c",
+        "publishedAt": "2026-08-14T18:52:08Z",
         "experimental": true
       }
     ]
