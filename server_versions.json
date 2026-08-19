@@ -2619,14 +2619,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/78/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/83/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "381b17b7-42df-40e3-89ed-65a611007f94",
-        "buildName": "#78",
-        "downloadSize": 82384575,
-        "publishedAt": "2026-08-18T01:37:06.918Z",
+        "buildUuid": "b4032983-3671-495c-8582-a3a44481a88b",
+        "buildName": "#83",
+        "downloadSize": 82386756,
+        "publishedAt": "2026-08-19T00:13:23.721Z",
         "experimental": true
       },
       {
@@ -5589,9 +5589,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 94224912,
-        "sha256": "a3acd313850b6161d2a4a19b564648e5ee423abcf23595cb581f11fe8027052e",
-        "publishedAt": "2026-08-17T12:07:25Z",
+        "downloadSize": 94247792,
+        "sha256": "25b0696d6d5d0d6e82b19230a2222131af7f44b4741b1dc1aa6b93091740193e",
+        "publishedAt": "2026-08-18T22:06:41Z",
         "experimental": true
       },
       {
@@ -5602,9 +5602,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 113833576,
-        "sha256": "0832d8fe5f73f42df260d2ccf0569ab2a3a27c966ca34e49028d55f43cecdb86",
-        "publishedAt": "2026-08-17T12:07:26Z",
+        "downloadSize": 113871888,
+        "sha256": "366f71466d3ed402cca8c4bca15fe0ba610bd0034c06870c83b0f52342bf5d08",
+        "publishedAt": "2026-08-18T22:06:42Z",
         "experimental": true
       },
       {
@@ -5615,9 +5615,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 110466224,
-        "sha256": "2bc81a26edb169daa6e10f4cc5a46e0afc4718e545f6dd95c6ef4dfe668d0550",
-        "publishedAt": "2026-08-17T12:07:27Z",
+        "downloadSize": 110443720,
+        "sha256": "a37886b09fb32e3258ae56fa7ffca2901867238d07d987328f3bd8791cac1f2e",
+        "publishedAt": "2026-08-18T22:06:42Z",
         "experimental": true
       },
       {
@@ -5628,9 +5628,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 109955384,
-        "sha256": "41d22884feaf4f245020d6401eb264ea7f8273690ac7d53755c38d3efd8cc10b",
-        "publishedAt": "2026-08-17T12:07:26Z",
+        "downloadSize": 110016824,
+        "sha256": "f1be3048894376777e550d8c5291ba1af0d7411a534c773533f2fe97d8b0a431",
+        "publishedAt": "2026-08-18T22:06:42Z",
         "experimental": true
       },
       {
@@ -5641,9 +5641,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 95016256,
-        "sha256": "69c29f8ae5de17a96bcb3e17c1d27b2a1597d8e85cbaadad536439299d6e8a9b",
-        "publishedAt": "2026-08-17T12:07:25Z",
+        "downloadSize": 95022392,
+        "sha256": "21fe2bac51113472bb50c94f30fb442c00273882ea004e078670d80c681814d0",
+        "publishedAt": "2026-08-18T22:06:41Z",
         "experimental": true
       }
     ]
@@ -6256,14 +6256,14 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.60/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.64/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "3330c27c-9996-47b1-b48f-da4b62edd911",
-        "buildName": "26.2.0.60",
-        "projectVersion": "26.2.0.60",
-        "downloadSize": 71173611,
+        "buildUuid": "08d68187-a2ec-4ee2-8b78-7e22d6d95ac5",
+        "buildName": "26.2.0.64",
+        "projectVersion": "26.2.0.64",
+        "downloadSize": 71173713,
         "publishedAt": "2026-06-16T12:03:33Z"
       },
       {
