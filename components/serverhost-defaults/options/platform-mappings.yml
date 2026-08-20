@@ -18,5 +18,8 @@ platforms:
   # Leaf is a Paper fork, map to Paper
   leaf: paper
 
+  # FlameCord is a BungeeCord fork, map to BungeeCord
+  flamecord: bungeecord
+
   # Add more mappings as needed
   # Format: source-platform: target-platform

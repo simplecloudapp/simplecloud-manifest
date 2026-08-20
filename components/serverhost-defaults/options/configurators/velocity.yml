@@ -7,7 +7,6 @@ paths:
       show-max-players: %max-players%
       forwarding-secret-file: "forwarding.secret"
       player-info-forwarding-mode: "MODERN"
-      motd: "<#09add3>A Velocity Server"
   - path: "forwarding.secret"
     type: "TXT"
     data: "%forwarding-secret%"
