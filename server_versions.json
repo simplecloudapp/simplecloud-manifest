@@ -3403,7 +3403,7 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://fill-data.papermc.io/v1/objects/19c81c308ba4de4b9fc0a61860c86281836d26ac046f696ea241766eea4b2468/folia-26.2-4.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/faae55d240337cd6341fee2ce1512dafe658cfb03c88f6b213fd15c37bb07307/folia-26.2-5.jar",
         "channel": "BETA",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -3427,10 +3427,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 4,
-        "downloadSize": 62126906,
-        "sha256": "19c81c308ba4de4b9fc0a61860c86281836d26ac046f696ea241766eea4b2468",
-        "publishedAt": "2026-08-11T05:26:02Z"
+        "buildNumber": 5,
+        "downloadSize": 62127491,
+        "sha256": "faae55d240337cd6341fee2ce1512dafe658cfb03c88f6b213fd15c37bb07307",
+        "publishedAt": "2026-08-19T10:02:44Z"
       },
       {
         "version": "26.1.2",
@@ -5589,9 +5589,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 94247792,
-        "sha256": "25b0696d6d5d0d6e82b19230a2222131af7f44b4741b1dc1aa6b93091740193e",
-        "publishedAt": "2026-08-18T22:06:41Z",
+        "downloadSize": 94650160,
+        "sha256": "bf993b7749efd2b05363de8399c49ff8cc82c82f2c5a4caac9e010561a814bdf",
+        "publishedAt": "2026-08-19T20:52:59Z",
         "experimental": true
       },
       {
@@ -5602,9 +5602,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 113871888,
-        "sha256": "366f71466d3ed402cca8c4bca15fe0ba610bd0034c06870c83b0f52342bf5d08",
-        "publishedAt": "2026-08-18T22:06:42Z",
+        "downloadSize": 114314736,
+        "sha256": "74a77a027dcce8d4dc45274073beec256070b63e37791fd6ac20ab881b7f74eb",
+        "publishedAt": "2026-08-19T20:53:02Z",
         "experimental": true
       },
       {
@@ -5615,9 +5615,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 110443720,
-        "sha256": "a37886b09fb32e3258ae56fa7ffca2901867238d07d987328f3bd8791cac1f2e",
-        "publishedAt": "2026-08-18T22:06:42Z",
+        "downloadSize": 110959384,
+        "sha256": "d2d96f03ade4b51159de7f30fb97f33e5f9645055c4803e0e11acd00ea9cf051",
+        "publishedAt": "2026-08-19T20:52:59Z",
         "experimental": true
       },
       {
@@ -5628,9 +5628,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 110016824,
-        "sha256": "f1be3048894376777e550d8c5291ba1af0d7411a534c773533f2fe97d8b0a431",
-        "publishedAt": "2026-08-18T22:06:42Z",
+        "downloadSize": 109846840,
+        "sha256": "e60e4fed59d73e053b8e7058c62cf60ae240fe8432b1280d3065bc07a2818a73",
+        "publishedAt": "2026-08-19T20:52:59Z",
         "experimental": true
       },
       {
@@ -5641,9 +5641,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 95022392,
-        "sha256": "21fe2bac51113472bb50c94f30fb442c00273882ea004e078670d80c681814d0",
-        "publishedAt": "2026-08-18T22:06:41Z",
+        "downloadSize": 95077688,
+        "sha256": "4dfe35b0634d774c5b61cf37a4ab15c66362d1f4db14f65a8d55137ef4280980",
+        "publishedAt": "2026-08-19T20:52:58Z",
         "experimental": true
       }
     ]
@@ -6268,14 +6268,14 @@
       },
       {
         "version": "26.1.2",
-        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.95/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.96/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "74148d20-da55-4221-a433-a04dd08b9486",
-        "buildName": "26.1.2.95",
-        "projectVersion": "26.1.2.95",
-        "downloadSize": 72331192,
+        "buildUuid": "c3fd3693-343c-4402-ba69-a32c78c94fe1",
+        "buildName": "26.1.2.96",
+        "projectVersion": "26.1.2.96",
+        "downloadSize": 72332550,
         "publishedAt": "2026-04-09T10:12:23Z"
       },
       {
