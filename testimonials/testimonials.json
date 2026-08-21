@@ -172,5 +172,16 @@
          "x":"noriwanne",
          "github":"noriwanne"
       }
+   },
+   {
+      "username":"Minecraft.How",
+      "role":"Minecraft Publication",
+      "skinUrl":"https://minecraft.how/android-chrome-512x512.png",
+      "comment":"We run a Minecraft site and just finished rewriting our SimpleCloud guide for it. What stood out most was how fast the new CLI setup is compared to the old manager and wrapper way of doing things. Solid pick if you're running a real network.",
+      "userSince":"Spring 2026",
+      "testimonialDate":"21st Aug. 2026",
+      "socials":{
+         "portfolio":"https://minecraft.how"
+      }
    }
 ]
