@@ -21,5 +21,8 @@ platforms:
   # FlameCord is a BungeeCord fork, map to BungeeCord
   flamecord: bungeecord
 
+  # VeloFlame is a Velocity fork, map to Velocity
+  veloflame: velocity
+
   # Add more mappings as needed
   # Format: source-platform: target-platform
