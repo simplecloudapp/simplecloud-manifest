@@ -1,8 +1,10 @@
 paths:
   - path: "velocity.toml"
     type: "TOML"
+    defaults:
+      jar-entry: "default-velocity.toml"
+      url: "https://raw.githubusercontent.com/PaperMC/Velocity/HEAD/proxy/src/main/resources/default-velocity.toml"
     data:
-      config-version: "%velocity-config-version%"
       bind: "0.0.0.0:%port%"
       show-max-players: %max-players%
       forwarding-secret-file: "forwarding.secret"
