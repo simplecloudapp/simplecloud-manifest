@@ -1,0 +1,40 @@
+name: Configure LuckPerms
+
+# Add default/luckperms to workflows.when.start after internal/setup.
+# Use this workflow only for Paper/Bukkit and BungeeCord/Velocity server groups.
+# Install the appropriate LuckPerms plugin and configure shared database storage in your templates.
+# Each SimpleCloud group gets its own LuckPerms server context (Lobby becomes server=lobby).
+# To grant a permission to an existing rank on that server group:
+#   lp group member permission set example.permission true server=lobby
+# Use lpv on Velocity and lpb on BungeeCord. Global permissions and ranks still apply.
+# https://luckperms.net/wiki/Configuration
+# https://luckperms.net/wiki/Context
+
+steps:
+  - name: configure-luckperms-velocity
+    if: "{{ runtime.software }} == velocity"
+    uses: simplecloud/configurate
+    with:
+      dir: "{{ runtime.server-dir }}"
+      config:
+        paths:
+          - path: plugins/luckperms/config.yml
+            type: YML
+            data:
+              server: "{{ runtime.name }}"
+              include-global: true
+              apply-global-groups: true
+
+  - name: configure-luckperms-paper-and-bungee
+    if: "{{ runtime.software }} != velocity"
+    uses: simplecloud/configurate
+    with:
+      dir: "{{ runtime.server-dir }}"
+      config:
+        paths:
+          - path: plugins/LuckPerms/config.yml
+            type: YML
+            data:
+              server: "{{ runtime.name }}"
+              include-global: true
+              apply-global-groups: true
