@@ -5639,8 +5639,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
         "downloadSize": 105888160,
-        "sha256": "2f853a23339415439e6d1d2c79d53089c1a9d391d688b65591574d9fac90eaa6",
-        "publishedAt": "2026-09-06T22:04:29Z",
+        "sha256": "6139c4f451f3903fab078326c1f78604c7ccc11a7978dfd8af42906a207de0a8",
+        "publishedAt": "2026-09-07T23:31:56Z",
         "experimental": true
       },
       {
@@ -5652,8 +5652,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
         "downloadSize": 128178520,
-        "sha256": "9c475f8668e94805d3eb0a16cbc2dd9a349c2547a003380e937ff1cc4fe0afcc",
-        "publishedAt": "2026-09-06T22:04:29Z",
+        "sha256": "c98e2e38a4eb8cb4db0437b5a2a30f5feeeef67a97489de9ffdf4d4998825524",
+        "publishedAt": "2026-09-07T23:31:57Z",
         "experimental": true
       },
       {
@@ -5664,9 +5664,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 122685000,
-        "sha256": "05cb5621088c7c480cabcfa270076cc7c29790e3df48b62a7c998e9df0d109b7",
-        "publishedAt": "2026-09-06T22:04:29Z",
+        "downloadSize": 122684552,
+        "sha256": "24655f32760dcaa5c4c7ba6035c512fbf903388d59315b36efa06da62a985180",
+        "publishedAt": "2026-09-07T23:31:57Z",
         "experimental": true
       },
       {
@@ -5678,8 +5678,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
         "downloadSize": 125002240,
-        "sha256": "75d83aa9e29cc5b73ea10b7331143348781d7feb5e3a952356127bfdd434786f",
-        "publishedAt": "2026-09-06T22:04:29Z",
+        "sha256": "c73c436db2258fe81b546b7c00d0a28e359c529e58f59df2b7ca563574445381",
+        "publishedAt": "2026-09-07T23:31:57Z",
         "experimental": true
       },
       {
@@ -5691,8 +5691,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
         "downloadSize": 108122112,
-        "sha256": "c46f3fc7c5bd9a43a70c63b514a2da94bf3270d0dabc4bc0e278d172960eee01",
-        "publishedAt": "2026-09-06T22:04:29Z",
+        "sha256": "eed3961ec66c80253629e2d03912d024ab5d44523409d85e1d94f7083abf9788",
+        "publishedAt": "2026-09-07T23:31:56Z",
         "experimental": true
       }
     ]
@@ -6344,26 +6344,26 @@
     "downloadLinks": [
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.79/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.81/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "abc4af2e-3d2f-472d-8660-bd4a0c3c486c",
-        "buildName": "26.2.0.79",
-        "projectVersion": "26.2.0.79",
-        "downloadSize": 71184132,
+        "buildUuid": "e2f19ac6-351a-4c3f-84e2-038b6e885d9b",
+        "buildName": "26.2.0.81",
+        "projectVersion": "26.2.0.81",
+        "downloadSize": 71183971,
         "publishedAt": "2026-06-16T12:03:33Z"
       },
       {
         "version": "26.1.2",
-        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.106/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.107/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "442d8a08-e247-4b40-ba4e-9c7722b3202e",
-        "buildName": "26.1.2.106",
-        "projectVersion": "26.1.2.106",
-        "downloadSize": 72342790,
+        "buildUuid": "b91e77c1-9201-484c-b2d7-8b3614bd8f86",
+        "buildName": "26.1.2.107",
+        "projectVersion": "26.1.2.107",
+        "downloadSize": 72342784,
         "publishedAt": "2026-04-09T10:12:23Z"
       },
       {
