@@ -619,11 +619,74 @@
     "isPaperclip": true,
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/paper.svg",
-    "latestVersion": "26.2",
+    "latestVersion": "26.3",
     "downloadLinks": [
       {
+        "version": "26.3",
+        "link": "https://fill-data.papermc.io/v1/objects/7f98951a70ed7b3f28906b1c534e599f70d0dbbab1ef58bb2272f7d348bc0e51/paper-26.3-5.jar",
+        "channel": "ALPHA",
+        "javaMinimum": 25,
+        "javaRecommendedFlags": [
+          "-XX:+AlwaysPreTouch",
+          "-XX:+DisableExplicitGC",
+          "-XX:+ParallelRefProcEnabled",
+          "-XX:+PerfDisableSharedMem",
+          "-XX:+UnlockExperimentalVMOptions",
+          "-XX:+UseG1GC",
+          "-XX:G1HeapRegionSize=8M",
+          "-XX:G1HeapWastePercent=5",
+          "-XX:G1MaxNewSizePercent=40",
+          "-XX:G1MixedGCCountTarget=4",
+          "-XX:G1MixedGCLiveThresholdPercent=90",
+          "-XX:G1NewSizePercent=30",
+          "-XX:G1RSetUpdatingPauseTimePercent=5",
+          "-XX:G1ReservePercent=20",
+          "-XX:InitiatingHeapOccupancyPercent=15",
+          "-XX:MaxGCPauseMillis=200",
+          "-XX:MaxTenuringThreshold=1",
+          "-XX:SurvivorRatio=32"
+        ],
+        "supportStatus": "SUPPORTED",
+        "buildNumber": 5,
+        "downloadSize": 63712809,
+        "sha256": "7f98951a70ed7b3f28906b1c534e599f70d0dbbab1ef58bb2272f7d348bc0e51",
+        "publishedAt": "2026-09-15T18:45:30Z"
+      },
+      {
+        "version": "26.3-rc-3",
+        "link": "https://fill-data.papermc.io/v1/objects/098602998d2676ad8ec36e53b0da3ccb9f5e9b901ddfac9ee5b6fe50a330f6f3/paper-26.3-rc-3-1.jar",
+        "channel": "ALPHA",
+        "javaMinimum": 25,
+        "javaRecommendedFlags": [
+          "-XX:+AlwaysPreTouch",
+          "-XX:+DisableExplicitGC",
+          "-XX:+ParallelRefProcEnabled",
+          "-XX:+PerfDisableSharedMem",
+          "-XX:+UnlockExperimentalVMOptions",
+          "-XX:+UseG1GC",
+          "-XX:G1HeapRegionSize=8M",
+          "-XX:G1HeapWastePercent=5",
+          "-XX:G1MaxNewSizePercent=40",
+          "-XX:G1MixedGCCountTarget=4",
+          "-XX:G1MixedGCLiveThresholdPercent=90",
+          "-XX:G1NewSizePercent=30",
+          "-XX:G1RSetUpdatingPauseTimePercent=5",
+          "-XX:G1ReservePercent=20",
+          "-XX:InitiatingHeapOccupancyPercent=15",
+          "-XX:MaxGCPauseMillis=200",
+          "-XX:MaxTenuringThreshold=1",
+          "-XX:SurvivorRatio=32"
+        ],
+        "supportStatus": "UNSUPPORTED",
+        "supportEnd": "2026-09-15",
+        "buildNumber": 1,
+        "downloadSize": 63714968,
+        "sha256": "098602998d2676ad8ec36e53b0da3ccb9f5e9b901ddfac9ee5b6fe50a330f6f3",
+        "publishedAt": "2026-09-15T12:51:28Z"
+      },
+      {
         "version": "26.2",
-        "link": "https://fill-data.papermc.io/v1/objects/7b7b3b43c009103e1971a0576c26f655a7dd9b56a0a2a4438e352c03a7fecd08/paper-26.2-123.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/274bbcb9807ad79a479617ce695a7c0686e652a8d1cabfd0e288d92a3ea29593/paper-26.2-124.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -647,10 +710,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 123,
-        "downloadSize": 64521337,
-        "sha256": "7b7b3b43c009103e1971a0576c26f655a7dd9b56a0a2a4438e352c03a7fecd08",
-        "publishedAt": "2026-09-09T17:32:22Z"
+        "buildNumber": 124,
+        "downloadSize": 64521995,
+        "sha256": "274bbcb9807ad79a479617ce695a7c0686e652a8d1cabfd0e288d92a3ea29593",
+        "publishedAt": "2026-09-15T17:48:49Z"
       },
       {
         "version": "26.2-rc-2",
@@ -3848,9 +3911,21 @@
     "isPaperclip": false,
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/fabric.png",
-    "latestVersion": "26.2",
+    "latestVersion": "26.3",
     "latestSnapshot": "26.3-rc-3",
     "downloadLinks": [
+      {
+        "version": "26.3",
+        "link": "https://versions.mcjars.app/download/fabric/26.3/0.19.5/1.1.2.jar",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "31458920-ee6c-4392-9e08-a5821c79be86",
+        "buildName": "0.19.5",
+        "projectVersion": "0.19.5",
+        "downloadSize": 181838,
+        "publishedAt": "2026-09-15T11:23:02Z"
+      },
       {
         "version": "26.3-rc-3",
         "link": "https://versions.mcjars.app/download/fabric/26.3-rc-3/0.19.5/1.1.2.jar",
@@ -4535,9 +4610,20 @@
     "isPaperclip": false,
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
-    "latestVersion": "26.2",
+    "latestVersion": "26.3",
     "latestSnapshot": "26.3-rc-3",
     "downloadLinks": [
+      {
+        "version": "26.3",
+        "link": "https://piston-data.mojang.com/v1/objects/33680f5f2ac32864d6d7cf5e56a705fdb3e05f4c/server.jar",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "e88b5870-9f4d-4623-91a7-8c4717e7b375",
+        "buildName": "#1",
+        "downloadSize": 62294556,
+        "publishedAt": "2026-09-15T13:23:02Z"
+      },
       {
         "version": "26.3-rc-3",
         "link": "https://piston-data.mojang.com/v1/objects/6daddb59a36dfad698169693ed5c2326611f4fb7/server.jar",
@@ -5614,17 +5700,6 @@
         "publishedAt": "2012-12-27T22:00:00Z"
       },
       {
-        "version": "1.4.5",
-        "link": "https://launcher.mojang.com/v1/objects/c12fd88a8233d2c517dbc8196ba2ae855f4d36ea/server.jar",
-        "isSnapshot": false,
-        "javaMinimum": 8,
-        "supportStatus": "UNSUPPORTED",
-        "buildUuid": "39f1bd8b-4c09-430f-b5ae-604c8c91a920",
-        "buildName": "#1",
-        "downloadSize": 2047972,
-        "publishedAt": "2012-12-19T22:00:00Z"
-      },
-      {
         "version": "1.4.6",
         "link": "https://launcher.mojang.com/v1/objects/a0aeb5709af5f2c3058c1cf0dc6b110a7a61278c/server.jar",
         "isSnapshot": false,
@@ -5633,6 +5708,17 @@
         "buildUuid": "de331650-6f26-4803-9bb2-ca938bb686e9",
         "buildName": "#1",
         "downloadSize": 2061647,
+        "publishedAt": "2012-12-19T22:00:00Z"
+      },
+      {
+        "version": "1.4.5",
+        "link": "https://launcher.mojang.com/v1/objects/c12fd88a8233d2c517dbc8196ba2ae855f4d36ea/server.jar",
+        "isSnapshot": false,
+        "javaMinimum": 8,
+        "supportStatus": "UNSUPPORTED",
+        "buildUuid": "39f1bd8b-4c09-430f-b5ae-604c8c91a920",
+        "buildName": "#1",
+        "downloadSize": 2047972,
         "publishedAt": "2012-12-19T22:00:00Z"
       },
       {
@@ -5723,9 +5809,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 106421424,
-        "sha256": "64ea23f6adb4164d72ac527ab4a33650dc90faa67eb9edf84946f72ed6f7100b",
-        "publishedAt": "2026-09-14T06:05:06Z",
+        "downloadSize": 106535952,
+        "sha256": "cd55e127570ef1a405eed6eec726f8625a71bddf00736f908bb348f68b85b32f",
+        "publishedAt": "2026-09-15T05:17:51Z",
         "experimental": true
       },
       {
@@ -5736,9 +5822,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 128879392,
-        "sha256": "b25ec388f277416efc0ac727565bc39f1c5bc5f6b55ba2c189dd6a6fb9a8cdeb",
-        "publishedAt": "2026-09-14T06:05:08Z",
+        "downloadSize": 129062032,
+        "sha256": "4954ecf679546f36d378ceb9b98baa20b8724bd2f79c8113c042b1cc818941bc",
+        "publishedAt": "2026-09-15T05:17:52Z",
         "experimental": true
       },
       {
@@ -5749,9 +5835,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 123335296,
-        "sha256": "caf9cbd0eca22afc85c79486003ac4cdc622ec2c6d902c72ce02ad1e1d7650a8",
-        "publishedAt": "2026-09-14T06:05:08Z",
+        "downloadSize": 123552280,
+        "sha256": "c58b4565dbc16fcf9c3fe2171ad3743dd6e19392c5f68ea92fecd6687a82d510",
+        "publishedAt": "2026-09-15T05:17:52Z",
         "experimental": true
       },
       {
@@ -5762,9 +5848,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 125473280,
-        "sha256": "3ea97ed62bddf18d87b7114bdcc09db50f2e66013651cb5d18b7271c400355ac",
-        "publishedAt": "2026-09-14T06:05:08Z",
+        "downloadSize": 125592576,
+        "sha256": "e14dfb9ca870b3e724e59db34df2650acd65a85a7f71e411518c5e2321f47da8",
+        "publishedAt": "2026-09-15T05:17:52Z",
         "experimental": true
       },
       {
@@ -5775,9 +5861,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 108528128,
-        "sha256": "26120b617994de2def2da843d6b2b40fb67b6460030fd18c66847aca0fe18048",
-        "publishedAt": "2026-09-14T06:05:07Z",
+        "downloadSize": 108662784,
+        "sha256": "02fdaa85ae3063a4eff5be8a5018a7d30aaeab77b0b6e5ccc41eb1e602a0d8ee",
+        "publishedAt": "2026-09-15T05:17:51Z",
         "experimental": true
       }
     ]
@@ -6412,8 +6498,21 @@
     "isPaperclip": false,
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/neoforge.png",
-    "latestVersion": "26.2",
+    "latestVersion": "26.3",
     "downloadLinks": [
+      {
+        "version": "26.3",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.1-beta/1/server.jar.zip",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "47822d33-3ebf-4814-9eba-8e8753d7c44c",
+        "buildName": "26.3.0.1-beta",
+        "projectVersion": "26.3.0.1-beta",
+        "downloadSize": 72545598,
+        "publishedAt": "2026-09-15T11:23:02Z",
+        "experimental": true
+      },
       {
         "version": "26.2",
         "link": "https://files.mcjars.app/neoforge/26.2/26.2.0.88/1/server.jar.zip",
@@ -6683,8 +6782,21 @@
     "isPaperclip": false,
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/limbo.png",
-    "latestVersion": "26.2",
+    "latestVersion": "26.3",
     "downloadLinks": [
+      {
+        "version": "26.3",
+        "link": "https://cdn.modrinth.com/data/gIDqs3gn/versions/t4FmKS67/Limbo-2026.0.3-ALPHA-26.3.jar",
+        "channel": "ALPHA",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "buildUuid": "t4FmKS67",
+        "buildName": "Limbo-2026.0.3-ALPHA-26.3.jar",
+        "projectVersion": "2026.0.3-ALPHA",
+        "downloadSize": 8819668,
+        "publishedAt": "2026-09-15T16:51:33.265261Z",
+        "experimental": true
+      },
       {
         "version": "26.2",
         "link": "https://cdn.modrinth.com/data/gIDqs3gn/versions/W9yOc4GR/Limbo-2026.0.2-ALPHA-26.2.jar",
