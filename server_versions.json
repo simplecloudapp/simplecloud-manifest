@@ -482,7 +482,6 @@
     "name": "Gate",
     "type": "PROXY",
     "description": "A fast, extensible, and secure Minecraft proxy written in Go by Minekube.",
-    "hidden": true,
     "isPaperclip": false,
     "isBinary": true,
     "iconUrl": "https://raw.githubusercontent.com/minekube/gate/master/.web/docs/public/logo_transparent.png",
