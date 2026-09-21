@@ -1,0 +1,14 @@
+paths:
+  - path: "config.yml"
+    type: "YML"
+    defaults:
+      url: "https://raw.githubusercontent.com/minekube/gate/v0.74.9/pkg/configs/config-minimal.yml"
+    data:
+      config:
+        bind: "0.0.0.0:%port%"
+        onlineMode: true
+        status:
+          showMaxPlayers: %max-players%
+        forwarding:
+          mode: "velocity"
+          velocitySecret: "%forwarding-secret%"
