@@ -635,7 +635,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/4f3a74b3fe3da1a7aa039a35600dfc2a867bd055b6fdc025c914736d9343a76e/paper-26.3-30.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/fc7fde19fa83debd24e4e85c4821e766674d4a7eb23e84404c8d7acabec1bb46/paper-26.3-32.jar",
         "channel": "ALPHA",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -659,10 +659,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 30,
-        "downloadSize": 65162502,
-        "sha256": "4f3a74b3fe3da1a7aa039a35600dfc2a867bd055b6fdc025c914736d9343a76e",
-        "publishedAt": "2026-09-21T07:44:46Z"
+        "buildNumber": 32,
+        "downloadSize": 65163087,
+        "sha256": "fc7fde19fa83debd24e4e85c4821e766674d4a7eb23e84404c8d7acabec1bb46",
+        "publishedAt": "2026-09-21T17:06:10Z"
       },
       {
         "version": "26.3-rc-3",
@@ -698,7 +698,7 @@
       },
       {
         "version": "26.2",
-        "link": "https://fill-data.papermc.io/v1/objects/9c95eb088b903d9ed96cd457838f3078f02407a965dc8ae36d2c4e551a04355a/paper-26.2-126.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/670226293b7ebaf0168e3d9a3e9b31036ba89b3c171d8793a34675b183fd1bff/paper-26.2-127.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -722,10 +722,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 126,
-        "downloadSize": 64521721,
-        "sha256": "9c95eb088b903d9ed96cd457838f3078f02407a965dc8ae36d2c4e551a04355a",
-        "publishedAt": "2026-09-20T02:38:48Z"
+        "buildNumber": 127,
+        "downloadSize": 64521805,
+        "sha256": "670226293b7ebaf0168e3d9a3e9b31036ba89b3c171d8793a34675b183fd1bff",
+        "publishedAt": "2026-09-21T13:51:02Z"
       },
       {
         "version": "26.2-rc-2",
@@ -3088,14 +3088,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://api.purpurmc.org/v2/purpur/26.3/2638/download",
+        "link": "https://api.purpurmc.org/v2/purpur/26.3/2639/download",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "4432696d-1276-4df9-9134-948df07ee1b8",
-        "buildName": "#2638",
-        "downloadSize": 68036953,
-        "publishedAt": "2026-09-21T09:11:21.724Z",
+        "buildUuid": "bd27c934-cacd-4dec-9893-5aeb4eb5b2f5",
+        "buildName": "#2639",
+        "downloadSize": 68038837,
+        "publishedAt": "2026-09-21T23:40:28.481Z",
         "experimental": true
       },
       {
@@ -6555,14 +6555,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.7-beta/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.8-beta/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "89e79dd7-5096-49a5-9345-43fd4eee44ce",
-        "buildName": "26.3.0.7-beta",
-        "projectVersion": "26.3.0.7-beta",
-        "downloadSize": 72469174,
+        "buildUuid": "4fe7be17-19b9-4cc8-a74a-dcf19e5f3370",
+        "buildName": "26.3.0.8-beta",
+        "projectVersion": "26.3.0.8-beta",
+        "downloadSize": 72474701,
         "publishedAt": "2026-09-15T11:23:02Z",
         "experimental": true
       },
