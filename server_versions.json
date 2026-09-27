@@ -485,142 +485,142 @@
     "isPaperclip": false,
     "isBinary": true,
     "iconUrl": "https://raw.githubusercontent.com/minekube/gate/master/.web/docs/public/logo_transparent.png",
-    "latestVersion": "v0.74.11",
+    "latestVersion": "v0.74.13",
     "downloadLinks": [
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_darwin_amd64",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_darwin_amd64",
         "platform": "darwin",
         "architecture": "amd64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_darwin_amd64",
-        "downloadSize": 31731008,
-        "sha256": "5f8a9da4733ec7b50cc5a61e2615f7dc13bf2028962d6345b2dce7fa26484e29",
-        "publishedAt": "2026-09-22T04:19:53Z"
+        "buildName": "gate_0.74.13_darwin_amd64",
+        "downloadSize": 31739296,
+        "sha256": "ed6a7f3ac3dae186e6d836ae6b3a9cdff91402853a85c68f17a0e573582c563e",
+        "publishedAt": "2026-09-26T04:20:06Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_darwin_arm64",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_darwin_arm64",
         "platform": "darwin",
         "architecture": "arm64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_darwin_arm64",
-        "downloadSize": 29943330,
-        "sha256": "f05832939e135981a86e7d5956823e1162c223ec9d4e50958a3ecea59c7a7d3f",
-        "publishedAt": "2026-09-22T04:19:53Z"
+        "buildName": "gate_0.74.13_darwin_arm64",
+        "downloadSize": 29943410,
+        "sha256": "1b388a28520dadfb2c240e81fa40c63bff441a27833cc863e6a6d39e331e713c",
+        "publishedAt": "2026-09-26T04:20:07Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_linux_386",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_linux_386",
         "platform": "linux",
         "architecture": "386",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_linux_386",
-        "downloadSize": 28664071,
-        "sha256": "9d7528c34f38b7008ed0bbbc10a4d90fa95853ffbf46b055064377157526daca",
-        "publishedAt": "2026-09-22T04:19:54Z"
+        "buildName": "gate_0.74.13_linux_386",
+        "downloadSize": 28672263,
+        "sha256": "d49852c54d169484781549aa4f93ff3d34e0b8ec4aaabbb503ad1bd4cff88bbb",
+        "publishedAt": "2026-09-26T04:20:07Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_linux_386_musl",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_linux_386_musl",
         "platform": "linux",
         "architecture": "386",
         "variant": "musl",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_linux_386_musl",
+        "buildName": "gate_0.74.13_linux_386_musl",
         "downloadSize": 24207522,
-        "sha256": "d6c49c65e18913783a7ecaac4104c9c1bdaee50562cdcf8dc390f531d816d37b",
-        "publishedAt": "2026-09-22T04:19:54Z"
+        "sha256": "f7b5cb913b6d3d671d20ad9711bd4cfd70dd6ea13306749f848d61538daacdca",
+        "publishedAt": "2026-09-26T04:20:07Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_linux_amd64",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_linux_amd64",
         "platform": "linux",
         "architecture": "amd64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_linux_amd64",
-        "downloadSize": 30875913,
-        "sha256": "3604fdb9b6e5b5c00202f9a1e5de119b2f75bc70e7b9f8023daee6f061f6f7bd",
-        "publishedAt": "2026-09-22T04:19:53Z"
+        "buildName": "gate_0.74.13_linux_amd64",
+        "downloadSize": 30880009,
+        "sha256": "b68903dfb14462c9b70bf37fe22664611371454a4ac38ec467502e34e994e9af",
+        "publishedAt": "2026-09-26T04:20:07Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_linux_amd64_musl",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_linux_amd64_musl",
         "platform": "linux",
         "architecture": "amd64",
         "variant": "musl",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_linux_amd64_musl",
+        "buildName": "gate_0.74.13_linux_amd64_musl",
         "downloadSize": 25944226,
-        "sha256": "db8007f80a41c76c64c4d9434b5018f6c4c998b8815ea7e6992a27cbd7a90c44",
-        "publishedAt": "2026-09-22T04:19:54Z"
+        "sha256": "daa03c910202228ed6b2945ec4e011a52bbdb058441c3105265304aad63aed16",
+        "publishedAt": "2026-09-26T04:20:07Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_linux_arm64",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_linux_arm64",
         "platform": "linux",
         "architecture": "arm64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_linux_arm64",
+        "buildName": "gate_0.74.13_linux_arm64",
         "downloadSize": 28901641,
-        "sha256": "2ffb83f01a1eb070f153a5dfb1740b86cafa56443b845bba24b8d902f9535c54",
-        "publishedAt": "2026-09-22T04:19:55Z"
+        "sha256": "45d2e39395143cf04b380bb57e418d7f8f25867f0de1a23eb526c19477c3bd6c",
+        "publishedAt": "2026-09-26T04:20:08Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_linux_arm64_musl",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_linux_arm64_musl",
         "platform": "linux",
         "architecture": "arm64",
         "variant": "musl",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_linux_arm64_musl",
+        "buildName": "gate_0.74.13_linux_arm64_musl",
         "downloadSize": 24314018,
-        "sha256": "ed9f68f34a290a56073229ef4b519cbb303567e3f851ba50f1ef7155f548630e",
-        "publishedAt": "2026-09-22T04:19:55Z"
+        "sha256": "1950a31545fe22fa4db6b0e36cd21f8ab39e2b3d6c69be1510c183c70aa56b88",
+        "publishedAt": "2026-09-26T04:20:08Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_windows_386.exe",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_windows_386.exe",
         "platform": "windows",
         "architecture": "386",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_windows_386.exe",
-        "downloadSize": 29292544,
-        "sha256": "24fe40ea5d74ea420b93bebdb2c2fec31ba75786b74410f6df308e2d9530525c",
-        "publishedAt": "2026-09-22T04:19:55Z"
+        "buildName": "gate_0.74.13_windows_386.exe",
+        "downloadSize": 29298176,
+        "sha256": "1093572a14cbf69c652d035f732de095d0aaed17238db39b5058ef0a74396d4e",
+        "publishedAt": "2026-09-26T04:20:08Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_windows_amd64.exe",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_windows_amd64.exe",
         "platform": "windows",
         "architecture": "amd64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_windows_amd64.exe",
-        "downloadSize": 31619072,
-        "sha256": "1ca4d8cda6065bce4cb6ddfb34b6c7bbf7e5ccef56e5a7b16c93d7e2fde1968f",
-        "publishedAt": "2026-09-22T04:19:55Z"
+        "buildName": "gate_0.74.13_windows_amd64.exe",
+        "downloadSize": 31625728,
+        "sha256": "ceb463d9d8ee31d925dc27e32c623939ab4ea6823422aa9691004d4cca232717",
+        "publishedAt": "2026-09-26T04:20:08Z"
       },
       {
-        "version": "v0.74.11",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.11/gate_0.74.11_windows_arm64.exe",
+        "version": "v0.74.13",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.74.13/gate_0.74.13_windows_arm64.exe",
         "platform": "windows",
         "architecture": "arm64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.74.11_windows_arm64.exe",
-        "downloadSize": 29159936,
-        "sha256": "0cff3492d799b7a8658f97c33d6e95e06099b553ca5823eec322a51b5cd9332f",
-        "publishedAt": "2026-09-22T04:19:56Z"
+        "buildName": "gate_0.74.13_windows_arm64.exe",
+        "downloadSize": 29165568,
+        "sha256": "f61ae25662c8bfed6571a03beaa6ed57b50d12bfc706df3ce8e483b5c862ad8b",
+        "publishedAt": "2026-09-26T04:20:09Z"
       }
     ]
   },
@@ -635,7 +635,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/2b77166ee61886a9bc9ab33dc9e4847fa3538b36d9ba6e5f2fa7ed90973aa748/paper-26.3-41.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/dd64988a011729e6812f2fff1be32ba5c572ecdc8890e6abc7a56aa91b53f77d/paper-26.3-49.jar",
         "channel": "ALPHA",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -659,10 +659,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 41,
-        "downloadSize": 65176386,
-        "sha256": "2b77166ee61886a9bc9ab33dc9e4847fa3538b36d9ba6e5f2fa7ed90973aa748",
-        "publishedAt": "2026-09-25T03:26:20Z"
+        "buildNumber": 49,
+        "downloadSize": 54017881,
+        "sha256": "dd64988a011729e6812f2fff1be32ba5c572ecdc8890e6abc7a56aa91b53f77d",
+        "publishedAt": "2026-09-26T20:39:03Z"
       },
       {
         "version": "26.3-rc-3",
@@ -5810,9 +5810,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 103767792,
-        "sha256": "743f7ea98dd2020ab0a5caf156d20ccdccd9900d5869512783a38dbc7d8c3b77",
-        "publishedAt": "2026-09-25T23:41:08Z",
+        "downloadSize": 103768592,
+        "sha256": "de4ef2846c42aee974611def26abc9ddc0bd78488d92199968b8591091c63b96",
+        "publishedAt": "2026-09-26T23:29:25Z",
         "experimental": true
       },
       {
@@ -5823,9 +5823,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 126666792,
-        "sha256": "48cba7ee6e255f7d2150435f58228f1ec9cab477f1dee259f47cd24b8f304b0b",
-        "publishedAt": "2026-09-25T23:41:09Z",
+        "downloadSize": 126675528,
+        "sha256": "864f606ee3c23107f53380d340cf820fbfe98a2620639729c6206edebd47dcd3",
+        "publishedAt": "2026-09-26T23:29:26Z",
         "experimental": true
       },
       {
@@ -5836,9 +5836,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 121026816,
-        "sha256": "6c49ddd876a907acc8f53ac4bb10ed78249d17250324c4c20f8e32e80ada06f0",
-        "publishedAt": "2026-09-25T23:41:13Z",
+        "downloadSize": 121028312,
+        "sha256": "3c2d3405bd071ec7883b15875f0dee32ff0a78785866f09e25fbbb3732e0617b",
+        "publishedAt": "2026-09-26T23:29:26Z",
         "experimental": true
       },
       {
@@ -5849,9 +5849,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 123089920,
-        "sha256": "a531a2678a0e8b81f46ffd6d5862e7d1dad5d20b563e86a932eb1479cbc04694",
-        "publishedAt": "2026-09-25T23:41:09Z",
+        "downloadSize": 123098624,
+        "sha256": "8e0cdca5ba675b95e1ef832f8972b3eba41b9749d6ad67fc3ec11549ac22a34b",
+        "publishedAt": "2026-09-26T23:29:26Z",
         "experimental": true
       },
       {
@@ -5862,9 +5862,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 105984000,
-        "sha256": "9da84908520867c6e80b1cb72006ea6a2d0f0925d298c0c9f2eee4f3ea4ecfaf",
-        "publishedAt": "2026-09-25T23:41:09Z",
+        "downloadSize": 105993728,
+        "sha256": "456b884603baee249f968df08b125b3dda3c83044644e719b1bc9b9f0984841c",
+        "publishedAt": "2026-09-26T23:29:25Z",
         "experimental": true
       }
     ]
@@ -6542,14 +6542,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.22-beta/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.23-beta/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "902f4b02-dff4-4e8c-91d2-b0b7eb8c5a77",
-        "buildName": "26.3.0.22-beta",
-        "projectVersion": "26.3.0.22-beta",
-        "downloadSize": 72484148,
+        "buildUuid": "b444ab4a-cce9-40c5-9024-cd982399c48d",
+        "buildName": "26.3.0.23-beta",
+        "projectVersion": "26.3.0.23-beta",
+        "downloadSize": 72481489,
         "publishedAt": "2026-09-15T11:23:02Z",
         "experimental": true
       },
@@ -6567,14 +6567,14 @@
       },
       {
         "version": "26.1.2",
-        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.109/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.111/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "e013f949-db1a-4407-a848-0deb5e123f7a",
-        "buildName": "26.1.2.109",
-        "projectVersion": "26.1.2.109",
-        "downloadSize": 72343333,
+        "buildUuid": "4a589cfb-b943-4f13-af34-12f12c834756",
+        "buildName": "26.1.2.111",
+        "projectVersion": "26.1.2.111",
+        "downloadSize": 72347846,
         "publishedAt": "2026-04-09T10:12:23Z"
       },
       {
@@ -6729,14 +6729,14 @@
       },
       {
         "version": "1.21.1",
-        "link": "https://files.mcjars.app/neoforge/1.21.1/21.1.251/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/1.21.1/21.1.252/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "dd8c104b-5b4e-4993-ad5c-ee8f34ec1a98",
-        "buildName": "21.1.251",
-        "projectVersion": "21.1.251",
-        "downloadSize": 107705932,
+        "buildUuid": "f63b8ceb-ec63-45ad-bd5b-068c788a74c5",
+        "buildName": "21.1.252",
+        "projectVersion": "21.1.252",
+        "downloadSize": 107705942,
         "publishedAt": "2024-08-08T12:24:45Z"
       },
       {
