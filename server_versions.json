@@ -6566,14 +6566,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.36-beta/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.39-beta/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "b098a87e-163f-4f9b-bab8-cd4044ee22a6",
-        "buildName": "26.3.0.36-beta",
-        "projectVersion": "26.3.0.36-beta",
-        "downloadSize": 73437513,
+        "buildUuid": "e89ee5f5-39a1-4e2b-b746-84334b9d3653",
+        "buildName": "26.3.0.39-beta",
+        "projectVersion": "26.3.0.39-beta",
+        "downloadSize": 73435955,
         "publishedAt": "2026-09-15T11:23:02Z",
         "experimental": true
       },
