@@ -635,7 +635,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/98aabc113a80b9b5e183475e839a17cf99c39c915a1f46b8f35a5e89fd5de0f1/paper-26.3-140.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/429f5748552d6ad7c1405015e9513b47679e9ff598fb17fe664875e705664758/paper-26.3-142.jar",
         "channel": "BETA",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -659,10 +659,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 140,
-        "downloadSize": 54017532,
-        "sha256": "98aabc113a80b9b5e183475e839a17cf99c39c915a1f46b8f35a5e89fd5de0f1",
-        "publishedAt": "2026-09-29T16:11:19Z"
+        "buildNumber": 142,
+        "downloadSize": 54017845,
+        "sha256": "429f5748552d6ad7c1405015e9513b47679e9ff598fb17fe664875e705664758",
+        "publishedAt": "2026-10-01T20:45:34Z"
       },
       {
         "version": "26.3-rc-3",
@@ -4036,18 +4036,6 @@
         "publishedAt": "2026-09-04T11:54:52Z"
       },
       {
-        "version": "26.3-pre-1",
-        "link": "https://versions.mcjars.app/download/fabric/26.3-pre-1/0.19.5/1.1.2.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "209d42ff-7422-42dc-b731-e5087db6cac6",
-        "buildName": "0.19.5",
-        "projectVersion": "0.19.5",
-        "downloadSize": 181844,
-        "publishedAt": "2026-09-01T11:29:01Z"
-      },
-      {
         "version": "26.2",
         "link": "https://versions.mcjars.app/download/fabric/26.2/0.19.5/1.1.2.jar",
         "isSnapshot": false,
@@ -4731,18 +4719,6 @@
         "buildName": "#1",
         "downloadSize": 62292880,
         "publishedAt": "2026-09-04T13:54:52Z",
-        "experimental": true
-      },
-      {
-        "version": "26.3-pre-1",
-        "link": "https://piston-data.mojang.com/v1/objects/1e6e3a06cc13cf6975a0921b272ab544798d4b06/server.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "8542bfad-981c-4822-bb94-676c53931bf0",
-        "buildName": "#1",
-        "downloadSize": 62286884,
-        "publishedAt": "2026-09-01T13:29:01Z",
         "experimental": true
       },
       {
@@ -5982,19 +5958,6 @@
         "experimental": true
       },
       {
-        "version": "26.3-pre-1",
-        "link": "https://piston-data.mojang.com/v1/objects/1e6e3a06cc13cf6975a0921b272ab544798d4b06/server.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "4b42f4f6-c3fb-4bec-86e0-1a02b29e51a5",
-        "buildName": "0.31.0-beta.4",
-        "projectVersion": "0.31.0-beta.4",
-        "downloadSize": 62286884,
-        "publishedAt": "2026-09-01T11:29:01Z",
-        "experimental": true
-      },
-      {
         "version": "26.2",
         "link": "https://piston-data.mojang.com/v1/objects/823e2250d24b3ddac457a60c92a6a941943fcd6a/server.jar",
         "isSnapshot": false,
@@ -6566,14 +6529,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.39-beta/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.40-beta/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "e89ee5f5-39a1-4e2b-b746-84334b9d3653",
-        "buildName": "26.3.0.39-beta",
-        "projectVersion": "26.3.0.39-beta",
-        "downloadSize": 73435955,
+        "buildUuid": "f7f20738-c78f-43b6-ac84-f8fb16a2a690",
+        "buildName": "26.3.0.40-beta",
+        "projectVersion": "26.3.0.40-beta",
+        "downloadSize": 73435439,
         "publishedAt": "2026-09-15T11:23:02Z",
         "experimental": true
       },
