@@ -635,7 +635,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/429f5748552d6ad7c1405015e9513b47679e9ff598fb17fe664875e705664758/paper-26.3-142.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/32cf4a93545e218525bc4536b017c6b5d5085d27d449d64266a6b23ba4d0cbb9/paper-26.3-143.jar",
         "channel": "BETA",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -659,10 +659,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 142,
-        "downloadSize": 54017845,
-        "sha256": "429f5748552d6ad7c1405015e9513b47679e9ff598fb17fe664875e705664758",
-        "publishedAt": "2026-10-01T20:45:34Z"
+        "buildNumber": 143,
+        "downloadSize": 54017253,
+        "sha256": "32cf4a93545e218525bc4536b017c6b5d5085d27d449d64266a6b23ba4d0cbb9",
+        "publishedAt": "2026-10-02T14:13:32Z"
       },
       {
         "version": "26.3-rc-3",
@@ -2753,8 +2753,20 @@
     "isPaperclip": true,
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/leaf.svg",
-    "latestVersion": "26.2",
+    "latestVersion": "26.3",
     "downloadLinks": [
+      {
+        "version": "26.3",
+        "link": "https://files.mcjars.app/leaf/26.3/1/server.jar",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "a0982569-f70d-4e69-a0d6-7afa1003cde7",
+        "buildName": "#1",
+        "downloadSize": 81616756,
+        "publishedAt": "2026-10-02T13:07:19.133Z",
+        "experimental": true
+      },
       {
         "version": "26.2",
         "link": "https://files.mcjars.app/leaf/26.2/123/server.jar",
@@ -6529,14 +6541,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.40-beta/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.43-beta/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "f7f20738-c78f-43b6-ac84-f8fb16a2a690",
-        "buildName": "26.3.0.40-beta",
-        "projectVersion": "26.3.0.40-beta",
-        "downloadSize": 73435439,
+        "buildUuid": "f472efb1-13bf-4b8b-9e34-2cc12a2aecc3",
+        "buildName": "26.3.0.43-beta",
+        "projectVersion": "26.3.0.43-beta",
+        "downloadSize": 73437922,
         "publishedAt": "2026-09-15T11:23:02Z",
         "experimental": true
       },
@@ -6555,14 +6567,14 @@
       },
       {
         "version": "26.1.2",
-        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.91/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.114/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "b9725896-2f9c-48ef-a150-8d757bcdba42",
-        "buildName": "26.1.2.91",
-        "projectVersion": "26.1.2.91",
-        "downloadSize": 72315182,
+        "buildUuid": "21a702d2-4c8c-415b-ac2c-c62a46c5231c",
+        "buildName": "26.1.2.114",
+        "projectVersion": "26.1.2.114",
+        "downloadSize": 72347715,
         "publishedAt": "2026-04-09T10:12:23Z"
       },
       {
