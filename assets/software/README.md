@@ -16,6 +16,7 @@ Do not recolor, distort, or imply endorsement by the upstream projects.
 | ASPaper | `aspaper.svg` | `https://infernalsuite.com/img/logo.svg` | Infernal Suite mark; no ASPaper-specific mark found. |
 | Purpur | `purpur.svg` | `https://purpurmc.org/images/purpur.svg` | Official Purpur site asset. |
 | Folia | `folia.svg` | `https://raw.githubusercontent.com/PaperMC/website/main/src/assets/brand/folia.svg` | Project-owned PaperMC website asset, colored green for contrast across light and dark UI surfaces. |
+| Canvas | `canvas.png` | `https://canvasmc.io/logo.png` | Official CanvasMC website logo. |
 | Fabric | `fabric.png` | `https://docs.fabricmc.net/logo.png` | Official Fabric docs asset. |
 | Quilt | `quilt.png` | `https://raw.githubusercontent.com/QuiltMC/quiltmc.org/main/public/assets/img/logo-square.png` | Official QuiltMC website asset. |
 | NeoForge | `neoforge.png` | `https://avatars.githubusercontent.com/u/138629134?v=4` | Official NeoForged GitHub organization avatar (square icon). |

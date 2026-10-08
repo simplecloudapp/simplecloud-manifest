@@ -3953,6 +3953,83 @@
     ]
   },
   {
+    "name": "Canvas",
+    "type": "SERVER",
+    "description": "A Folia fork with region threading, performance improvements, and an expanded plugin API. Plugins must explicitly support Folia.",
+    "isPaperclip": true,
+    "isBinary": false,
+    "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/canvas.png",
+    "latestVersion": "26.3",
+    "downloadLinks": [
+      {
+        "version": "26.3",
+        "link": "https://jenkins.canvasmc.io/job/Canvas/971/artifact/canvas-server/build/libs/canvas-build.971.jar",
+        "channel": "BETA",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "javaRecommendedFlags": [
+          "--add-modules=jdk.incubator.vector"
+        ],
+        "buildName": "canvas-build.971.jar",
+        "buildNumber": 971,
+        "publishedAt": "2026-10-06T18:36:02.365Z",
+        "experimental": true
+      },
+      {
+        "version": "26.2",
+        "link": "https://jenkins.canvasmc.io/job/Canvas/962/artifact/canvas-server/build/libs/canvas-build.962.jar",
+        "channel": "STABLE",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "javaRecommendedFlags": [
+          "--add-modules=jdk.incubator.vector"
+        ],
+        "buildName": "canvas-build.962.jar",
+        "buildNumber": 962,
+        "publishedAt": "2026-09-29T22:07:12.613Z"
+      },
+      {
+        "version": "26.1.2",
+        "link": "https://jenkins.canvasmc.io/job/Canvas/876/artifact/canvas-server/build/libs/canvas-build.876.jar",
+        "channel": "STABLE",
+        "isSnapshot": false,
+        "javaMinimum": 25,
+        "javaRecommendedFlags": [
+          "--add-modules=jdk.incubator.vector"
+        ],
+        "buildName": "canvas-build.876.jar",
+        "buildNumber": 876,
+        "publishedAt": "2026-07-25T21:42:33.175Z"
+      },
+      {
+        "version": "1.21.11",
+        "link": "https://jenkins.canvasmc.io/job/Canvas/794/artifact/canvas-server/build/libs/canvas-build.794.jar",
+        "channel": "STABLE",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "javaRecommendedFlags": [
+          "--add-modules=jdk.incubator.vector"
+        ],
+        "buildName": "canvas-build.794.jar",
+        "buildNumber": 794,
+        "publishedAt": "2026-06-06T14:11:47.135Z"
+      },
+      {
+        "version": "1.21.8",
+        "link": "https://jenkins.canvasmc.io/job/Canvas/603/artifact/canvas-server/build/libs/canvas-build.603.jar",
+        "channel": "STABLE",
+        "isSnapshot": false,
+        "javaMinimum": 21,
+        "javaRecommendedFlags": [
+          "--add-modules=jdk.incubator.vector"
+        ],
+        "buildName": "canvas-build.603.jar",
+        "buildNumber": 603,
+        "publishedAt": "2025-12-29T18:22:42.939Z"
+      }
+    ]
+  },
+  {
     "name": "Fabric",
     "type": "SERVER",
     "description": "A lightweight mod loader for running Fabric mods on a Minecraft server. Use it for modded gameplay rather than Bukkit or Paper plugins.",

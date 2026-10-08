@@ -18,6 +18,9 @@ platforms:
   # Leaf is a Paper fork, map to Paper
   leaf: paper
 
+  # Canvas is a Folia fork, map to Folia
+  canvas: folia
+
   # FlameCord is a BungeeCord fork, map to BungeeCord
   flamecord: bungeecord
 
