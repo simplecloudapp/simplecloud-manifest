@@ -1,0 +1,234 @@
+# SimpleCloud self-hosting stack.
+# Run setup.sh first: it writes the .env file this stack reads.
+# Docs: https://simplecloud.app/docs/en/manual/setup/self-hosting
+
+name: simplecloud
+
+services:
+  caddy:
+    image: caddy:2.11-alpine
+    restart: unless-stopped
+    ports: ["80:80", "443:443", "443:443/udp"]
+    configs:
+      - source: caddyfile
+        target: /etc/caddy/Caddyfile
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+
+  dashboard:
+    image: ghcr.io/simplecloudapp/platform-dashboard:latest
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: "3000"
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/sc_auth?sslmode=disable
+      SIMPLECLOUD_API_URL: http://controller:1337
+      AUTH_INTERNAL_URL: http://auth:3001
+      AUTH_INTERNAL_SECRET: ${AUTH_INTERNAL_SECRET}
+      NETWORK_CREDENTIALS_SECRET: ${NETWORK_CREDENTIALS_SECRET}
+      BETTER_AUTH_URL: https://auth.${DOMAIN}
+      BETTER_AUTH_COOKIE_DOMAIN: .${DOMAIN}
+      PASSKEY_RP_ID: ${DOMAIN}
+      SIMPLECLOUD_DASHBOARD_URL: https://dash.${DOMAIN}
+      USER_IP_TRACKING_ENABLED: "false"
+      VITE_DASHBOARD_URL: https://dash.${DOMAIN}
+      VITE_AUTH_URL: https://auth.${DOMAIN}
+      VITE_SIMPLECLOUD_API_URL: https://controller.${DOMAIN}
+      VITE_SIMPLECLOUD_NATS_URL: wss://nats.${DOMAIN}
+      VITE_SERVERHOST_GATEWAY_BASE_URL: https://serverhosts.${DOMAIN}/v0/serverhosts/{slug}
+    depends_on: [auth, controller]
+
+  auth:
+    image: ghcr.io/simplecloudapp/platform-auth:latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/sc_auth?sslmode=disable
+      SIMPLECLOUD_API_URL: http://controller:1337
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      AUTH_INTERNAL_SECRET: ${AUTH_INTERNAL_SECRET}
+      NETWORK_CREDENTIALS_SECRET: ${NETWORK_CREDENTIALS_SECRET}
+      BETTER_AUTH_URL: https://auth.${DOMAIN}
+      BETTER_AUTH_COOKIE_DOMAIN: .${DOMAIN}
+      PASSKEY_RP_ID: ${DOMAIN}
+      SIMPLECLOUD_DASHBOARD_URL: https://dash.${DOMAIN}
+      AUTH_TRUSTED_ORIGINS: https://dash.${DOMAIN},https://auth.${DOMAIN}
+      JWT_ISSUER: https://auth.${DOMAIN}
+      JWT_AUDIENCE: https://auth.${DOMAIN}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
+      DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET:-}
+    depends_on:
+      postgres: {condition: service_healthy}
+
+  controller:
+    image: ghcr.io/simplecloudapp/platform-controller:latest
+    restart: unless-stopped
+    environment:
+      HTTP_PORT: "1337"
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/sc_controller?sslmode=disable
+      ENVIRONMENT_VARIABLE_ENCRYPTION_KEY: ${ENVIRONMENT_VARIABLE_ENCRYPTION_KEY}
+      NATS_URL: nats://nats:4222
+      NATS_USER_NKEY_FILE: /run/nats-user.seed
+      NATS_ISSUER_PRIVATE_KEY: ${NATS_ISSUER_SEED}
+      VALKEY_URL: valkey:6379
+      VALKEY_PASSWORD: ${VALKEY_PASSWORD}
+      AUTH_SERVER_URL: http://auth:3001
+      AUTH_JWT_ALLOWED_URLS: https://auth.${DOMAIN}
+      CLICKHOUSE_DSN: clickhouse://simplecloud:${CLICKHOUSE_PASSWORD}@clickhouse:9000/simplecloud
+      OTEL_EXPORTER_OTLP_ENDPOINT: otel-collector:4317
+    configs:
+      - source: nats_user_seed
+        target: /run/nats-user.seed
+    depends_on:
+      postgres: {condition: service_healthy}
+      clickhouse: {condition: service_healthy}
+      nats: {condition: service_started}
+      valkey: {condition: service_started}
+      otel-collector: {condition: service_started}
+
+  gateway:
+    image: ghcr.io/simplecloudapp/serverhost-gateway:latest
+    restart: unless-stopped
+    environment:
+      CONTROLLER_URL: http://controller:1337
+      SERVERHOST_GATEWAY_ADDR: :8081
+      SERVERHOST_GATEWAY_ALLOWED_ORIGINS: https://dash.${DOMAIN}
+    depends_on: [controller]
+
+  nats:
+    image: nats:2.11-alpine
+    restart: unless-stopped
+    command: [--config, /etc/nats/nats.conf]
+    configs:
+      - source: nats_conf
+        target: /etc/nats/nats.conf
+
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: sc_controller
+    configs:
+      - source: postgres_init
+        target: /docker-entrypoint-initdb.d/10-auth.sql
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U postgres -d sc_controller]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    restart: unless-stopped
+    command: [valkey-server, --requirepass, "${VALKEY_PASSWORD}"]
+    volumes:
+      - valkey:/data
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.8
+    restart: unless-stopped
+    environment:
+      CLICKHOUSE_DB: simplecloud
+      CLICKHOUSE_USER: simplecloud
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+    ulimits:
+      nofile: {soft: 262144, hard: 262144}
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+    healthcheck:
+      test: [CMD-SHELL, 'clickhouse-client --user simplecloud --password "$${CLICKHOUSE_PASSWORD}" --query "SELECT 1"']
+      interval: 3s
+      timeout: 5s
+      retries: 40
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.147.0
+    restart: unless-stopped
+    command: [--config=/etc/otel.yaml]
+    configs:
+      - source: otel_config
+        target: /etc/otel.yaml
+    depends_on:
+      clickhouse: {condition: service_healthy}
+
+configs:
+  caddyfile:
+    content: |
+      dash.${DOMAIN} {
+        reverse_proxy dashboard:3000
+      }
+      auth.${DOMAIN} {
+        reverse_proxy auth:3001
+      }
+      controller.${DOMAIN} {
+        reverse_proxy controller:1337
+      }
+      nats.${DOMAIN} {
+        reverse_proxy nats:9222
+      }
+      serverhosts.${DOMAIN} {
+        reverse_proxy gateway:8081
+      }
+
+  nats_conf:
+    content: |
+      port: 4222
+      websocket {
+        port: 9222
+        no_tls: true
+      }
+      authorization {
+        auth_callout {
+          issuer: ${NATS_ISSUER_PUBLIC_KEY}
+          auth_users: [${NATS_USER_PUBLIC_KEY}]
+          account: CLOUD
+        }
+      }
+      accounts {
+        CLOUD: { users: [{ nkey: ${NATS_USER_PUBLIC_KEY} }] }
+        SYS: {}
+      }
+      system_account: SYS
+      jetstream { enabled: false }
+
+  nats_user_seed:
+    content: ${NATS_USER_SEED}
+
+  postgres_init:
+    content: CREATE DATABASE sc_auth;
+
+  otel_config:
+    content: |
+      receivers:
+        otlp:
+          protocols:
+            grpc: {endpoint: 0.0.0.0:4317}
+      processors:
+        batch: {}
+      exporters:
+        clickhouse:
+          endpoint: tcp://clickhouse:9000
+          database: simplecloud
+          username: simplecloud
+          password: ${CLICKHOUSE_PASSWORD}
+          create_schema: true
+          ttl: 72h
+      service:
+        pipelines:
+          metrics: {receivers: [otlp], processors: [batch], exporters: [clickhouse]}
+          logs: {receivers: [otlp], processors: [batch], exporters: [clickhouse]}
+          traces: {receivers: [otlp], processors: [batch], exporters: [clickhouse]}
+
+volumes:
+  caddy-data:
+  caddy-config:
+  postgres:
+  valkey:
+  clickhouse:
