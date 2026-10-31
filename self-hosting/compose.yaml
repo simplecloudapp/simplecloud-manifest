@@ -4,6 +4,14 @@
 
 name: simplecloud
 
+# The service URLs the dashboard and auth hand to the browser.
+x-public-urls: &public-urls
+  VITE_DASHBOARD_URL: https://dash.${DOMAIN}
+  VITE_AUTH_URL: https://auth.${DOMAIN}
+  VITE_SIMPLECLOUD_API_URL: https://controller.${DOMAIN}
+  VITE_SIMPLECLOUD_NATS_URL: wss://nats.${DOMAIN}
+  VITE_SERVERHOST_GATEWAY_BASE_URL: https://serverhosts.${DOMAIN}/v0/serverhosts/{slug}
+
 services:
   caddy:
     image: caddy:2.11-alpine
@@ -34,11 +42,7 @@ services:
       USER_IP_TRACKING_ENABLED: "false"
       RESEND_API_KEY: ${RESEND_API_KEY:-}
       EMAIL_FROM: ${EMAIL_FROM:-}
-      VITE_DASHBOARD_URL: https://dash.${DOMAIN}
-      VITE_AUTH_URL: https://auth.${DOMAIN}
-      VITE_SIMPLECLOUD_API_URL: https://controller.${DOMAIN}
-      VITE_SIMPLECLOUD_NATS_URL: wss://nats.${DOMAIN}
-      VITE_SERVERHOST_GATEWAY_BASE_URL: https://serverhosts.${DOMAIN}/v0/serverhosts/{slug}
+      <<: *public-urls
     depends_on:
       auth-migrations: {condition: service_completed_successfully}
       auth: {condition: service_started}
@@ -76,6 +80,7 @@ services:
       DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET:-}
       RESEND_API_KEY: ${RESEND_API_KEY:-}
       EMAIL_FROM: ${EMAIL_FROM:-}
+      <<: *public-urls
     depends_on:
       auth-migrations: {condition: service_completed_successfully}
 
