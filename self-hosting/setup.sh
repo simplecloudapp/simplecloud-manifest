@@ -45,6 +45,10 @@ GITHUB_CLIENT_SECRET=
 DISCORD_CLIENT_ID=
 DISCORD_CLIENT_SECRET=
 
+# Email sign-in and team invites (Resend). Optional.
+RESEND_API_KEY=
+EMAIL_FROM=
+
 # Generated secrets. Keep this file private.
 POSTGRES_PASSWORD=$(hex)
 VALKEY_PASSWORD=$(hex)

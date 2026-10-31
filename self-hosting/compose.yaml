@@ -32,6 +32,8 @@ services:
       PASSKEY_RP_ID: ${DOMAIN}
       SIMPLECLOUD_DASHBOARD_URL: https://dash.${DOMAIN}
       USER_IP_TRACKING_ENABLED: "false"
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-}
       VITE_DASHBOARD_URL: https://dash.${DOMAIN}
       VITE_AUTH_URL: https://auth.${DOMAIN}
       VITE_SIMPLECLOUD_API_URL: https://controller.${DOMAIN}
@@ -72,6 +74,8 @@ services:
       GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
       DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-}
     depends_on:
       auth-migrations: {condition: service_completed_successfully}
 
