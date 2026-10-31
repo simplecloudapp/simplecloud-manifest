@@ -37,7 +37,18 @@ services:
       VITE_SIMPLECLOUD_API_URL: https://controller.${DOMAIN}
       VITE_SIMPLECLOUD_NATS_URL: wss://nats.${DOMAIN}
       VITE_SERVERHOST_GATEWAY_BASE_URL: https://serverhosts.${DOMAIN}/v0/serverhosts/{slug}
-    depends_on: [auth, controller]
+    depends_on:
+      auth-migrations: {condition: service_completed_successfully}
+      auth: {condition: service_started}
+      controller: {condition: service_started}
+
+  auth-migrations:
+    image: ghcr.io/simplecloudapp/platform-auth:latest
+    command: [bun, --no-install, scripts/migrate.mjs]
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/sc_auth?sslmode=disable
+    depends_on:
+      postgres: {condition: service_healthy}
 
   auth:
     image: ghcr.io/simplecloudapp/platform-auth:latest
@@ -62,7 +73,7 @@ services:
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
       DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET:-}
     depends_on:
-      postgres: {condition: service_healthy}
+      auth-migrations: {condition: service_completed_successfully}
 
   controller:
     image: ghcr.io/simplecloudapp/platform-controller:latest
@@ -84,10 +95,18 @@ services:
       - source: nats_user_seed
         target: /run/nats-user.seed
     depends_on:
-      postgres: {condition: service_healthy}
-      clickhouse: {condition: service_healthy}
+      controller-migrations: {condition: service_completed_successfully}
       nats: {condition: service_started}
       valkey: {condition: service_started}
+
+  controller-migrations:
+    image: ghcr.io/simplecloudapp/platform-controller-migrations:latest
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/sc_controller?sslmode=disable
+      CLICKHOUSE_URL: http://simplecloud:${CLICKHOUSE_PASSWORD}@clickhouse:8123/?database=simplecloud
+    depends_on:
+      postgres: {condition: service_healthy}
+      clickhouse: {condition: service_healthy}
       otel-collector: {condition: service_started}
 
   gateway:
