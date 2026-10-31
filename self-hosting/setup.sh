@@ -63,5 +63,13 @@ NATS_USER_SEED=$user_seed
 NATS_USER_PUBLIC_KEY=$user_public
 EOF
 
-echo "Created compose.yaml and .env for $domain."
-echo "Add a login provider to .env, then run: docker compose up -d"
+cat <<EOF
+Created compose.yaml and .env for $domain.
+
+Add at least one login method to .env. OAuth callback URLs:
+  Google:  https://auth.$domain/api/auth/callback/google
+  GitHub:  https://auth.$domain/api/auth/callback/github
+  Discord: https://auth.$domain/api/auth/callback/discord
+
+Then run: docker compose up -d
+EOF
