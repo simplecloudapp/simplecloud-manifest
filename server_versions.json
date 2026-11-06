@@ -518,142 +518,142 @@
     "isPaperclip": false,
     "isBinary": true,
     "iconUrl": "https://raw.githubusercontent.com/minekube/gate/master/.web/docs/public/logo_transparent.png",
-    "latestVersion": "v0.76.0",
+    "latestVersion": "v0.76.2",
     "downloadLinks": [
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_darwin_amd64",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_darwin_amd64",
         "platform": "darwin",
         "architecture": "amd64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_darwin_amd64",
+        "buildName": "gate_0.76.2_darwin_amd64",
         "downloadSize": 32170880,
-        "sha256": "0b6b93bc2faf68f2de670fa4aff5f73eb579d390f9842d32dcae66caaf9f4610",
-        "publishedAt": "2026-11-04T04:19:43Z"
+        "sha256": "5be38b901c788c5a6c9ec9d323a8f586f2030da6791b5b66d3062754bebbbe37",
+        "publishedAt": "2026-11-05T04:19:47Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_darwin_arm64",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_darwin_arm64",
         "platform": "darwin",
         "architecture": "arm64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_darwin_arm64",
+        "buildName": "gate_0.76.2_darwin_arm64",
         "downloadSize": 30336738,
-        "sha256": "5b3a7f4aa692368686dc14db2d51652b91c9d3f76ee5d24d0d22a166634a9a63",
-        "publishedAt": "2026-11-04T04:19:43Z"
+        "sha256": "240ba56a4c72bf98ea2bf562cfdbdae1618ed65c285ce4af8b2630752a523e0e",
+        "publishedAt": "2026-11-05T04:19:47Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_linux_386",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_linux_386",
         "platform": "linux",
         "architecture": "386",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_linux_386",
+        "buildName": "gate_0.76.2_linux_386",
         "downloadSize": 29036807,
-        "sha256": "6a93af6248d123268db87de7f2311c7c28f674bba0629f09792ca583a750a550",
-        "publishedAt": "2026-11-04T04:19:42Z"
+        "sha256": "828b804bfd3bb3a89828b5722194222dc556f7a0b8ad5a67658b5772e7ee408a",
+        "publishedAt": "2026-11-05T04:19:47Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_linux_386_musl",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_linux_386_musl",
         "platform": "linux",
         "architecture": "386",
         "variant": "musl",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_linux_386_musl",
+        "buildName": "gate_0.76.2_linux_386_musl",
         "downloadSize": 24395938,
-        "sha256": "f1c465972d5505e3dc48190368acad72b0ea38f1d2c4e539e13955e3fc83408e",
-        "publishedAt": "2026-11-04T04:19:44Z"
+        "sha256": "34d4e10f2a2d26a24d5dd15eb3c017e470ef5dfb92df469cdabd61f1a941d06e",
+        "publishedAt": "2026-11-05T04:19:47Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_linux_amd64",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_linux_amd64",
         "platform": "linux",
         "architecture": "amd64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_linux_amd64",
+        "buildName": "gate_0.76.2_linux_amd64",
         "downloadSize": 31305993,
-        "sha256": "fcfa2539d86787c35024f7ef07da19a7562907f491b6ef996c4045713c3e9758",
-        "publishedAt": "2026-11-04T04:19:43Z"
+        "sha256": "a2bf93b51110ac736f5042c3afb900fef8e9ed0167b8ba9d32770d075bc4821f",
+        "publishedAt": "2026-11-05T04:19:47Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_linux_amd64_musl",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_linux_amd64_musl",
         "platform": "linux",
         "architecture": "amd64",
         "variant": "musl",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_linux_amd64_musl",
+        "buildName": "gate_0.76.2_linux_amd64_musl",
         "downloadSize": 26149026,
-        "sha256": "11560055e70512723dfeeea15675f7283c0f5aec20d1c2138c173498d24c84bd",
-        "publishedAt": "2026-11-04T04:19:44Z"
+        "sha256": "144e6cbfe9845c9f54f16d4662ef2184bdf519030450eb59447a619a103a8963",
+        "publishedAt": "2026-11-05T04:19:48Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_linux_arm64",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_linux_arm64",
         "platform": "linux",
         "architecture": "arm64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_linux_arm64",
+        "buildName": "gate_0.76.2_linux_arm64",
         "downloadSize": 29294857,
-        "sha256": "7e54955b52c09b9ab2b81b591766ac7ee8099147d44ed4320d0cbceaae47f22e",
-        "publishedAt": "2026-11-04T04:19:44Z"
+        "sha256": "8e6ef65f97190035d58c44bf883941bbe2ae6948b185fd483f9d200ee2decf88",
+        "publishedAt": "2026-11-05T04:19:49Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_linux_arm64_musl",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_linux_arm64_musl",
         "platform": "linux",
         "architecture": "arm64",
         "variant": "musl",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_linux_arm64_musl",
+        "buildName": "gate_0.76.2_linux_arm64_musl",
         "downloadSize": 24445090,
-        "sha256": "edbc9268c8fabc0b45da3699122c2684ebf05137711d7a5481a8043bde80ac50",
-        "publishedAt": "2026-11-04T04:19:44Z"
+        "sha256": "85cd3e0880fa3919070e6e719e67597d07083fc350f23ad99ff873d05340d1b3",
+        "publishedAt": "2026-11-05T04:19:48Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_windows_386.exe",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_windows_386.exe",
         "platform": "windows",
         "architecture": "386",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_windows_386.exe",
+        "buildName": "gate_0.76.2_windows_386.exe",
         "downloadSize": 29671936,
-        "sha256": "ac095a4b8a0aa4934135f728f19d89eb6feee074136c5f9399c27db998a1200e",
-        "publishedAt": "2026-11-04T04:19:45Z"
+        "sha256": "25951a66142dd6f35b6fa2b83792a0f5fbd06e94cca7231a0a46650d0e063e09",
+        "publishedAt": "2026-11-05T04:19:49Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_windows_amd64.exe",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_windows_amd64.exe",
         "platform": "windows",
         "architecture": "amd64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_windows_amd64.exe",
+        "buildName": "gate_0.76.2_windows_amd64.exe",
         "downloadSize": 32056320,
-        "sha256": "e56ae23be5a3cfe61c75ee00a79e03d78bab14da0d9c7e9243b4e994170360e0",
-        "publishedAt": "2026-11-04T04:19:45Z"
+        "sha256": "487cf257cc5f6f8d28c129a0ad2b039a0cdcc15f98ce7eec06dd076eb410f781",
+        "publishedAt": "2026-11-05T04:19:49Z"
       },
       {
-        "version": "v0.76.0",
-        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.0/gate_0.76.0_windows_arm64.exe",
+        "version": "v0.76.2",
+        "link": "https://github.com/simplecloudapp/simplecloud-gate/releases/download/v0.76.2/gate_0.76.2_windows_arm64.exe",
         "platform": "windows",
         "architecture": "arm64",
         "channel": "STABLE",
         "isSnapshot": false,
-        "buildName": "gate_0.76.0_windows_arm64.exe",
+        "buildName": "gate_0.76.2_windows_arm64.exe",
         "downloadSize": 29560832,
-        "sha256": "5b1c83c1d963dde07b744627bcff6eb3e66d2dfaadab0dfadb0dac5e6f4288e7",
-        "publishedAt": "2026-11-04T04:19:45Z"
+        "sha256": "51cb7c63f85874a8eb6f4bf33f94d57a195eead3f3999cacfaee9d589f8ec74a",
+        "publishedAt": "2026-11-05T04:19:50Z"
       }
     ]
   },
@@ -668,7 +668,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/ea1081663127a4256ca8ce500899a44b896c3a834a8bfac65d1e58ee1f1bee13/paper-26.3-241.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/650805b63174770b557d83bbfcdd16ec39531124b7b850589bad59bc4b6a0af8/paper-26.3-243.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -692,10 +692,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 241,
-        "downloadSize": 55268063,
-        "sha256": "ea1081663127a4256ca8ce500899a44b896c3a834a8bfac65d1e58ee1f1bee13",
-        "publishedAt": "2026-11-04T11:40:42Z"
+        "buildNumber": 243,
+        "downloadSize": 55279926,
+        "sha256": "650805b63174770b557d83bbfcdd16ec39531124b7b850589bad59bc4b6a0af8",
+        "publishedAt": "2026-11-05T23:26:23Z"
       },
       {
         "version": "26.3-rc-3",
@@ -2791,26 +2791,26 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/leaf/26.3/18/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.3/20/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "b8e43a11-9fa9-4709-91d9-a3fdca3d2d30",
-        "buildName": "#18",
-        "downloadSize": 82865974,
-        "publishedAt": "2026-11-03T07:20:51.087Z",
+        "buildUuid": "a5fc26bd-82f6-4a5e-aee6-b135e03bbf0a",
+        "buildName": "#20",
+        "downloadSize": 30308717,
+        "publishedAt": "2026-11-05T08:07:25.522Z",
         "experimental": true
       },
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/127/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/129/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "9138a2cc-a1cf-4e94-88e3-1353816750fe",
-        "buildName": "#127",
-        "downloadSize": 85225451,
-        "publishedAt": "2026-11-01T22:30:17.275Z",
+        "buildUuid": "a2eb962e-47b4-4f98-be29-da5eb4740390",
+        "buildName": "#129",
+        "downloadSize": 34769062,
+        "publishedAt": "2026-11-05T08:03:28.586Z",
         "experimental": true
       },
       {
@@ -5927,9 +5927,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 100061328,
-        "sha256": "f0c572e5d0105bcbf1533eb505034fd23f8ef3c2f9be3821843186fb2b84a4cf",
-        "publishedAt": "2026-11-04T04:44:03Z",
+        "downloadSize": 100489808,
+        "sha256": "d0b1625ce2dd0a60f68ab2c5b3391bd01fbcbc589abece496afee1d191a65407",
+        "publishedAt": "2026-11-05T04:30:46Z",
         "experimental": true
       },
       {
@@ -5940,9 +5940,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 126882752,
-        "sha256": "4e13b5523740ea334c2fd2de8ee76dac4b8448e9a83942631327acc3fc0232ec",
-        "publishedAt": "2026-11-04T04:44:04Z",
+        "downloadSize": 127925768,
+        "sha256": "fc9c06288be28b82f06399df0deba155a74e98d3058dda233ddef566e29c5467",
+        "publishedAt": "2026-11-05T04:30:47Z",
         "experimental": true
       },
       {
@@ -5953,9 +5953,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 122870392,
-        "sha256": "c8498f9c9b201ca1c91462657e7c95496ed88273ec3499aeb1ff4ba563bcdf9d",
-        "publishedAt": "2026-11-04T04:44:05Z",
+        "downloadSize": 123536648,
+        "sha256": "bfa7267e1269805a270a8dc5f9375009c66cabfe57efa3f090fbd992eb5c383c",
+        "publishedAt": "2026-11-05T04:30:48Z",
         "experimental": true
       },
       {
@@ -5966,9 +5966,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 109914624,
-        "sha256": "ff229c1398232396b0458304c2488bf63f21ee547a46bbb0a7961701b58bbe90",
-        "publishedAt": "2026-11-04T04:44:04Z",
+        "downloadSize": 110793216,
+        "sha256": "64ff577d21ab862f5859ec8788f861b10e4e89598499d371f2be84d8b133d65a",
+        "publishedAt": "2026-11-05T04:30:47Z",
         "experimental": true
       },
       {
@@ -5979,9 +5979,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 93749248,
-        "sha256": "8f8a760d253d3feab050e60531b1a3f5fb34ff0dd574fd97bfed800beeb56e2b",
-        "publishedAt": "2026-11-04T04:44:03Z",
+        "downloadSize": 94346240,
+        "sha256": "34f783ffa651f0478108e92f70b80d96fde4bbd6cfba6857ced7e8257e3dfdfe",
+        "publishedAt": "2026-11-05T04:30:46Z",
         "experimental": true
       }
     ]
@@ -5994,19 +5994,33 @@
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/quilt.png",
     "latestVersion": "26.3",
-    "latestSnapshot": "26.4-snapshot-6",
+    "latestSnapshot": "26.4-snapshot-7",
     "downloadLinks": [
+      {
+        "version": "26.4-snapshot-7",
+        "link": "https://piston-data.mojang.com/v1/objects/0870c02432ef2391ba7c586c3e113e98406aea20/server.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "57264701-44fc-46f2-b63c-103b1ba0608b",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
+        "downloadSize": 63476160,
+        "publishedAt": "2026-11-03T13:08:56Z",
+        "experimental": true
+      },
       {
         "version": "26.4-snapshot-6",
         "link": "https://piston-data.mojang.com/v1/objects/a022ed5cfa7e7f8a52c91b21ecf5a976b5a516f9/server.jar",
         "isSnapshot": true,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "2caf237b-1732-4125-a11f-8377ddf7ed25",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "75d3f537-ea4e-4cba-9147-5e9adc355669",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 63440656,
-        "publishedAt": "2026-10-27T13:40:29Z"
+        "publishedAt": "2026-10-27T13:40:29Z",
+        "experimental": true
       },
       {
         "version": "26.4-snapshot-5",
@@ -6014,11 +6028,12 @@
         "isSnapshot": true,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "10d50e3b-f4ad-4d1d-b65b-8212aaa93445",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "661f87d6-fbeb-422f-9ba5-67fb4bb9375c",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 62548082,
-        "publishedAt": "2026-10-20T12:15:06Z"
+        "publishedAt": "2026-10-20T12:15:06Z",
+        "experimental": true
       },
       {
         "version": "26.4-snapshot-4",
@@ -6026,11 +6041,12 @@
         "isSnapshot": true,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "04c76538-4eb4-4535-86ed-d1e2bb6e509b",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "8721a2f3-c067-48ff-8d8b-94852469668d",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 62483987,
-        "publishedAt": "2026-10-13T12:05:46Z"
+        "publishedAt": "2026-10-13T12:05:46Z",
+        "experimental": true
       },
       {
         "version": "26.4-snapshot-3",
@@ -6038,11 +6054,12 @@
         "isSnapshot": true,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "669b279f-7977-48f9-bbb5-cb516efb6225",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "34749933-0ac5-4d29-93c2-f31183df3be9",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 62458029,
-        "publishedAt": "2026-10-06T12:54:26Z"
+        "publishedAt": "2026-10-06T12:54:26Z",
+        "experimental": true
       },
       {
         "version": "26.3",
@@ -6050,11 +6067,12 @@
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "8490af9a-2c0e-4dbc-a91e-99c35859478c",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "9a232fc9-15d6-4724-90e9-051305d28571",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 62294556,
-        "publishedAt": "2026-09-15T11:23:02Z"
+        "publishedAt": "2026-09-15T11:23:02Z",
+        "experimental": true
       },
       {
         "version": "26.2",
@@ -6062,11 +6080,12 @@
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "1853a6da-18e4-47ca-84db-124f7b7cca4e",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "e93bba24-288c-49b7-8211-8bdd878910af",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 60894273,
-        "publishedAt": "2026-06-16T12:03:33Z"
+        "publishedAt": "2026-06-16T12:03:33Z",
+        "experimental": true
       },
       {
         "version": "26.1.2",
@@ -6074,11 +6093,12 @@
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "e6a17205-1ea0-4cf6-b7f0-2c3dfb30594d",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "142901da-b281-41bc-a5fc-20f285824c1d",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 60417480,
-        "publishedAt": "2026-04-09T10:12:23Z"
+        "publishedAt": "2026-04-09T10:12:23Z",
+        "experimental": true
       },
       {
         "version": "26.1.1",
@@ -6086,11 +6106,12 @@
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "90979506-51ce-4a41-a9ab-4cd815a0a88e",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "017660e1-a22f-44b9-b75c-d8d7a0193338",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 60417481,
-        "publishedAt": "2026-04-01T09:06:36Z"
+        "publishedAt": "2026-04-01T09:06:36Z",
+        "experimental": true
       },
       {
         "version": "26.1",
@@ -6098,11 +6119,12 @@
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "faa4a834-fff2-4b17-a2a6-1ef5fec07b26",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "cde089e5-0815-4e25-9dd4-985074c9aa62",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 60417588,
-        "publishedAt": "2026-03-24T12:11:04Z"
+        "publishedAt": "2026-03-24T12:11:04Z",
+        "experimental": true
       },
       {
         "version": "1.21.11",
@@ -6110,11 +6132,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "27297a15-df22-419f-aeff-82c90121950d",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "002bb4d2-adf4-45ed-a1fb-c62e320ecb67",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 56327581,
-        "publishedAt": "2025-12-09T12:23:30Z"
+        "publishedAt": "2025-12-09T12:23:30Z",
+        "experimental": true
       },
       {
         "version": "1.21.10",
@@ -6122,11 +6145,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "988f8acd-2140-4eda-9356-db9e73011993",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "5e97d6b5-1719-4153-9005-c09d739cb6a7",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 58642415,
-        "publishedAt": "2025-10-07T09:17:23Z"
+        "publishedAt": "2025-10-07T09:17:23Z",
+        "experimental": true
       },
       {
         "version": "1.21.9",
@@ -6134,11 +6158,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "fa2ed759-4c69-4243-a6e4-4f73af45d9d7",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "d89c0696-cb81-46c0-ba82-8982787c764d",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 58638725,
-        "publishedAt": "2025-09-30T11:58:43Z"
+        "publishedAt": "2025-09-30T11:58:43Z",
+        "experimental": true
       },
       {
         "version": "1.21.8",
@@ -6146,11 +6171,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "5baae1ea-e755-4c59-893f-09e5e1d24703",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "a36ba665-876d-4341-b3a1-ead9f0315797",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 57555044,
-        "publishedAt": "2025-07-17T12:04:02Z"
+        "publishedAt": "2025-07-17T12:04:02Z",
+        "experimental": true
       },
       {
         "version": "1.21.7",
@@ -6158,11 +6184,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "6ac136de-449f-4f76-a55e-b104a006cdf9",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "31801af1-0135-48a5-9367-251dc222a21b",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 57556704,
-        "publishedAt": "2025-06-30T09:32:16Z"
+        "publishedAt": "2025-06-30T09:32:16Z",
+        "experimental": true
       },
       {
         "version": "1.21.6",
@@ -6170,11 +6197,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "a023371f-2aae-49f5-becb-16a3314da31c",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "e39fcac6-7da2-4283-9690-dc5a21dd665d",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 57554576,
-        "publishedAt": "2025-06-17T11:10:28Z"
+        "publishedAt": "2025-06-17T11:10:28Z",
+        "experimental": true
       },
       {
         "version": "1.21.5",
@@ -6182,11 +6210,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "845f29bb-0157-4357-a641-364f2b74ee4e",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "0920f0cf-f4c2-4a67-8580-80fd3ecd629b",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 57269758,
-        "publishedAt": "2025-03-25T12:14:58Z"
+        "publishedAt": "2025-03-25T12:14:58Z",
+        "experimental": true
       },
       {
         "version": "1.21.4",
@@ -6194,11 +6223,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "e0d58ed0-e0db-4cff-ae77-52b44f7e484e",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "6b338fc4-213f-4ba5-8a5c-92510bb552a2",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 56880250,
-        "publishedAt": "2024-12-03T10:12:57Z"
+        "publishedAt": "2024-12-03T10:12:57Z",
+        "experimental": true
       },
       {
         "version": "1.21.3",
@@ -6206,11 +6236,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "f87e9ca4-9f76-440c-889b-f206459b91e9",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "e7a19d01-97ea-4a98-8991-dfd482bd1747",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 56122038,
-        "publishedAt": "2024-10-23T12:28:15Z"
+        "publishedAt": "2024-10-23T12:28:15Z",
+        "experimental": true
       },
       {
         "version": "1.21.2",
@@ -6218,11 +6249,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "c1b50da2-c3f6-4e4b-ad10-ff073c5c9fdd",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "46e68db5-485a-4424-a64a-1dd237415f22",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 56120171,
-        "publishedAt": "2024-10-22T09:58:55Z"
+        "publishedAt": "2024-10-22T09:58:55Z",
+        "experimental": true
       },
       {
         "version": "1.21.1",
@@ -6230,11 +6262,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "d2ad19f9-71b6-4aed-8a5c-abcb231a5bfa",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "5ad88b37-70ab-4687-9784-c883ee65a5a6",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 51627615,
-        "publishedAt": "2024-08-08T12:24:45Z"
+        "publishedAt": "2024-08-08T12:24:45Z",
+        "experimental": true
       },
       {
         "version": "1.21",
@@ -6242,11 +6275,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "1d8dee1e-1280-4732-9259-b5125fa9b1bc",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "450deda3-ca33-45e9-a136-997593828503",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 51623779,
-        "publishedAt": "2024-06-13T08:24:03Z"
+        "publishedAt": "2024-06-13T08:24:03Z",
+        "experimental": true
       },
       {
         "version": "1.20.6",
@@ -6254,11 +6288,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "031aca26-f2b3-4aa6-a24a-6995514d1c1a",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "1034690c-c738-4372-af26-c2859d3b73c4",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 51420480,
-        "publishedAt": "2024-04-29T12:40:45Z"
+        "publishedAt": "2024-04-29T12:40:45Z",
+        "experimental": true
       },
       {
         "version": "1.20.5",
@@ -6266,11 +6301,12 @@
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "a959c3f0-acca-4833-94d2-0ae0fe806548",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "441a4521-3ab4-4cdd-a94b-49aa44fac006",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 51424012,
-        "publishedAt": "2024-04-23T11:54:12Z"
+        "publishedAt": "2024-04-23T11:54:12Z",
+        "experimental": true
       },
       {
         "version": "1.20.4",
@@ -6278,11 +6314,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "51355029-b844-4398-a839-1ff84df420a7",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "0cb70413-e2b4-4414-9ea4-d95fbeaaa0ba",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 49150256,
-        "publishedAt": "2023-12-07T12:56:20Z"
+        "publishedAt": "2023-12-07T12:56:20Z",
+        "experimental": true
       },
       {
         "version": "1.20.3",
@@ -6290,11 +6327,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "1f2937cd-e56d-49d9-9f6c-2ba538c250a2",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "9360d758-6e3e-4eeb-b8f0-81b7e826c4f5",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 49152320,
-        "publishedAt": "2023-12-04T12:10:32Z"
+        "publishedAt": "2023-12-04T12:10:32Z",
+        "experimental": true
       },
       {
         "version": "1.20.2",
@@ -6302,11 +6340,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "8b6b5071-7642-4f27-9e93-2c7cf8d8cd04",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "172e2995-e42a-48fc-98d7-df8b9cbb8e6e",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 48285806,
-        "publishedAt": "2023-09-20T09:02:57Z"
+        "publishedAt": "2023-09-20T09:02:57Z",
+        "experimental": true
       },
       {
         "version": "1.20.1",
@@ -6314,11 +6353,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "c13addbe-7fa1-4f9b-99de-f661f993c438",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "cdff590b-681e-4d0e-883f-f66bfa70c3a8",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 47791053,
-        "publishedAt": "2023-06-12T13:25:51Z"
+        "publishedAt": "2023-06-12T13:25:51Z",
+        "experimental": true
       },
       {
         "version": "1.20",
@@ -6326,11 +6366,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "5bece05b-d1a9-445e-bce4-39abc565645c",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "d25c9a53-a98f-4ca4-b8b9-c5a174a25d5e",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 47787288,
-        "publishedAt": "2023-06-02T08:36:17Z"
+        "publishedAt": "2023-06-02T08:36:17Z",
+        "experimental": true
       },
       {
         "version": "1.19.4",
@@ -6338,11 +6379,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "578b81f5-3fbd-46f3-ad0c-e5b2b65eb097",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "9f42262f-e9e1-4f90-a0f6-0761227bb65c",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 47515675,
-        "publishedAt": "2023-03-14T12:56:18Z"
+        "publishedAt": "2023-03-14T12:56:18Z",
+        "experimental": true
       },
       {
         "version": "1.19.3",
@@ -6350,11 +6392,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "9a89d892-9e2b-4e5b-a3e2-6dc2536cf8af",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "fd996703-a531-40ae-8653-ea3d475efb2f",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 47162712,
-        "publishedAt": "2022-12-07T08:17:18Z"
+        "publishedAt": "2022-12-07T08:17:18Z",
+        "experimental": true
       },
       {
         "version": "1.19.2",
@@ -6362,11 +6405,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "66acfac8-363e-4031-a876-e6c999add5a5",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "3703c6b5-5640-4626-a2d8-f41b2b7e31db",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 45609512,
-        "publishedAt": "2022-08-05T11:57:05Z"
+        "publishedAt": "2022-08-05T11:57:05Z",
+        "experimental": true
       },
       {
         "version": "1.19.1",
@@ -6374,11 +6418,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "cdae90d5-d684-4805-b461-74a76bb34ed2",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "669f884b-5061-4540-a5e8-ef93ee4da2d7",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 45609936,
-        "publishedAt": "2022-07-27T09:25:33Z"
+        "publishedAt": "2022-07-27T09:25:33Z",
+        "experimental": true
       },
       {
         "version": "1.19",
@@ -6386,11 +6431,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "495aba2c-1e3e-41a5-9bd5-43857022f18b",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "514dcf11-acd3-4dc2-8feb-5c8cd34685ad",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 45538778,
-        "publishedAt": "2022-06-07T09:42:18Z"
+        "publishedAt": "2022-06-07T09:42:18Z",
+        "experimental": true
       },
       {
         "version": "1.18.2",
@@ -6398,11 +6444,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "ce39ac07-9951-4105-b286-07a2f2533755",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "99f29990-d497-489f-a186-964f602edef3",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 46592587,
-        "publishedAt": "2022-02-28T10:42:45Z"
+        "publishedAt": "2022-02-28T10:42:45Z",
+        "experimental": true
       },
       {
         "version": "1.18.1",
@@ -6410,11 +6457,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "11e0ffcc-b081-447d-81b9-ea028951a01b",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "a1624836-6213-4903-b5f1-35cc4d3db864",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 46324407,
-        "publishedAt": "2021-12-10T08:23:00Z"
+        "publishedAt": "2021-12-10T08:23:00Z",
+        "experimental": true
       },
       {
         "version": "1.18",
@@ -6422,11 +6470,12 @@
         "isSnapshot": false,
         "javaMinimum": 17,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "58cefb0c-5109-415c-a21e-91ff5db5f639",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "50eb6e29-8193-4077-add8-1e45a34ebc8a",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 46323386,
-        "publishedAt": "2021-11-30T09:16:29Z"
+        "publishedAt": "2021-11-30T09:16:29Z",
+        "experimental": true
       },
       {
         "version": "1.17.1",
@@ -6434,11 +6483,12 @@
         "isSnapshot": false,
         "javaMinimum": 16,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "962e6a8f-4fdd-4746-a15c-a91fe0137267",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "571f1619-8914-4607-9f97-2c0ec478bf62",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 43626592,
-        "publishedAt": "2021-07-06T12:01:34Z"
+        "publishedAt": "2021-07-06T12:01:34Z",
+        "experimental": true
       },
       {
         "version": "1.17",
@@ -6446,11 +6496,12 @@
         "isSnapshot": false,
         "javaMinimum": 16,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "47585b45-2c9f-46ad-aec3-968b4b599bd9",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "d45c738b-e72a-4716-99ba-d8539e6dbe59",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 43621201,
-        "publishedAt": "2021-06-08T11:00:40Z"
+        "publishedAt": "2021-06-08T11:00:40Z",
+        "experimental": true
       },
       {
         "version": "1.16.5",
@@ -6458,11 +6509,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "79763b13-e9c3-4d5a-bfc2-d6a452371283",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "5e7a88d7-222e-4c56-94fd-49fdb1d381a1",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 37962360,
-        "publishedAt": "2021-01-14T16:05:32Z"
+        "publishedAt": "2021-01-14T16:05:32Z",
+        "experimental": true
       },
       {
         "version": "1.16.4",
@@ -6470,11 +6522,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "0c933725-07ce-4242-90fa-263470102c14",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "bba53531-8136-403b-921b-33ace20ee52a",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 37961464,
-        "publishedAt": "2020-10-29T15:49:37Z"
+        "publishedAt": "2020-10-29T15:49:37Z",
+        "experimental": true
       },
       {
         "version": "1.16.3",
@@ -6482,11 +6535,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "8673cf98-2301-4202-a461-1f8263e3dea7",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "0a10f60a-c410-44f4-9e96-d11500e0c328",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 37942656,
-        "publishedAt": "2020-09-10T13:42:37Z"
+        "publishedAt": "2020-09-10T13:42:37Z",
+        "experimental": true
       },
       {
         "version": "1.16.2",
@@ -6494,11 +6548,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "eb8eb25d-37ae-4b2a-ba60-c57b7825cb0b",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "bbf5efbf-1a4a-4af9-aa02-1e69b473635f",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 37942337,
-        "publishedAt": "2020-08-11T10:13:46Z"
+        "publishedAt": "2020-08-11T10:13:46Z",
+        "experimental": true
       },
       {
         "version": "1.16.1",
@@ -6506,11 +6561,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "fee0a88e-3eff-49a7-a22e-e62c37aa9b66",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "4b5e1973-2b8d-4d3a-8298-5cd4575144db",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 37968964,
-        "publishedAt": "2020-06-24T10:31:40Z"
+        "publishedAt": "2020-06-24T10:31:40Z",
+        "experimental": true
       },
       {
         "version": "1.16",
@@ -6518,11 +6574,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "17aeeb56-9891-4ff8-a7df-d20c1ee24608",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "7c877935-f96b-4b51-91ea-af36a7ba64e4",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 37968865,
-        "publishedAt": "2020-06-23T16:20:52Z"
+        "publishedAt": "2020-06-23T16:20:52Z",
+        "experimental": true
       },
       {
         "version": "1.15.2",
@@ -6530,11 +6587,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "ea2f2ff0-e76b-4ed0-9e63-48041ee9f654",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "679617f6-ae48-4c7e-b06f-a7ee8e93494f",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 36175593,
-        "publishedAt": "2020-01-17T10:03:52Z"
+        "publishedAt": "2020-01-17T10:03:52Z",
+        "experimental": true
       },
       {
         "version": "1.15.1",
@@ -6542,11 +6600,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "7ec91db4-a430-4b56-abcc-7f718420c068",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "29949342-20fe-42a7-af6d-0f517ebdf4fe",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 36164938,
-        "publishedAt": "2019-12-16T10:29:47Z"
+        "publishedAt": "2019-12-16T10:29:47Z",
+        "experimental": true
       },
       {
         "version": "1.15",
@@ -6554,11 +6613,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "21f965ca-b3ae-4416-b54b-ea4c54b5d883",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "8fca63e4-c5d2-45a1-8f6f-90e4d7e75676",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 36164465,
-        "publishedAt": "2019-12-09T13:13:38Z"
+        "publishedAt": "2019-12-09T13:13:38Z",
+        "experimental": true
       },
       {
         "version": "1.14.4",
@@ -6566,11 +6626,12 @@
         "isSnapshot": false,
         "javaMinimum": 8,
         "supportStatus": "UNSUPPORTED",
-        "buildUuid": "0b9bda59-7024-4423-9b98-448d9933b100",
-        "buildName": "0.30.2",
-        "projectVersion": "0.30.2",
+        "buildUuid": "36d22965-9269-435b-b2f3-bd7ef5feb04a",
+        "buildName": "0.31.0-beta.6",
+        "projectVersion": "0.31.0-beta.6",
         "downloadSize": 35958734,
-        "publishedAt": "2019-07-19T09:25:47Z"
+        "publishedAt": "2019-07-19T09:25:47Z",
+        "experimental": true
       }
     ]
   },
