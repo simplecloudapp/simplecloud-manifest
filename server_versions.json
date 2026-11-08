@@ -315,7 +315,7 @@
         "buildUuid": "29901ed4-de60-4f41-861b-7c55dfe2f288",
         "buildName": "#615",
         "downloadSize": 27658469,
-        "publishedAt": "2026-06-16T17:33:05.43Z"
+        "publishedAt": "2026-06-16T15:33:05.43Z"
       },
       {
         "version": "1.20",
@@ -672,14 +672,13 @@
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
+          "-XX:+UseCompactObjectHeaders",
           "-XX:+AlwaysPreTouch",
           "-XX:+DisableExplicitGC",
-          "-XX:+ParallelRefProcEnabled",
           "-XX:+PerfDisableSharedMem",
           "-XX:+UnlockExperimentalVMOptions",
           "-XX:+UseG1GC",
           "-XX:G1HeapRegionSize=8M",
-          "-XX:G1HeapWastePercent=5",
           "-XX:G1MaxNewSizePercent=40",
           "-XX:G1MixedGCCountTarget=4",
           "-XX:G1MixedGCLiveThresholdPercent=90",
@@ -687,7 +686,6 @@
           "-XX:G1RSetUpdatingPauseTimePercent=5",
           "-XX:G1ReservePercent=20",
           "-XX:InitiatingHeapOccupancyPercent=15",
-          "-XX:MaxGCPauseMillis=200",
           "-XX:MaxTenuringThreshold=1",
           "-XX:SurvivorRatio=32"
         ],
@@ -703,14 +701,13 @@
         "channel": "ALPHA",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
+          "-XX:+UseCompactObjectHeaders",
           "-XX:+AlwaysPreTouch",
           "-XX:+DisableExplicitGC",
-          "-XX:+ParallelRefProcEnabled",
           "-XX:+PerfDisableSharedMem",
           "-XX:+UnlockExperimentalVMOptions",
           "-XX:+UseG1GC",
           "-XX:G1HeapRegionSize=8M",
-          "-XX:G1HeapWastePercent=5",
           "-XX:G1MaxNewSizePercent=40",
           "-XX:G1MixedGCCountTarget=4",
           "-XX:G1MixedGCLiveThresholdPercent=90",
@@ -718,7 +715,6 @@
           "-XX:G1RSetUpdatingPauseTimePercent=5",
           "-XX:G1ReservePercent=20",
           "-XX:InitiatingHeapOccupancyPercent=15",
-          "-XX:MaxGCPauseMillis=200",
           "-XX:MaxTenuringThreshold=1",
           "-XX:SurvivorRatio=32"
         ],
@@ -2791,26 +2787,26 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/leaf/26.3/20/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.3/22/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "a5fc26bd-82f6-4a5e-aee6-b135e03bbf0a",
-        "buildName": "#20",
-        "downloadSize": 30308717,
-        "publishedAt": "2026-11-05T08:07:25.522Z",
+        "buildUuid": "33e31a17-550d-4dd1-8fec-3561f7227506",
+        "buildName": "#22",
+        "downloadSize": 27097425,
+        "publishedAt": "2026-11-07T22:02:59.88Z",
         "experimental": true
       },
       {
         "version": "26.2",
-        "link": "https://files.mcjars.app/leaf/26.2/129/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.2/131/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "a2eb962e-47b4-4f98-be29-da5eb4740390",
-        "buildName": "#129",
-        "downloadSize": 34769062,
-        "publishedAt": "2026-11-05T08:03:28.586Z",
+        "buildUuid": "7eabb30c-def5-4c6c-bd13-aadfcfdcc309",
+        "buildName": "#131",
+        "downloadSize": 31557202,
+        "publishedAt": "2026-11-07T22:04:28.759Z",
         "experimental": true
       },
       {
@@ -2822,7 +2818,7 @@
         "buildUuid": "3d98f451-f665-4fd8-9fcb-385056e36dfd",
         "buildName": "#3",
         "downloadSize": 83696220,
-        "publishedAt": "2026-06-16T17:59:05.039Z",
+        "publishedAt": "2026-06-16T15:59:05.039Z",
         "experimental": true
       },
       {
@@ -2834,7 +2830,7 @@
         "buildUuid": "9534d402-d64b-492e-bcf1-df7d67f983c0",
         "buildName": "#179",
         "downloadSize": 83953995,
-        "publishedAt": "2026-09-12T17:20:48.702Z"
+        "publishedAt": "2026-09-12T15:20:48.702Z"
       },
       {
         "version": "1.21.8",
@@ -2845,7 +2841,7 @@
         "buildUuid": "373c35d3-c18f-47d9-962a-7dd44876db65",
         "buildName": "#175",
         "downloadSize": 85494745,
-        "publishedAt": "2026-02-08T20:17:58.56Z",
+        "publishedAt": "2026-02-08T19:17:58.56Z",
         "experimental": true
       },
       {
@@ -2857,7 +2853,7 @@
         "buildUuid": "3ce950ee-8011-4fc8-acbd-5fd0cd755e36",
         "buildName": "#53",
         "downloadSize": 69103557,
-        "publishedAt": "2025-07-24T10:35:31.685Z"
+        "publishedAt": "2025-07-24T08:35:31.685Z"
       },
       {
         "version": "1.21.6",
@@ -2868,7 +2864,7 @@
         "buildUuid": "6f08534f-1358-49f6-a5b9-fd22d45abcf9",
         "buildName": "#29",
         "downloadSize": 68940564,
-        "publishedAt": "2025-07-21T20:52:44.362Z"
+        "publishedAt": "2025-07-21T18:52:44.362Z"
       },
       {
         "version": "1.21.5",
@@ -2879,7 +2875,7 @@
         "buildUuid": "82b4ff4d-ef21-4652-979b-6413db636429",
         "buildName": "#68",
         "downloadSize": 68534055,
-        "publishedAt": "2025-07-01T03:04:46.603Z"
+        "publishedAt": "2025-07-01T01:04:46.603Z"
       },
       {
         "version": "1.21.4",
@@ -2890,7 +2886,7 @@
         "buildUuid": "7b64ac42-956a-4581-a3ce-ad5e2a95454b",
         "buildName": "#525",
         "downloadSize": 68594371,
-        "publishedAt": "2026-02-08T20:13:12.679Z"
+        "publishedAt": "2026-02-08T19:13:12.679Z"
       },
       {
         "version": "1.21.3",
@@ -2902,7 +2898,7 @@
         "buildName": "1.21.3-e380e4b5",
         "projectVersion": "1.21.3-e380e4b5",
         "downloadSize": 92059546,
-        "publishedAt": "2025-02-19T01:33:12Z",
+        "publishedAt": "2025-02-19T00:33:12Z",
         "experimental": true
       },
       {
@@ -2915,7 +2911,7 @@
         "buildName": "1.21.1-24093972",
         "projectVersion": "1.21.1-24093972",
         "downloadSize": 90291922,
-        "publishedAt": "2025-04-27T21:58:15Z",
+        "publishedAt": "2025-04-27T19:58:15Z",
         "experimental": true
       },
       {
@@ -2928,7 +2924,7 @@
         "buildName": "1.20.4-6d332992",
         "projectVersion": "1.20.4-6d332992",
         "downloadSize": 76968533,
-        "publishedAt": "2025-02-19T01:29:13Z",
+        "publishedAt": "2025-02-19T00:29:13Z",
         "experimental": true
       }
     ]
@@ -2951,7 +2947,7 @@
         "buildUuid": "6eab6447-3bf1-4b5c-b1b5-a3700a82e097",
         "buildName": "#17475",
         "downloadSize": 62868402,
-        "publishedAt": "2026-11-04T12:54:01.712Z"
+        "publishedAt": "2026-11-04T11:54:01.712Z"
       },
       {
         "version": "26.2",
@@ -2962,7 +2958,7 @@
         "buildUuid": "a7181b39-bf1d-430f-b6ad-fd9eac5a03d0",
         "buildName": "#17464",
         "downloadSize": 64822628,
-        "publishedAt": "2026-10-31T17:39:29.741Z"
+        "publishedAt": "2026-10-31T16:39:29.741Z"
       },
       {
         "version": "26.1.2",
@@ -2973,7 +2969,7 @@
         "buildUuid": "b127f8e2-ea80-41f2-a028-c8fd4e864684",
         "buildName": "#17247",
         "downloadSize": 60490472,
-        "publishedAt": "2026-07-19T17:49:36.948Z"
+        "publishedAt": "2026-07-19T15:49:36.948Z"
       },
       {
         "version": "1.21.11",
@@ -2984,7 +2980,7 @@
         "buildUuid": "8b680939-7aa3-456c-91dc-3a229453c784",
         "buildName": "#17197",
         "downloadSize": 62465957,
-        "publishedAt": "2026-06-01T19:24:30.098Z"
+        "publishedAt": "2026-06-01T17:24:30.098Z"
       },
       {
         "version": "1.21.10",
@@ -2995,7 +2991,7 @@
         "buildUuid": "b7d0bdf6-7d4f-4823-bc31-cbbdc23f7041",
         "buildName": "#17039",
         "downloadSize": 62089149,
-        "publishedAt": "2026-02-09T21:14:52.659Z"
+        "publishedAt": "2026-02-09T20:14:52.659Z"
       },
       {
         "version": "1.21.9",
@@ -3006,7 +3002,7 @@
         "buildUuid": "48908383-e410-4ae7-837f-6fef9b9ab7bd",
         "buildName": "#16800",
         "downloadSize": 60146533,
-        "publishedAt": "2025-10-06T00:31:53.548Z",
+        "publishedAt": "2025-10-05T22:31:53.548Z",
         "experimental": true
       },
       {
@@ -3018,7 +3014,7 @@
         "buildUuid": "41d27483-c49e-4446-9b44-524be2b91e80",
         "buildName": "#16899",
         "downloadSize": 60434279,
-        "publishedAt": "2025-12-03T10:43:17.763Z"
+        "publishedAt": "2025-12-03T09:43:17.763Z"
       },
       {
         "version": "1.21.7",
@@ -3029,7 +3025,7 @@
         "buildUuid": "958189b4-332c-4eb2-8a15-251f3eb43a24",
         "buildName": "#16778",
         "downloadSize": 60278497,
-        "publishedAt": "2025-09-12T20:52:17.986Z"
+        "publishedAt": "2025-09-12T18:52:17.986Z"
       },
       {
         "version": "1.21.6",
@@ -3040,7 +3036,7 @@
         "buildUuid": "d2f34573-7f17-42dc-bd95-1319aa277fbc",
         "buildName": "#16689",
         "downloadSize": 60254802,
-        "publishedAt": "2025-06-29T20:25:59.912Z"
+        "publishedAt": "2025-06-29T18:25:59.912Z"
       },
       {
         "version": "1.21.5",
@@ -3051,7 +3047,7 @@
         "buildUuid": "42b30940-d16c-4bec-87f1-6a65b088444f",
         "buildName": "#16671",
         "downloadSize": 59033367,
-        "publishedAt": "2025-06-11T19:44:12.676Z",
+        "publishedAt": "2025-06-11T17:44:12.676Z",
         "experimental": true
       },
       {
@@ -3063,7 +3059,7 @@
         "buildUuid": "2cabb18f-01d3-460e-827c-57e9022c897c",
         "buildName": "#16709",
         "downloadSize": 59054617,
-        "publishedAt": "2025-07-15T20:43:36.232Z"
+        "publishedAt": "2025-07-15T18:43:36.232Z"
       },
       {
         "version": "1.21.3",
@@ -3074,7 +3070,7 @@
         "buildUuid": "f60f3a3c-088f-408d-ab5d-f9bc970826a8",
         "buildName": "#16529",
         "downloadSize": 56557122,
-        "publishedAt": "2024-12-20T17:54:38.974Z"
+        "publishedAt": "2024-12-20T16:54:38.974Z"
       },
       {
         "version": "1.21.1",
@@ -3085,7 +3081,7 @@
         "buildUuid": "819f5963-d136-42d6-a1d5-1418b914a6ca",
         "buildName": "#16392",
         "downloadSize": 55033873,
-        "publishedAt": "2024-10-21T18:25:50.63Z"
+        "publishedAt": "2024-10-21T16:25:50.63Z"
       },
       {
         "version": "1.21",
@@ -3096,7 +3092,7 @@
         "buildUuid": "1c97b84e-b2f9-4f91-a6ca-39232d4ac5fd",
         "buildName": "#16385",
         "downloadSize": 54697799,
-        "publishedAt": "2024-10-15T21:09:16.408Z"
+        "publishedAt": "2024-10-15T19:09:16.408Z"
       },
       {
         "version": "1.20.6",
@@ -3107,7 +3103,7 @@
         "buildUuid": "5718d703-f00b-430d-9f6b-210119f57d05",
         "buildName": "#16042",
         "downloadSize": 51428669,
-        "publishedAt": "2024-06-11T21:09:34.726Z"
+        "publishedAt": "2024-06-11T19:09:34.726Z"
       },
       {
         "version": "1.20.4",
@@ -3118,7 +3114,7 @@
         "buildUuid": "46ced1de-c099-4903-a38e-e60d8c31c52f",
         "buildName": "#15981",
         "downloadSize": 48306316,
-        "publishedAt": "2024-05-24T19:13:59.781Z"
+        "publishedAt": "2024-05-24T17:13:59.781Z"
       },
       {
         "version": "1.20.2",
@@ -3129,7 +3125,7 @@
         "buildUuid": "d696578b-d357-4ce8-ad61-6c398580e9aa",
         "buildName": "#15721",
         "downloadSize": 47348137,
-        "publishedAt": "2024-01-23T20:13:58.009Z"
+        "publishedAt": "2024-01-23T19:13:58.009Z"
       }
     ]
   },
@@ -3144,14 +3140,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://api.purpurmc.org/v2/purpur/26.3/2656/download",
+        "link": "https://api.purpurmc.org/v2/purpur/26.3/2657/download",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "5ae43478-0dc9-4e56-9fb7-50a42aa739cc",
-        "buildName": "#2656",
-        "downloadSize": 58156576,
-        "publishedAt": "2026-11-06T04:05:05.793Z"
+        "buildUuid": "61488de3-7b84-4252-8565-05bba50c4397",
+        "buildName": "#2657",
+        "downloadSize": 58157588,
+        "publishedAt": "2026-11-07T02:44:58.859Z"
       },
       {
         "version": "26.2",
@@ -3162,7 +3158,7 @@
         "buildUuid": "61878bfc-8a4b-4406-99ba-2bb380c4e520",
         "buildName": "#2633",
         "downloadSize": 67413040,
-        "publishedAt": "2026-09-12T04:41:14.846Z"
+        "publishedAt": "2026-09-12T02:41:14.846Z"
       },
       {
         "version": "26.1.2",
@@ -3173,7 +3169,7 @@
         "buildUuid": "b0458e25-959a-4ac5-88ff-bc528c65a50e",
         "buildName": "#2592",
         "downloadSize": 55769351,
-        "publishedAt": "2026-06-15T21:56:11.655Z"
+        "publishedAt": "2026-06-15T19:56:11.655Z"
       },
       {
         "version": "1.21.11",
@@ -3184,7 +3180,7 @@
         "buildUuid": "9243fece-d3b8-437f-a8e3-4ff43e51ab51",
         "buildName": "#2568",
         "downloadSize": 57705084,
-        "publishedAt": "2026-04-05T00:22:15.566Z"
+        "publishedAt": "2026-04-04T22:22:15.566Z"
       },
       {
         "version": "1.21.10",
@@ -3195,7 +3191,7 @@
         "buildUuid": "bbb68bb4-6f92-4abf-a565-8a9c43db6319",
         "buildName": "#2535",
         "downloadSize": 57353083,
-        "publishedAt": "2025-12-11T03:37:52.026Z"
+        "publishedAt": "2025-12-11T02:37:52.026Z"
       },
       {
         "version": "1.21.9",
@@ -3206,7 +3202,7 @@
         "buildUuid": "99472cff-968d-447e-b698-93498dd922be",
         "buildName": "#2505",
         "downloadSize": 56302847,
-        "publishedAt": "2025-10-07T06:42:04.754Z",
+        "publishedAt": "2025-10-07T04:42:04.754Z",
         "experimental": true
       },
       {
@@ -3218,7 +3214,7 @@
         "buildUuid": "3e62142f-5506-4a96-b818-e1b93cc501c0",
         "buildName": "#2497",
         "downloadSize": 55669800,
-        "publishedAt": "2025-09-19T03:46:05.352Z"
+        "publishedAt": "2025-09-19T01:46:05.352Z"
       },
       {
         "version": "1.21.7",
@@ -3229,7 +3225,7 @@
         "buildUuid": "75655a13-25bd-47e7-a047-4891f77c379d",
         "buildName": "#2477",
         "downloadSize": 55631121,
-        "publishedAt": "2025-07-18T05:02:51.285Z"
+        "publishedAt": "2025-07-18T03:02:51.285Z"
       },
       {
         "version": "1.21.6",
@@ -3240,7 +3236,7 @@
         "buildUuid": "c9685767-aa05-4ffe-98ce-3eaf9c7d4579",
         "buildName": "#2465",
         "downloadSize": 55503473,
-        "publishedAt": "2025-06-30T20:59:11.429Z"
+        "publishedAt": "2025-06-30T18:59:11.429Z"
       },
       {
         "version": "1.21.5",
@@ -3251,7 +3247,7 @@
         "buildUuid": "efc9a33b-9dfd-478c-a6e8-180335791e29",
         "buildName": "#2450",
         "downloadSize": 54289044,
-        "publishedAt": "2025-06-17T07:06:13.989Z"
+        "publishedAt": "2025-06-17T05:06:13.989Z"
       },
       {
         "version": "1.21.4",
@@ -3262,7 +3258,7 @@
         "buildUuid": "74c6e213-2c4a-4919-8001-b61315507596",
         "buildName": "#2416",
         "downloadSize": 54293399,
-        "publishedAt": "2025-04-13T01:30:45.78Z"
+        "publishedAt": "2025-04-12T23:30:45.78Z"
       },
       {
         "version": "1.21.3",
@@ -3273,7 +3269,7 @@
         "buildUuid": "ad4e7872-6827-4395-afe6-ad6b41c0da8a",
         "buildName": "#2358",
         "downloadSize": 54612899,
-        "publishedAt": "2024-12-04T13:54:36.194Z"
+        "publishedAt": "2024-12-04T12:54:36.194Z"
       },
       {
         "version": "1.21.1",
@@ -4764,7 +4760,7 @@
         "buildUuid": "6b517929-b23f-4694-bbb2-dc78f40a74e2",
         "buildName": "#1",
         "downloadSize": 63476160,
-        "publishedAt": "2026-11-03T14:08:56Z",
+        "publishedAt": "2026-11-03T13:08:56Z",
         "experimental": true
       },
       {
@@ -4776,7 +4772,7 @@
         "buildUuid": "c30341c8-1275-4fdd-8d9b-b5dfe15309db",
         "buildName": "#1",
         "downloadSize": 63440656,
-        "publishedAt": "2026-10-27T14:40:29Z",
+        "publishedAt": "2026-10-27T13:40:29Z",
         "experimental": true
       },
       {
@@ -4788,7 +4784,7 @@
         "buildUuid": "e2394d42-625c-4c95-b1e8-31aedb1a6c70",
         "buildName": "#1",
         "downloadSize": 62548082,
-        "publishedAt": "2026-10-20T14:15:06Z",
+        "publishedAt": "2026-10-20T12:15:06Z",
         "experimental": true
       },
       {
@@ -4800,7 +4796,7 @@
         "buildUuid": "c2cb64fb-fbca-4963-9a70-b039375ba9d9",
         "buildName": "#1",
         "downloadSize": 62483987,
-        "publishedAt": "2026-10-13T14:05:46Z",
+        "publishedAt": "2026-10-13T12:05:46Z",
         "experimental": true
       },
       {
@@ -4812,7 +4808,7 @@
         "buildUuid": "e88b5870-9f4d-4623-91a7-8c4717e7b375",
         "buildName": "#1",
         "downloadSize": 62294556,
-        "publishedAt": "2026-09-15T13:23:02Z"
+        "publishedAt": "2026-09-15T11:23:02Z"
       },
       {
         "version": "26.2",
@@ -4823,7 +4819,7 @@
         "buildUuid": "a3d01a16-15ba-4c0e-8d9d-47dd651a01d7",
         "buildName": "#1",
         "downloadSize": 60894273,
-        "publishedAt": "2026-06-16T14:03:33Z"
+        "publishedAt": "2026-06-16T12:03:33Z"
       },
       {
         "version": "26.1.2",
@@ -4834,7 +4830,7 @@
         "buildUuid": "218a5219-fdb6-42c1-9731-919677f4eb76",
         "buildName": "#1",
         "downloadSize": 60417480,
-        "publishedAt": "2026-04-09T12:12:23Z"
+        "publishedAt": "2026-04-09T10:12:23Z"
       },
       {
         "version": "26.1.1",
@@ -4845,7 +4841,7 @@
         "buildUuid": "d60309ee-faaf-490a-86b3-76dea20463df",
         "buildName": "#1",
         "downloadSize": 60417481,
-        "publishedAt": "2026-04-01T11:06:36Z"
+        "publishedAt": "2026-04-01T09:06:36Z"
       },
       {
         "version": "26.1",
@@ -4856,7 +4852,7 @@
         "buildUuid": "32842bc1-29f7-4d1d-a9fc-1c9342758e1b",
         "buildName": "#1",
         "downloadSize": 60417588,
-        "publishedAt": "2026-03-24T13:11:04Z"
+        "publishedAt": "2026-03-24T12:11:04Z"
       },
       {
         "version": "1.21.11",
@@ -4867,7 +4863,7 @@
         "buildUuid": "a67f3339-36de-423f-83ab-8e55cc02e240",
         "buildName": "#1",
         "downloadSize": 56327581,
-        "publishedAt": "2025-12-09T13:23:30Z"
+        "publishedAt": "2025-12-09T12:23:30Z"
       },
       {
         "version": "1.21.10",
@@ -4878,7 +4874,7 @@
         "buildUuid": "d3c76c96-34f7-4258-97e9-84a34ecbc1be",
         "buildName": "#1",
         "downloadSize": 58642415,
-        "publishedAt": "2025-10-07T11:17:23Z"
+        "publishedAt": "2025-10-07T09:17:23Z"
       },
       {
         "version": "1.21.9",
@@ -4889,7 +4885,7 @@
         "buildUuid": "9505e02a-dd8a-474a-9204-ed2f95c1f0dd",
         "buildName": "#1",
         "downloadSize": 58638725,
-        "publishedAt": "2025-09-30T13:58:43Z"
+        "publishedAt": "2025-09-30T11:58:43Z"
       },
       {
         "version": "1.21.8",
@@ -4900,7 +4896,7 @@
         "buildUuid": "54eb0a6c-5e8d-48e0-af5d-691fe66831fd",
         "buildName": "#1",
         "downloadSize": 57555044,
-        "publishedAt": "2025-07-17T14:04:02Z"
+        "publishedAt": "2025-07-17T12:04:02Z"
       },
       {
         "version": "1.21.7",
@@ -4911,7 +4907,7 @@
         "buildUuid": "2c6b8a8d-b9e6-4f73-8f7b-14b93da77a7b",
         "buildName": "#1",
         "downloadSize": 57556704,
-        "publishedAt": "2025-06-30T11:32:16Z"
+        "publishedAt": "2025-06-30T09:32:16Z"
       },
       {
         "version": "1.21.6",
@@ -4922,7 +4918,7 @@
         "buildUuid": "2ccde522-dc2a-4d1f-b1cb-3432c39380e9",
         "buildName": "#1",
         "downloadSize": 57554576,
-        "publishedAt": "2025-06-17T13:10:28Z"
+        "publishedAt": "2025-06-17T11:10:28Z"
       },
       {
         "version": "1.21.5",
@@ -4933,7 +4929,7 @@
         "buildUuid": "8e1c1a65-2101-4e23-b4d0-41fb34bcd59e",
         "buildName": "#1",
         "downloadSize": 57269758,
-        "publishedAt": "2025-03-25T13:14:58Z"
+        "publishedAt": "2025-03-25T12:14:58Z"
       },
       {
         "version": "1.21.4",
@@ -4944,7 +4940,7 @@
         "buildUuid": "e5016f57-8603-42cf-8488-fd7ef07deff7",
         "buildName": "#1",
         "downloadSize": 56880250,
-        "publishedAt": "2024-12-03T11:12:57Z"
+        "publishedAt": "2024-12-03T10:12:57Z"
       },
       {
         "version": "1.21.3",
@@ -5904,8 +5900,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
         "downloadSize": 100810096,
-        "sha256": "930e9ba542b2c3a2d7c27d124883b2734a26f9237966517d0618314c08ccdbd2",
-        "publishedAt": "2026-11-06T04:31:53Z",
+        "sha256": "b9f9933f938fae3a4a47affa3a8e657c69472499965385325d4c698b250b9aac",
+        "publishedAt": "2026-11-07T04:23:22Z",
         "experimental": true
       },
       {
@@ -5917,8 +5913,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
         "downloadSize": 128056704,
-        "sha256": "bc2f3042a690cdd0e41d1b6f1fad73c863e0babfae1aead09e22af8ae3ec6cc5",
-        "publishedAt": "2026-11-06T04:31:53Z",
+        "sha256": "afc5be38d848156de1868ea4272e7dae7bff49d165110d7252a38e966d5fb4db",
+        "publishedAt": "2026-11-07T04:23:22Z",
         "experimental": true
       },
       {
@@ -5930,8 +5926,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
         "downloadSize": 124229416,
-        "sha256": "e37be9b8add6674ca864fb04c310ebfcef64bdb460beed7b989672e006905c9b",
-        "publishedAt": "2026-11-06T04:31:53Z",
+        "sha256": "bf08783336a6b428e5971872744d316bb5c449eabca543eaf98b73e8535bc5ce",
+        "publishedAt": "2026-11-07T04:23:23Z",
         "experimental": true
       },
       {
@@ -5943,8 +5939,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
         "downloadSize": 110592512,
-        "sha256": "4d73d7549fccc61d286600b4786b5160a8b6251a2104c2a498ca011703aa616e",
-        "publishedAt": "2026-11-06T04:31:52Z",
+        "sha256": "89f09e8603946589bbfba40527f6bb6428c1e8feec6ccbadb98d52528d7eb01e",
+        "publishedAt": "2026-11-07T04:23:23Z",
         "experimental": true
       },
       {
@@ -5956,8 +5952,8 @@
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
         "downloadSize": 94841856,
-        "sha256": "02d6beeb0ac589acb97f296c7beca32e4507c1aa2be65fc217176f84cea91eac",
-        "publishedAt": "2026-11-06T04:31:51Z",
+        "sha256": "41af879563f0fdef7bd8b925eae9d9c3afd7db20a2a570bd433145b21821cf1f",
+        "publishedAt": "2026-11-07T04:23:21Z",
         "experimental": true
       }
     ]
@@ -6617,7 +6613,7 @@
         "buildName": "26.3.0.101",
         "projectVersion": "26.3.0.101",
         "downloadSize": 73521440,
-        "publishedAt": "2026-09-15T11:23:02Z"
+        "publishedAt": "2026-11-01T15:46:22.639895Z"
       },
       {
         "version": "26.2",
@@ -6629,7 +6625,7 @@
         "buildName": "26.2.0.93",
         "projectVersion": "26.2.0.93",
         "downloadSize": 71206403,
-        "publishedAt": "2026-06-16T12:03:33Z"
+        "publishedAt": "2026-10-15T01:39:56.68113Z"
       },
       {
         "version": "26.1.2",
@@ -6641,7 +6637,7 @@
         "buildName": "26.1.2.126",
         "projectVersion": "26.1.2.126",
         "downloadSize": 72350822,
-        "publishedAt": "2026-04-09T10:12:23Z"
+        "publishedAt": "2026-11-01T22:03:37.394333Z"
       },
       {
         "version": "26.1.1",
@@ -6653,7 +6649,7 @@
         "buildName": "26.1.1.15-beta",
         "projectVersion": "26.1.1.15-beta",
         "downloadSize": 72225850,
-        "publishedAt": "2026-04-01T09:06:36Z",
+        "publishedAt": "2026-04-08T09:09:06.918654Z",
         "experimental": true
       },
       {
@@ -6666,7 +6662,7 @@
         "buildName": "26.1.0.19-beta",
         "projectVersion": "26.1.0.19-beta",
         "downloadSize": 72198436,
-        "publishedAt": "2026-03-24T12:11:04Z",
+        "publishedAt": "2026-03-31T22:34:15.570309Z",
         "experimental": true
       },
       {
@@ -6679,7 +6675,7 @@
         "buildName": "21.11.48",
         "projectVersion": "21.11.48",
         "downloadSize": 67219214,
-        "publishedAt": "2025-12-09T12:23:30Z"
+        "publishedAt": "2026-10-15T01:40:32.034268Z"
       },
       {
         "version": "1.21.10",
@@ -6691,7 +6687,7 @@
         "buildName": "21.10.64",
         "projectVersion": "21.10.64",
         "downloadSize": 69597326,
-        "publishedAt": "2025-10-07T09:17:23Z"
+        "publishedAt": "2025-12-03T08:31:10.78561Z"
       },
       {
         "version": "1.21.9",
@@ -6703,7 +6699,7 @@
         "buildName": "21.9.16-beta",
         "projectVersion": "21.9.16-beta",
         "downloadSize": 122321614,
-        "publishedAt": "2025-09-30T11:58:43Z",
+        "publishedAt": "2025-10-07T12:56:48.555227Z",
         "experimental": true
       },
       {
@@ -6716,7 +6712,7 @@
         "buildName": "21.8.57",
         "projectVersion": "21.8.57",
         "downloadSize": 119184152,
-        "publishedAt": "2025-07-17T12:04:02Z"
+        "publishedAt": "2026-10-15T01:40:31.179588Z"
       },
       {
         "version": "1.21.7",
@@ -6728,7 +6724,7 @@
         "buildName": "21.7.25-beta",
         "projectVersion": "21.7.25-beta",
         "downloadSize": 118606998,
-        "publishedAt": "2025-06-30T09:32:16Z",
+        "publishedAt": "2025-07-16T21:08:18.204273Z",
         "experimental": true
       },
       {
@@ -6741,7 +6737,7 @@
         "buildName": "21.6.20-beta",
         "projectVersion": "21.6.20-beta",
         "downloadSize": 118547727,
-        "publishedAt": "2025-06-17T11:10:28Z",
+        "publishedAt": "2025-06-26T22:46:11.343636Z",
         "experimental": true
       },
       {
@@ -6754,7 +6750,7 @@
         "buildName": "21.5.101",
         "projectVersion": "21.5.101",
         "downloadSize": 115492560,
-        "publishedAt": "2025-03-25T12:14:58Z"
+        "publishedAt": "2026-10-15T01:41:30.911392Z"
       },
       {
         "version": "1.21.4",
@@ -6766,7 +6762,7 @@
         "buildName": "21.4.161",
         "projectVersion": "21.4.161",
         "downloadSize": 113982732,
-        "publishedAt": "2024-12-03T10:12:57Z"
+        "publishedAt": "2026-10-15T01:42:01.454447Z"
       },
       {
         "version": "1.21.3",
@@ -6778,7 +6774,7 @@
         "buildName": "21.3.100",
         "projectVersion": "21.3.100",
         "downloadSize": 113108374,
-        "publishedAt": "2024-10-23T12:28:15Z"
+        "publishedAt": "2026-10-15T01:42:28.203379Z"
       },
       {
         "version": "1.21.2",
@@ -6790,7 +6786,7 @@
         "buildName": "21.2.1-beta",
         "projectVersion": "21.2.1-beta",
         "downloadSize": 113036594,
-        "publishedAt": "2024-10-22T09:58:55Z",
+        "publishedAt": "2024-10-23T08:10:45.183627Z",
         "experimental": true
       },
       {
@@ -6803,7 +6799,7 @@
         "buildName": "21.1.265",
         "projectVersion": "21.1.265",
         "downloadSize": 107740017,
-        "publishedAt": "2024-08-08T12:24:45Z"
+        "publishedAt": "2026-10-25T06:00:38.797285Z"
       },
       {
         "version": "1.21",
@@ -6815,7 +6811,7 @@
         "buildName": "21.0.167",
         "projectVersion": "21.0.167",
         "downloadSize": 110738635,
-        "publishedAt": "2024-06-13T08:24:03Z"
+        "publishedAt": "2024-08-08T17:08:20.288544Z"
       },
       {
         "version": "1.20.6",
@@ -6827,7 +6823,7 @@
         "buildName": "20.6.144",
         "projectVersion": "20.6.144",
         "downloadSize": 109806597,
-        "publishedAt": "2024-04-29T12:40:45Z"
+        "publishedAt": "2026-10-15T01:41:53.846453Z"
       },
       {
         "version": "1.20.5",
@@ -6839,7 +6835,7 @@
         "buildName": "20.5.21-beta",
         "projectVersion": "20.5.21-beta",
         "downloadSize": 109177979,
-        "publishedAt": "2024-04-23T11:54:12Z",
+        "publishedAt": "2024-04-29T06:37:02.232851Z",
         "experimental": true
       },
       {
@@ -6852,7 +6848,7 @@
         "buildName": "20.4.253",
         "projectVersion": "20.4.253",
         "downloadSize": 104045573,
-        "publishedAt": "2023-12-07T12:56:20Z"
+        "publishedAt": "2026-10-15T01:43:31.735261Z"
       },
       {
         "version": "1.20.3",
@@ -6864,7 +6860,7 @@
         "buildName": "20.3.8-beta",
         "projectVersion": "20.3.8-beta",
         "downloadSize": 106167346,
-        "publishedAt": "2023-12-04T12:10:32Z",
+        "publishedAt": "2023-12-07T08:23:52.553639Z",
         "experimental": true
       },
       {
@@ -6877,7 +6873,7 @@
         "buildName": "20.2.93",
         "projectVersion": "20.2.93",
         "downloadSize": 101124169,
-        "publishedAt": "2023-09-20T09:02:57Z"
+        "publishedAt": "2025-04-21T18:38:04.107481Z"
       }
     ]
   },
