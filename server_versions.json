@@ -668,7 +668,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/f9df8e19f4bdee97dbded48095391ea69c64342a4e19624db4f5e0d0136dfe0b/paper-26.3-253.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/a7116085a8ba88cf00771d5e61a2925007942092650811da7327dc23243f0cec/paper-26.3-255.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -690,10 +690,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 253,
-        "downloadSize": 55296155,
-        "sha256": "f9df8e19f4bdee97dbded48095391ea69c64342a4e19624db4f5e0d0136dfe0b",
-        "publishedAt": "2026-11-15T17:14:05Z"
+        "buildNumber": 255,
+        "downloadSize": 55296784,
+        "sha256": "a7116085a8ba88cf00771d5e61a2925007942092650811da7327dc23243f0cec",
+        "publishedAt": "2026-11-18T11:35:26Z"
       },
       {
         "version": "26.3-rc-3",
@@ -2787,14 +2787,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/leaf/26.3/24/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.3/25/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "3b4c2626-ae0a-4d9c-b857-27ea8d701cfe",
-        "buildName": "#24",
-        "downloadSize": 27097534,
-        "publishedAt": "2026-11-16T13:58:34.014Z",
+        "buildUuid": "70048f96-f52e-4913-a071-1156ac0d28d0",
+        "buildName": "#25",
+        "downloadSize": 27098012,
+        "publishedAt": "2026-11-18T13:20:49.781Z",
         "experimental": true
       },
       {
@@ -3604,7 +3604,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/e128879088ba73aa99e218fa6d51fdba3ef2fa3e3c4bc63b834145ac03a243b4/folia-26.3-21.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/06401b3d70551eee4094138fda9d9aacba10cd94bf86b16c60bd93b5a4349610/folia-26.3-23.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -3626,10 +3626,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 21,
-        "downloadSize": 55568174,
-        "sha256": "e128879088ba73aa99e218fa6d51fdba3ef2fa3e3c4bc63b834145ac03a243b4",
-        "publishedAt": "2026-11-17T23:03:18Z"
+        "buildNumber": 23,
+        "downloadSize": 55568440,
+        "sha256": "06401b3d70551eee4094138fda9d9aacba10cd94bf86b16c60bd93b5a4349610",
+        "publishedAt": "2026-11-18T17:16:02Z"
       },
       {
         "version": "26.2",
@@ -5946,9 +5946,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 104343296,
-        "sha256": "501fad389cff92895d1bfcdef8286a17a71236efe23593767311f8848b6094ff",
-        "publishedAt": "2026-11-17T05:06:30Z",
+        "downloadSize": 104248608,
+        "sha256": "a8cc04a397c548316dc629c17f6f8711de1c5b512c8a1bd295bf1c8786dc7db8",
+        "publishedAt": "2026-11-18T05:11:57Z",
         "experimental": true
       },
       {
@@ -5959,9 +5959,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 131369728,
-        "sha256": "a4cda0760234d188332effbb3e21dd744da49d3116785de6d3c4e6711fa547fa",
-        "publishedAt": "2026-11-17T05:06:32Z",
+        "downloadSize": 131428232,
+        "sha256": "aa1ba6017dd2182dc82adc7ce10f172ec673fc0ae5a44d1b85593d057e274b38",
+        "publishedAt": "2026-11-18T05:11:58Z",
         "experimental": true
       },
       {
@@ -5972,9 +5972,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 127199648,
-        "sha256": "f707b6570ff3185c2858e6a95442eaa2ae8ae499dcf6c6f14683b3807fd908b4",
-        "publishedAt": "2026-11-17T05:06:33Z",
+        "downloadSize": 127185840,
+        "sha256": "5a6693b0a121880b1bf0501517afc7eec4cc17bf30010990b880193eb8cd2073",
+        "publishedAt": "2026-11-18T05:11:59Z",
         "experimental": true
       },
       {
@@ -5985,9 +5985,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 115419136,
-        "sha256": "42a02c80b41adf283e7841e2a3b465e16718fe0c54b0cd193ea3a99e2769d735",
-        "publishedAt": "2026-11-17T05:06:32Z",
+        "downloadSize": 114949120,
+        "sha256": "3cc5be27c6e277cb32990c4b300e0664cb72349393a62b4f5b9df44ec8f62c27",
+        "publishedAt": "2026-11-18T05:11:58Z",
         "experimental": true
       },
       {
@@ -5998,9 +5998,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 98556928,
-        "sha256": "941b0dbe07c5586e428b33d2472c4bd0f5132c2ff7329e1318d878391b98555d",
-        "publishedAt": "2026-11-17T05:06:31Z",
+        "downloadSize": 98416640,
+        "sha256": "d9cb40c6cf9416bfd70add87e59275a6e93ab45c7b5bc6b38b92d2a3eec4fe78",
+        "publishedAt": "2026-11-18T05:11:57Z",
         "experimental": true
       }
     ]
@@ -6639,15 +6639,15 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.110/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.3/26.3.0.113/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "235248b1-2b7a-49d6-9166-26e5011f2a3f",
-        "buildName": "26.3.0.110",
-        "projectVersion": "26.3.0.110",
-        "downloadSize": 73522558,
-        "publishedAt": "2026-11-17T08:31:38.316Z"
+        "buildUuid": "3571e712-f826-49ca-ac9a-cfd8a226d8b0",
+        "buildName": "26.3.0.113",
+        "projectVersion": "26.3.0.113",
+        "downloadSize": 73525705,
+        "publishedAt": "2026-11-17T23:48:01.072Z"
       },
       {
         "version": "26.2",
