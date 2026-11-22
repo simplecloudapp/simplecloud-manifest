@@ -2787,14 +2787,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/leaf/26.3/27/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.3/28/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "764c6eba-d038-45b7-8ac4-63be3cb741d6",
-        "buildName": "#27",
-        "downloadSize": 27134123,
-        "publishedAt": "2026-11-20T08:17:00.685Z",
+        "buildUuid": "5f26153f-86f8-47ab-9cb3-da1a7c7948e9",
+        "buildName": "#28",
+        "downloadSize": 27136621,
+        "publishedAt": "2026-11-21T15:05:27.653Z",
         "experimental": true
       },
       {
@@ -6665,15 +6665,15 @@
       },
       {
         "version": "26.1.2",
-        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.128/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/26.1.2/26.1.2.129/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "e16d919e-3074-421d-9342-af6718f6c35c",
-        "buildName": "26.1.2.128",
-        "projectVersion": "26.1.2.128",
-        "downloadSize": 72356157,
-        "publishedAt": "2026-11-20T06:50:30.005Z"
+        "buildUuid": "a79a6165-3d3a-4c4d-90f7-6518fed6e3d7",
+        "buildName": "26.1.2.129",
+        "projectVersion": "26.1.2.129",
+        "downloadSize": 72356726,
+        "publishedAt": "2026-11-21T11:17:39.411Z"
       },
       {
         "version": "26.1.1",
