@@ -89,20 +89,19 @@ installables:
             *" debian "*) distro=debian; codename="${DEBIAN_CODENAME:-$VERSION_CODENAME}" ;;
             *) exec apt-get install -y docker.io ;;
             esac;
+            created=;
+            if ! grep -qs '^[^#]*download\.docker\.com' /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; then
             repo="https://download.docker.com/linux/$distro";
             arch="$(dpkg --print-architecture)";
-            curl -fsI "$repo/dists/$codename/stable/binary-$arch/Packages" >/dev/null 2>&1;
-            found=$?;
-            if [ "$found" -eq 22 ]; then
+            status="$(curl -sI -o /dev/null -w '%{http_code}' "$repo/dists/$codename/stable/binary-$arch/Packages")";
+            if [ "$status" = 404 ]; then
             echo "Docker has no repository for $ID $codename on $arch; installing docker.io" >&2;
             exec apt-get install -y docker.io;
             fi;
-            if [ "$found" -ne 0 ]; then
-            echo "Could not reach download.docker.com" >&2;
+            if [ "$status" != 200 ]; then
+            echo "Could not reach Docker's repository at download.docker.com (HTTP $status)" >&2;
             exit 1;
             fi;
-            created=;
-            if ! grep -qs '^[^#]*download\.docker\.com' /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; then
             key=/etc/apt/keyrings/docker.asc;
             list=/etc/apt/sources.list.d/docker.list;
             install -m 0755 -d /etc/apt/keyrings || exit 1;
