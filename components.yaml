@@ -44,17 +44,18 @@ installables:
         armv7l) arch=armv7 ;;
         *) echo "Unsupported Docker Compose architecture: $arch" >&2; exit 1 ;;
         esac;
-        url="https://github.com/docker/compose/releases/download/v{{composeVersion}}/docker-compose-linux-$arch";
-        dir="$(mktemp -d)";
-        curl -fsSL "$url" -o "$dir/docker-compose"
-        && expected="$(curl -fsSL "$url.sha256" | cut -d ' ' -f 1)"
-        && echo "$expected  $dir/docker-compose" | sha256sum -c - >/dev/null
-        && install -D -m 0755 "$dir/docker-compose" /usr/local/lib/docker/cli-plugins/docker-compose;
-        status=$?;
-        rm -rf "$dir";
-        exit $status
-      # The CLI runs docker without sudo, so the user who ran sudo joins the
-      # docker group, which is root-equivalent. It applies from their next login.
+        name="docker-compose-linux-$arch";
+        url="https://github.com/docker/compose/releases/download/v{{composeVersion}}";
+        dir="$(mktemp -d)" || exit 1;
+        trap 'rm -rf "$dir"' EXIT;
+        cd "$dir" || exit 1;
+        curl -fsSLO "$url/$name" || exit 1;
+        curl -fsSLO "$url/$name.sha256" || exit 1;
+        sha256sum -c "$name.sha256" >/dev/null || exit 1;
+        install -D -m 0755 "$name" /usr/local/lib/docker/cli-plugins/docker-compose
+      # The CLI's docker runner runs docker without sudo, so the user who ran
+      # sudo joins the docker group, which is root-equivalent. It applies from
+      # their next login.
       addSudoUserToDockerGroup: >-
         if [ -n "${SUDO_USER:-}" ] && [ "$SUDO_USER" != root ]; then
         usermod -aG docker "$SUDO_USER";
@@ -70,9 +71,10 @@ installables:
       linux: "Install Docker Engine and the Docker Compose plugin from https://docs.docker.com/engine/install/"
       windows: "Install and start Docker Desktop from https://docs.docker.com/desktop/setup/install/windows-install/"
     # apt, dnf and yum install Docker from Docker's repositories, which have
-    # current versions, and keep a Docker that is already installed. Where
-    # Docker has no repository, apt and Amazon Linux use the distribution's
-    # docker package.
+    # current versions, and keep a Docker that is already installed. A Docker
+    # repository that is already configured is used as it is, and one written
+    # here is removed again when it fails. Where Docker has no repository, apt
+    # and Amazon Linux use the distribution's docker package.
     commands:
       apt:
         - ["apt-get", "update"]
@@ -89,17 +91,28 @@ installables:
             esac;
             repo="https://download.docker.com/linux/$distro";
             arch="$(dpkg --print-architecture)";
-            if ! curl -fsI "$repo/dists/$codename/stable/binary-$arch/Packages" >/dev/null 2>&1; then
+            curl -fsI "$repo/dists/$codename/stable/binary-$arch/Packages" >/dev/null 2>&1;
+            found=$?;
+            if [ "$found" -eq 22 ]; then
+            echo "Docker has no repository for $ID $codename on $arch; installing docker.io" >&2;
             exec apt-get install -y docker.io;
             fi;
+            if [ "$found" -ne 0 ]; then
+            echo "Could not reach download.docker.com" >&2;
+            exit 1;
+            fi;
+            created=;
+            if ! grep -qs '^[^#]*download\.docker\.com' /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; then
             key=/etc/apt/keyrings/docker.asc;
             list=/etc/apt/sources.list.d/docker.list;
             install -m 0755 -d /etc/apt/keyrings || exit 1;
             curl -fsSL "$repo/gpg" -o "$key" || exit 1;
             chmod a+r "$key";
             echo "deb [arch=$arch signed-by=$key] $repo $codename stable" > "$list";
+            created="$list";
+            fi;
             if ! apt-get update; then
-            rm -f "$list";
+            if [ -n "$created" ]; then rm -f "$created"; fi;
             exit 1;
             fi;
             exec apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -123,10 +136,14 @@ installables:
             if [ "$ID" = rhel ]; then
             repo=rhel;
             fi;
+            created=;
+            if ! grep -qs '^[^#]*download\.docker\.com' /etc/yum.repos.d/*.repo; then
             file=/etc/yum.repos.d/docker-ce.repo;
-            curl -fsSL "https://download.docker.com/linux/$repo/docker-ce.repo" -o "$file" || exit 1;
+            curl -fsSL "https://download.docker.com/linux/$repo/docker-ce.repo" -o "$file" || { rm -f "$file"; exit 1; };
+            created="$file";
+            fi;
             if ! dnf -y makecache --repo docker-ce-stable; then
-            rm -f "$file";
+            if [ -n "$created" ]; then rm -f "$created"; fi;
             echo "Could not load Docker's $repo repository for this release" >&2;
             exit 1;
             fi;
@@ -145,10 +162,14 @@ installables:
             yum -y install amazon-linux-extras || exit 1;
             exec amazon-linux-extras install -y docker;
             fi;
+            created=;
+            if ! grep -qs '^[^#]*download\.docker\.com' /etc/yum.repos.d/*.repo; then
             file=/etc/yum.repos.d/docker-ce.repo;
-            curl -fsSL https://download.docker.com/linux/centos/docker-ce.repo -o "$file" || exit 1;
+            curl -fsSL https://download.docker.com/linux/centos/docker-ce.repo -o "$file" || { rm -f "$file"; exit 1; };
+            created="$file";
+            fi;
             if ! yum -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin; then
-            rm -f "$file";
+            if [ -n "$created" ]; then rm -f "$created"; fi;
             exit 1;
             fi
         - ["sh", "-c", "{{installCompose}}"]
