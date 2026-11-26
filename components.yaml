@@ -36,43 +36,128 @@ installables:
       composeVersion: "5.8.0"
       # For an engine without the Compose plugin: Amazon Linux, a distribution
       # without a Docker repository, or a Docker that was already installed.
-      installCompose: "docker compose version >/dev/null 2>&1 && exit 0; arch=\"$(uname -m)\"; case \"$arch\" in x86_64|aarch64) ;; armv7l) arch=armv7 ;; *) echo \"Unsupported Docker Compose architecture: $arch\" >&2; exit 1 ;; esac; url=\"https://github.com/docker/compose/releases/download/v{{composeVersion}}/docker-compose-linux-$arch\"; dir=\"$(mktemp -d)\"; curl -fsSL \"$url\" -o \"$dir/docker-compose\" && expected=\"$(curl -fsSL \"$url.sha256\" | cut -d ' ' -f 1)\" && echo \"$expected  $dir/docker-compose\" | sha256sum -c - >/dev/null && install -D -m 0755 \"$dir/docker-compose\" /usr/local/lib/docker/cli-plugins/docker-compose; status=$?; rm -rf \"$dir\"; exit $status"
+      installCompose: >-
+        docker compose version >/dev/null 2>&1 && exit 0;
+        arch="$(uname -m)";
+        case "$arch" in
+        x86_64|aarch64) ;;
+        armv7l) arch=armv7 ;;
+        *) echo "Unsupported Docker Compose architecture: $arch" >&2; exit 1 ;;
+        esac;
+        url="https://github.com/docker/compose/releases/download/v{{composeVersion}}/docker-compose-linux-$arch";
+        dir="$(mktemp -d)";
+        curl -fsSL "$url" -o "$dir/docker-compose"
+        && expected="$(curl -fsSL "$url.sha256" | cut -d ' ' -f 1)"
+        && echo "$expected  $dir/docker-compose" | sha256sum -c - >/dev/null
+        && install -D -m 0755 "$dir/docker-compose" /usr/local/lib/docker/cli-plugins/docker-compose;
+        status=$?;
+        rm -rf "$dir";
+        exit $status
       # The CLI runs docker without sudo, so the user who ran sudo joins the
       # docker group, which is root-equivalent. It applies from their next login.
-      addSudoUserToDockerGroup: "if [ -n \"${SUDO_USER:-}\" ] && [ \"$SUDO_USER\" != root ]; then usermod -aG docker \"$SUDO_USER\"; fi"
-      startDocker: "if [ -d /run/systemd/system ]; then systemctl enable --now docker; else service docker start; fi"
+      addSudoUserToDockerGroup: >-
+        if [ -n "${SUDO_USER:-}" ] && [ "$SUDO_USER" != root ]; then
+        usermod -aG docker "$SUDO_USER";
+        fi
+      enableAndStartDocker: >-
+        if [ -d /run/systemd/system ]; then
+        systemctl enable --now docker;
+        else
+        service docker start;
+        fi
     manualInstructions:
       darwin: "Install and start Docker Desktop from https://docs.docker.com/desktop/setup/install/mac-install/"
       linux: "Install Docker Engine and the Docker Compose plugin from https://docs.docker.com/engine/install/"
       windows: "Install and start Docker Desktop from https://docs.docker.com/desktop/setup/install/windows-install/"
     # apt, dnf and yum install Docker from Docker's repositories, which have
-    # current versions, and leave a Docker that is already installed alone.
-    # Distributions without such a repository use their own docker package.
+    # current versions, and keep a Docker that is already installed. Where
+    # Docker has no repository, apt and Amazon Linux use the distribution's
+    # docker package.
     commands:
       apt:
         - ["apt-get", "update"]
         - ["apt-get", "install", "-y", "ca-certificates", "curl"]
-        # A derivative such as Kali has no codename Docker knows; it keeps docker.io.
-        - ["sh", "-c", "command -v docker >/dev/null 2>&1 && exit 0; . /etc/os-release; case \" $ID ${ID_LIKE:-} \" in *\" ubuntu \"*) distro=ubuntu; codename=\"${UBUNTU_CODENAME:-$VERSION_CODENAME}\" ;; *\" debian \"*) distro=debian; codename=\"${DEBIAN_CODENAME:-$VERSION_CODENAME}\" ;; *) distro=none ;; esac; repo=\"https://download.docker.com/linux/$distro\"; if ! curl -fsI \"$repo/dists/$codename/Release\" >/dev/null 2>&1; then exec apt-get install -y docker.io; fi; install -m 0755 -d /etc/apt/keyrings && curl -fsSL \"$repo/gpg\" -o /etc/apt/keyrings/docker.asc && chmod a+r /etc/apt/keyrings/docker.asc && echo \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] $repo $codename stable\" > /etc/apt/sources.list.d/docker.list && apt-get update && exec apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"]
+        - - "sh"
+          - "-c"
+          - >-
+            command -v docker >/dev/null 2>&1 && exit 0;
+            . /etc/os-release;
+            case " $ID ${ID_LIKE:-} " in
+            *" ubuntu "*) distro=ubuntu; codename="${UBUNTU_CODENAME:-$VERSION_CODENAME}" ;;
+            *" debian "*) distro=debian; codename="${DEBIAN_CODENAME:-$VERSION_CODENAME}" ;;
+            *) exec apt-get install -y docker.io ;;
+            esac;
+            repo="https://download.docker.com/linux/$distro";
+            arch="$(dpkg --print-architecture)";
+            if ! curl -fsI "$repo/dists/$codename/stable/binary-$arch/Packages" >/dev/null 2>&1; then
+            exec apt-get install -y docker.io;
+            fi;
+            key=/etc/apt/keyrings/docker.asc;
+            list=/etc/apt/sources.list.d/docker.list;
+            install -m 0755 -d /etc/apt/keyrings || exit 1;
+            curl -fsSL "$repo/gpg" -o "$key" || exit 1;
+            chmod a+r "$key";
+            echo "deb [arch=$arch signed-by=$key] $repo $codename stable" > "$list";
+            if ! apt-get update; then
+            rm -f "$list";
+            exit 1;
+            fi;
+            exec apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
         - ["sh", "-c", "{{installCompose}}"]
         - ["sh", "-c", "{{addSudoUserToDockerGroup}}"]
-        - ["sh", "-c", "{{startDocker}}"]
+        - ["sh", "-c", "{{enableAndStartDocker}}"]
       dnf:
-        # Rocky and Alma name rhel in ID_LIKE and use the CentOS repository.
-        - ["sh", "-c", "command -v docker >/dev/null 2>&1 && exit 0; . /etc/os-release; case \" $ID ${ID_LIKE:-} \" in *\" amzn \"*) exec dnf -y install docker ;; \" rhel \"*) repo=rhel ;; *\" rhel \"*|*\" centos \"*) repo=centos ;; *\" fedora \"*) repo=fedora ;; *) echo \"Docker has no dnf repository for $ID\" >&2; exit 1 ;; esac; file=/etc/yum.repos.d/docker-ce.repo; curl -fsSL \"https://download.docker.com/linux/$repo/docker-ce.repo\" -o \"$file\" || exit 1; if ! dnf -y makecache --repo docker-ce-stable; then rm -f \"$file\"; echo \"Docker's $repo repository has no packages for this release\" >&2; exit 1; fi; exec dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin"]
+        # Rocky and Alma name rhel in ID_LIKE and use Docker's CentOS
+        # repository; RHEL itself has its own.
+        - - "sh"
+          - "-c"
+          - >-
+            command -v docker >/dev/null 2>&1 && exit 0;
+            . /etc/os-release;
+            case " $ID ${ID_LIKE:-} " in
+            *" amzn "*) exec dnf -y install docker ;;
+            *" rhel "*|*" centos "*) repo=centos ;;
+            *" fedora "*) repo=fedora ;;
+            *) echo "Docker has no dnf repository for $ID" >&2; exit 1 ;;
+            esac;
+            if [ "$ID" = rhel ]; then
+            repo=rhel;
+            fi;
+            file=/etc/yum.repos.d/docker-ce.repo;
+            curl -fsSL "https://download.docker.com/linux/$repo/docker-ce.repo" -o "$file" || exit 1;
+            if ! dnf -y makecache --repo docker-ce-stable; then
+            rm -f "$file";
+            echo "Could not load Docker's $repo repository for this release" >&2;
+            exit 1;
+            fi;
+            exec dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
         - ["sh", "-c", "{{installCompose}}"]
         - ["sh", "-c", "{{addSudoUserToDockerGroup}}"]
-        - ["sh", "-c", "{{startDocker}}"]
+        - ["sh", "-c", "{{enableAndStartDocker}}"]
       yum:
-        # Only systems without dnf: Amazon Linux 2 and CentOS 7, both end of life.
-        - ["sh", "-c", "command -v docker >/dev/null 2>&1 && exit 0; . /etc/os-release; if [ \"$ID\" = amzn ]; then yum -y install amazon-linux-extras && exec amazon-linux-extras install -y docker; fi; file=/etc/yum.repos.d/docker-ce.repo; curl -fsSL https://download.docker.com/linux/centos/docker-ce.repo -o \"$file\" || exit 1; if ! yum -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin; then rm -f \"$file\"; exit 1; fi"]
+        # Systems without dnf, such as Amazon Linux 2 and CentOS 7.
+        - - "sh"
+          - "-c"
+          - >-
+            command -v docker >/dev/null 2>&1 && exit 0;
+            . /etc/os-release;
+            if [ "$ID" = amzn ]; then
+            yum -y install amazon-linux-extras || exit 1;
+            exec amazon-linux-extras install -y docker;
+            fi;
+            file=/etc/yum.repos.d/docker-ce.repo;
+            curl -fsSL https://download.docker.com/linux/centos/docker-ce.repo -o "$file" || exit 1;
+            if ! yum -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin; then
+            rm -f "$file";
+            exit 1;
+            fi
         - ["sh", "-c", "{{installCompose}}"]
         - ["sh", "-c", "{{addSudoUserToDockerGroup}}"]
-        - ["sh", "-c", "{{startDocker}}"]
+        - ["sh", "-c", "{{enableAndStartDocker}}"]
       pacman:
         - ["pacman", "-Syu", "--noconfirm", "docker", "docker-compose"]
         - ["sh", "-c", "{{addSudoUserToDockerGroup}}"]
-        - ["sh", "-c", "{{startDocker}}"]
+        - ["sh", "-c", "{{enableAndStartDocker}}"]
       brew:
         - ["brew", "install", "--cask", "docker"]
 
