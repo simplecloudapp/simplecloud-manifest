@@ -668,7 +668,7 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://fill-data.papermc.io/v1/objects/b2d24a0abe99f481b35504b119e35ac721013f59d9c670aa9a4d05814a81617b/paper-26.3-262.jar",
+        "link": "https://fill-data.papermc.io/v1/objects/949a1b05063d5bfd9ca324509d1d4726f2051e5bc81bc5f6f5d96f56f3a6e392/paper-26.3-263.jar",
         "channel": "STABLE",
         "javaMinimum": 25,
         "javaRecommendedFlags": [
@@ -690,10 +690,10 @@
           "-XX:SurvivorRatio=32"
         ],
         "supportStatus": "SUPPORTED",
-        "buildNumber": 262,
-        "downloadSize": 55307360,
-        "sha256": "b2d24a0abe99f481b35504b119e35ac721013f59d9c670aa9a4d05814a81617b",
-        "publishedAt": "2026-11-24T16:43:43Z"
+        "buildNumber": 263,
+        "downloadSize": 55307955,
+        "sha256": "949a1b05063d5bfd9ca324509d1d4726f2051e5bc81bc5f6f5d96f56f3a6e392",
+        "publishedAt": "2026-11-26T11:36:06Z"
       },
       {
         "version": "26.3-rc-3",
@@ -6864,15 +6864,15 @@
       },
       {
         "version": "1.21.1",
-        "link": "https://files.mcjars.app/neoforge/1.21.1/21.1.267/1/server.jar.zip",
+        "link": "https://files.mcjars.app/neoforge/1.21.1/21.1.268/1/server.jar.zip",
         "isSnapshot": false,
         "javaMinimum": 21,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "2a651920-9b65-47a3-a1a9-f71dd56f3351",
-        "buildName": "21.1.267",
-        "projectVersion": "21.1.267",
-        "downloadSize": 107746719,
-        "publishedAt": "2026-11-17T03:18:22.28Z"
+        "buildUuid": "1dca7392-8302-4c0a-a32c-893a49710f86",
+        "buildName": "21.1.268",
+        "projectVersion": "21.1.268",
+        "downloadSize": 107746749,
+        "publishedAt": "2026-11-26T02:32:39.426Z"
       },
       {
         "version": "1.21",
