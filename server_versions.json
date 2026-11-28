@@ -2787,14 +2787,14 @@
     "downloadLinks": [
       {
         "version": "26.3",
-        "link": "https://files.mcjars.app/leaf/26.3/33/server.jar",
+        "link": "https://files.mcjars.app/leaf/26.3/39/server.jar",
         "isSnapshot": false,
         "javaMinimum": 25,
         "supportStatus": "SUPPORTED",
-        "buildUuid": "8bd6baa3-a3bb-4f36-8550-3dfe9e56d779",
-        "buildName": "#33",
-        "downloadSize": 27139375,
-        "publishedAt": "2026-11-25T15:07:32.975Z",
+        "buildUuid": "9b00e2ce-712d-4946-ab80-d2aef4121a40",
+        "buildName": "#39",
+        "downloadSize": 27144915,
+        "publishedAt": "2026-11-27T21:39:42.743Z",
         "experimental": true
       },
       {
@@ -4097,8 +4097,20 @@
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/fabric.png",
     "latestVersion": "26.3",
-    "latestSnapshot": "26.4-pre-1",
+    "latestSnapshot": "26.4-pre-2",
     "downloadLinks": [
+      {
+        "version": "26.4-pre-2",
+        "link": "https://versions.mcjars.app/download/fabric/26.4-pre-2/0.20.1/1.1.2.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "768d7a21-2c43-48b0-8785-4970f3349ad1",
+        "buildName": "0.20.1",
+        "projectVersion": "0.20.1",
+        "downloadSize": 181844,
+        "publishedAt": "2026-11-27T10:00:38Z"
+      },
       {
         "version": "26.4-pre-1",
         "link": "https://versions.mcjars.app/download/fabric/26.4-pre-1/0.20.1/1.1.2.jar",
@@ -4158,18 +4170,6 @@
         "projectVersion": "0.20.1",
         "downloadSize": 181849,
         "publishedAt": "2026-11-03T13:08:56Z"
-      },
-      {
-        "version": "26.4-snapshot-6",
-        "link": "https://versions.mcjars.app/download/fabric/26.4-snapshot-6/0.20.1/1.1.2.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "c29cbac4-f2ec-4901-b5eb-34c03ebe7640",
-        "buildName": "0.20.1",
-        "projectVersion": "0.20.1",
-        "downloadSize": 181849,
-        "publishedAt": "2026-10-27T13:40:29Z"
       },
       {
         "version": "26.3",
@@ -4772,8 +4772,20 @@
     "isBinary": false,
     "iconUrl": "https://raw.githubusercontent.com/simplecloudapp/simplecloud-manifest/refs/heads/main/assets/software/vanilla.png",
     "latestVersion": "26.3",
-    "latestSnapshot": "26.4-pre-1",
+    "latestSnapshot": "26.4-pre-2",
     "downloadLinks": [
+      {
+        "version": "26.4-pre-2",
+        "link": "https://piston-data.mojang.com/v1/objects/63feac922579f0c3e0081bf1c41613de8feb5db9/server.jar",
+        "isSnapshot": true,
+        "javaMinimum": 25,
+        "supportStatus": "SUPPORTED",
+        "buildUuid": "9d72fb67-08eb-481b-ad5d-4f43fbbe76e2",
+        "buildName": "#1",
+        "downloadSize": 64149075,
+        "publishedAt": "2026-11-27T10:00:38Z",
+        "experimental": true
+      },
       {
         "version": "26.4-pre-1",
         "link": "https://piston-data.mojang.com/v1/objects/7ade6b7bb19a6ffbc3185c9227ab1871bf17e00e/server.jar",
@@ -4832,18 +4844,6 @@
         "buildName": "#1",
         "downloadSize": 63476160,
         "publishedAt": "2026-11-03T13:08:56Z",
-        "experimental": true
-      },
-      {
-        "version": "26.4-snapshot-6",
-        "link": "https://piston-data.mojang.com/v1/objects/a022ed5cfa7e7f8a52c91b21ecf5a976b5a516f9/server.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "c30341c8-1275-4fdd-8d9b-b5dfe15309db",
-        "buildName": "#1",
-        "downloadSize": 63440656,
-        "publishedAt": "2026-10-27T13:40:29Z",
         "experimental": true
       },
       {
@@ -5946,9 +5946,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-macOS",
-        "downloadSize": 105738256,
-        "sha256": "60bb286cff3469b5217cba23c1677c43c063432ed77b5e295a187c474537dfc7",
-        "publishedAt": "2026-11-25T04:38:24Z",
+        "downloadSize": 110737344,
+        "sha256": "4501eb2be62edac3f3af745a4fe1fa35b0fb25e12e10fe9d16b93f441c1e379e",
+        "publishedAt": "2026-11-27T05:39:02Z",
         "experimental": true
       },
       {
@@ -5959,9 +5959,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Linux",
-        "downloadSize": 133223264,
-        "sha256": "8086475ca5a60dea8060e60dc4c62c39a26497013e3762ed17c560ff07e5d50f",
-        "publishedAt": "2026-11-25T04:38:25Z",
+        "downloadSize": 139388288,
+        "sha256": "cef5da4cfea8af78f9c9fd8ffc4fc33e95bf9c47aa6baba035ddcc86bf2f36ac",
+        "publishedAt": "2026-11-27T05:39:03Z",
         "experimental": true
       },
       {
@@ -5972,9 +5972,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Linux",
-        "downloadSize": 129756624,
-        "sha256": "b51cfbc31ebd34b2ad4d242b7c9b8bb94d086c4618f7ebd6a412d6877ccd8f34",
-        "publishedAt": "2026-11-25T04:38:26Z",
+        "downloadSize": 134890960,
+        "sha256": "bcb88778ad731f804a4feec79f7e95b10ad48dd330652e428da9d5409007082a",
+        "publishedAt": "2026-11-27T05:39:03Z",
         "experimental": true
       },
       {
@@ -5985,9 +5985,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-X64-Windows.exe",
-        "downloadSize": 116435968,
-        "sha256": "b4d0bdec20b5d8e47a4f19841c886dba3a501b24e9cdb8364a8586623f409215",
-        "publishedAt": "2026-11-25T04:38:25Z",
+        "downloadSize": 123469312,
+        "sha256": "39dbc5ae47b3f7a70571b7a38e2eab6decade0c83901e5159b050b750f1dade2",
+        "publishedAt": "2026-11-27T05:39:03Z",
         "experimental": true
       },
       {
@@ -5998,9 +5998,9 @@
         "channel": "NIGHTLY",
         "isSnapshot": true,
         "buildName": "pumpkin-ARM64-Windows.exe",
-        "downloadSize": 99998720,
-        "sha256": "e455097c66c542de4f92fe8ca4ec4683df90f4f8ec1aa773c1023e801c78ab86",
-        "publishedAt": "2026-11-25T04:38:24Z",
+        "downloadSize": 105403904,
+        "sha256": "e0b2aa99d5ad609c7ef6a837eb113f1ca035338b9bf117705a4785425256e6d4",
+        "publishedAt": "2026-11-27T05:39:02Z",
         "experimental": true
       }
     ]
@@ -6078,19 +6078,6 @@
         "projectVersion": "0.31.0-beta.6",
         "downloadSize": 63476160,
         "publishedAt": "2026-11-03T13:08:56Z",
-        "experimental": true
-      },
-      {
-        "version": "26.4-snapshot-6",
-        "link": "https://piston-data.mojang.com/v1/objects/a022ed5cfa7e7f8a52c91b21ecf5a976b5a516f9/server.jar",
-        "isSnapshot": true,
-        "javaMinimum": 25,
-        "supportStatus": "SUPPORTED",
-        "buildUuid": "75d3f537-ea4e-4cba-9147-5e9adc355669",
-        "buildName": "0.31.0-beta.6",
-        "projectVersion": "0.31.0-beta.6",
-        "downloadSize": 63440656,
-        "publishedAt": "2026-10-27T13:40:29Z",
         "experimental": true
       },
       {
